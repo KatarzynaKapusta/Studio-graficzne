@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText"
+    android:orientation="horizontal">
+
+
+    <ImageButton
+        android:id="@+id/budowlany"
+        android:layout_width="107dp"
+        android:layout_height="223dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="563dp"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/button_budowlany"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/bank"
+        android:layout_width="107dp"
+        android:layout_height="223dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="445dp"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/button_bank"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <ImageButton
+        android:id="@+id/magazyn"
+        android:layout_width="107dp"
+        android:layout_height="223dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="418dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="206dp"
+        android:layout_marginBottom="95dp"
+        android:background="@drawable/button_magazyn"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <ImageButton
+        android:id="@+id/studio"
+        android:layout_width="107dp"
+        android:layout_height="223dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="297dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="327dp"
+        android:layout_marginBottom="95dp"
+        android:background="@drawable/button_studio"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/meblowy"
+        android:layout_width="107dp"
+        android:layout_height="223dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="536dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/button_meblowy"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="604dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/button_menu"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="349dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="347dp"
+        android:layout_marginBottom="362dp"
+        android:text="MAIN" />
+
+</RelativeLayout>
