@@ -10,10 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
+            android:name=".activity_logowanie"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_rejestracja"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity_meblowy"
             android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen"/>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
         <activity
             android:name=".activity_menu"
             android:exported="false"

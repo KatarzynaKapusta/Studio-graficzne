@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton button4;
     private ImageButton button5;
     private ImageButton button6;
+    private Button button7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        button7 = (Button) findViewById(R.id.button_logowanie);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivityLogowanie();
+            }
+        });
+
     }
     public void openActivityBudowlany(){
         Intent intent = new Intent(this, activity_budowlany.class);
@@ -94,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivityMenu(){
         Intent intent = new Intent(this, activity_menu.class);
+        startActivity(intent);
+    }
+
+    public void openActivityLogowanie(){
+        Intent intent = new Intent(this, activity_logowanie.class);
         startActivity(intent);
     }
 }
