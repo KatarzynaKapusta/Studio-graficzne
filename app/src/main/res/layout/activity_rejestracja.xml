@@ -33,7 +33,7 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login"
+            android:id="@+id/login_rejestracja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Login"
@@ -47,7 +47,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email"
+            android:id="@+id/email_rejestracja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -61,7 +61,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/haslo_rejestracja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -78,6 +78,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_zarejestruj_sie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zarejestruj się"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "158945083250",
+    "project_id": "studio-graficzne-baza",
+    "storage_bucket": "studio-graficzne-baza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158945083250:android:28c4c6659f0aa11d9b27eb",
+        "android_client_info": {
+          "package_name": "com.example.studiograficzne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158945083250-5s68css58svgh7btgectbfs407969qng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2jYWZkymP9ihJFoZc8PrX9ST6VQQljVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158945083250-5s68css58svgh7btgectbfs407969qng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
