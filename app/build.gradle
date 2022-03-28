@@ -44,4 +44,6 @@ dependencies {
     // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
+    //Firebase authentication ui (auth by email)
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
 }

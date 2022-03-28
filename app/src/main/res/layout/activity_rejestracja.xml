@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Witaj w MyStudio!"
+        android:text="Rejestracja w MyStudio"
         android:textSize="30sp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_rejestracja"
+            android:id="@+id/usrlogin_rejestracja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Login"
@@ -75,9 +75,24 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/haslo_powtorzone_rejestracja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm password"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button_zarejestruj_sie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,7 +101,7 @@
         android:textColor="#fff"
         android:layout_marginTop="20dp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button_rejestracja_masz_juz_konto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

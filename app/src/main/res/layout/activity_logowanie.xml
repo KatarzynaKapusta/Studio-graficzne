@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Witaj ponownie"
+        android:text="Logowanie do aplikacji"
         android:textSize="30sp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -32,21 +32,21 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_logowanie"
+            android:id="@+id/email_logowanie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Login"
+            android:hint="Email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"/>
+                android:inputType="textEmailAddress"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/haslo_logowanie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -61,7 +61,9 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-    <androidx.appcompat.widget.AppCompatButton
+
+    <Button
+        android:id="@+id/button_zapomnianeHaslo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zapomniane hasło?"
@@ -70,7 +72,8 @@
         android:textColor="#000"
         android:layout_marginTop="5dp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
+        android:id="@+id/button_zalogujSie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zaloguj się"
@@ -78,7 +81,7 @@
         android:textColor="#fff"
         android:layout_marginTop="5dp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button_przejdz_do_rejestracji_z_logowania"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
