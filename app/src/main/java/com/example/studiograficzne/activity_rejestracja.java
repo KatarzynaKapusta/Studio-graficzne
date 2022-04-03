@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,17 +19,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.annotations.Nullable;
 
-import android.util.Log;
-
 public class activity_rejestracja extends AppCompatActivity {
 
     Button signUpButton, alreadySignedUpButton;
     private TextInputLayout nicknameInput, emailInput, passwordInput, confirmPasswordInput;
 
     private static final String TAG = "EmailPassword";
-    // [START declare_auth]
+    //declare auth
     private FirebaseAuth mAuth;
-    // [END declare_auth]
+
     private ProgressDialog mLoadingBar;
 
     @Override
@@ -37,23 +36,23 @@ public class activity_rejestracja extends AppCompatActivity {
         setContentView(R.layout.activity_rejestracja);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        mAuth = FirebaseAuth.getInstance();
+
         nicknameInput = findViewById(R.id.regLoginInput);
         emailInput = findViewById(R.id.regEmailInput);
         passwordInput = findViewById(R.id.regPasswordInput);
         confirmPasswordInput = findViewById(R.id.regConfirmPasswordInput);
-
         alreadySignedUpButton =  findViewById(R.id.regAlreadySignedUpButton);
         signUpButton = findViewById(R.id.regSignUpButton);
-        mAuth = FirebaseAuth.getInstance();
+
         mLoadingBar = new ProgressDialog(activity_rejestracja.this);
 
         //Sprawdzanie poprawnosci danych
         signUpButton.setOnClickListener(view -> checkCredentials());
+        alreadySignedUpButton.setOnClickListener(view -> openAlreadySignedUpActivity());
 
-        alreadySignedUpButton.setOnClickListener(view -> openAlreadySingUpActivity());
 
-
-    } // OnCreate end
+    } //OnCreate end
 
     @Override
     public void onStart() {
@@ -63,11 +62,41 @@ public class activity_rejestracja extends AppCompatActivity {
         if(currentUser != null){
             reload();
         }
+        else {
+            Toast.makeText(activity_rejestracja.this, "Nie jestes zalogowany",
+                    Toast.LENGTH_SHORT).show();
+        }
+    } //OnStart end
+
+    private void createAccount(String email, String password) {
+        // [START create_user_with_email]
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            mLoadingBar.dismiss();
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            mLoadingBar.dismiss();
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(activity_rejestracja.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+        // [END create_user_with_email]
     }
 
+    /////STARE GUNWO//////
     private void checkCredentials() {
-        String nickname = nicknameInput.getEditText().getText().toString();
-        String email = emailInput.getEditText().getText().toString();
+        String nickname = nicknameInput.getEditText().getText().toString().trim();
+        String email = emailInput.getEditText().getText().toString().trim();
         String password = passwordInput.getEditText().getText().toString();
         String confirmPassword = confirmPasswordInput.getEditText().getText().toString();
 
@@ -105,24 +134,7 @@ public class activity_rejestracja extends AppCompatActivity {
             mLoadingBar.setCanceledOnTouchOutside(false);
             mLoadingBar.show();
 
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful())
-                    {
-                        mLoadingBar.dismiss();
-                        Toast.makeText(activity_rejestracja.this, "Zarejestrowano pomyslnie", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(activity_rejestracja.this,MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
-                    }
-                    else
-                    {
-                        Toast.makeText(activity_rejestracja.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
+            createAccount(email,password);
         }
     }
 
@@ -132,7 +144,7 @@ public class activity_rejestracja extends AppCompatActivity {
     }
 
     //Implementacja dla AlreadySignedUp()
-    private void openAlreadySingUpActivity() {
+    private void openAlreadySignedUpActivity() {
         Intent intent = new Intent(this, activity_logowanie.class);
         startActivity(intent);
     }
@@ -141,5 +153,8 @@ public class activity_rejestracja extends AppCompatActivity {
         // No-op
     }
 
-    private void reload() { }
+    private void reload() {
+        Toast.makeText(activity_rejestracja.this, "Jestes zalogowany",
+                Toast.LENGTH_SHORT).show();
+    }
 }

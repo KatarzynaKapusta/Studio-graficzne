@@ -14,8 +14,7 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:src="@drawable/rejestracja_logo"
-        android:contentDescription="logo gry"/>
+        android:src="@drawable/rejestracja_logo"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

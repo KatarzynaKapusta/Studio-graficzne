@@ -32,7 +32,7 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email_logowanie"
+            android:id="@+id/logEmailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -46,7 +46,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/haslo_logowanie"
+            android:id="@+id/logPasswordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -63,7 +63,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button_zapomnianeHaslo"
+        android:id="@+id/logForgotPasswordButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zapomniane hasło?"
@@ -73,7 +73,7 @@
         android:layout_marginTop="5dp"/>
 
     <Button
-        android:id="@+id/button_zalogujSie"
+        android:id="@+id/logSignInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zaloguj się"
@@ -82,7 +82,7 @@
         android:layout_marginTop="5dp"/>
 
     <Button
-        android:id="@+id/button_przejdz_do_rejestracji_z_logowania"
+        android:id="@+id/logCreateAccountButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nie posiadasz konta? Utwórz je"

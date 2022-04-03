@@ -1,29 +1,17 @@
 package com.example.studiograficzne;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
-
-import io.grpc.InternalWithLogId;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton button1;
-    private ImageButton button2;
-    private ImageButton button3;
-    private ImageButton button4;
-    private ImageButton button5;
-    private ImageButton button6;
-    private Button button7;
-    private Button button8;
     FirebaseAuth mAuth;
 
     @Override
@@ -31,56 +19,63 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1=  findViewById(R.id.budowlany);
-        button1.setOnClickListener(view -> openActivityBudowlany());
-
-        button2 = findViewById(R.id.bank);
-        button2.setOnClickListener(view -> openActivityBank());
-
-        button3 = findViewById(R.id.studio);
-        button3.setOnClickListener(view -> openActivityStudio());
-
-        button4 = findViewById(R.id.magazyn);
-        button4.setOnClickListener(view -> openActivityMagazyn());
-
-        button5= findViewById(R.id.meblowy);
-        button5.setOnClickListener(view -> openActivityMeblowy());
-
-        button6 =  findViewById(R.id.menu);
-        button6.setOnClickListener(view -> openActivityMenu());
-
-        button7 = findViewById(R.id.button_logowanie);
-        button7.setOnClickListener(view -> openActivityLogowanie());
-
         mAuth = FirebaseAuth.getInstance();
 
-        button8 = findViewById(R.id.button_wyloguj);
-        button8.setOnClickListener(view -> openActivityWyloguj());
+        //Budowlany
+        ImageButton budowlanyButton = findViewById(R.id.budowlany);
+        budowlanyButton.setOnClickListener(view -> openActivityBudowlany());
 
-    }
+        //Bank
+        ImageButton bankButton = findViewById(R.id.bank);
+        bankButton.setOnClickListener(view -> openActivityBank());
 
-    UserGameInfo User1 = new UserGameInfo();
+        //Studio
+        ImageButton studioButton = findViewById(R.id.studio);
+        studioButton.setOnClickListener(view -> openActivityStudio());
+
+        //Storage
+        ImageButton storageButton = findViewById(R.id.magazyn);
+        storageButton.setOnClickListener(view -> openActivityStorage());
+
+        //Furniture
+        ImageButton furnitureStoreButton = findViewById(R.id.meblowy);
+        furnitureStoreButton.setOnClickListener(view -> openActivityFurnitureStore());
+
+        //Menu
+        ImageButton menuButton = findViewById(R.id.menu);
+        menuButton.setOnClickListener(view -> openActivityMenu());
+
+        //Sign in
+        Button mainSignInButton = findViewById(R.id.button_logowanie);
+        mainSignInButton.setOnClickListener(view -> openActivitySignIn());
+
+        //Logout
+        Button mainLogoutButton = findViewById(R.id.button_wyloguj);
+        mainLogoutButton.setOnClickListener(view -> openActivityWyloguj());
+
+    } //OnCreate end
 
     public void openActivityBudowlany(){
         Intent intent = new Intent(this, activity_budowlany.class);
         startActivity(intent);
     }
+
     public void openActivityBank(){
         Intent intent = new Intent(this, activity_bank.class);
         startActivity(intent);
     }
+
     public void openActivityStudio(){
         Intent intent = new Intent(this, activity_studio.class);
         startActivity(intent);
     }
-    public void openActivityMagazyn(){
 
+    public void openActivityStorage(){
         Intent intent = new Intent(this, activity_magazyn.class);
-        intent.putExtra("user", User1);
         startActivity(intent);
     }
 
-    public void openActivityMeblowy(){
+    public void openActivityFurnitureStore(){
         Intent intent = new Intent(this, activity_meblowy.class);
         startActivity(intent);
     }
@@ -90,18 +85,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivityLogowanie(){
-
+    public void openActivitySignIn(){
         Intent intent = new Intent(this, activity_logowanie.class);
         startActivity(intent);
     }
 
     public void openActivityWyloguj(){
+        FirebaseAuth.getInstance().signOut();
         Toast.makeText(MainActivity.this, "Wylogowano pomyslnie", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MainActivity.this,activity_logowanie.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
     }
-
-
 }
