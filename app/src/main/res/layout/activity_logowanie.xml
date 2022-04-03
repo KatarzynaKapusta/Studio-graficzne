@@ -90,4 +90,13 @@
         android:textColor="#000"
         android:layout_marginTop="5dp"/>
 
+<!--    <Button-->
+<!--        android:id="@+id/checkButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="SPRAWDZ CZY EMAIL ISTNIEJE"-->
+<!--        android:background="#00000000"-->
+<!--        android:textColor="#000"-->
+<!--        android:layout_marginTop="5dp"/>-->
+
 </LinearLayout>

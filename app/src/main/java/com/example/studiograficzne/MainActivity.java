@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,67 +20,39 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton button5;
     private ImageButton button6;
     private Button button7;
+    private Button button8;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1= (ImageButton) findViewById(R.id.budowlany);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityBudowlany();
-            }
-        });
+        button1=  findViewById(R.id.budowlany);
+        button1.setOnClickListener(view -> openActivityBudowlany());
 
-        button2 = (ImageButton) findViewById(R.id.bank);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityBank();
-            }
-        });
+        button2 = findViewById(R.id.bank);
+        button2.setOnClickListener(view -> openActivityBank());
 
-        button3 = (ImageButton) findViewById(R.id.studio);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityStudio();
-            }
-        });
+        button3 = findViewById(R.id.studio);
+        button3.setOnClickListener(view -> openActivityStudio());
 
-        button4 = (ImageButton) findViewById(R.id.magazyn);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityMagazyn();
-            }
-        });
+        button4 = findViewById(R.id.magazyn);
+        button4.setOnClickListener(view -> openActivityMagazyn());
 
-        button5=(ImageButton) findViewById(R.id.meblowy);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityMeblowy();
-            }
-        });
+        button5= findViewById(R.id.meblowy);
+        button5.setOnClickListener(view -> openActivityMeblowy());
 
-        button6 = (ImageButton) findViewById(R.id.menu);
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityMenu();
-            }
-        });
+        button6 =  findViewById(R.id.menu);
+        button6.setOnClickListener(view -> openActivityMenu());
 
-        button7 = (Button) findViewById(R.id.button_logowanie);
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityLogowanie();
-            }
-        });
+        button7 = findViewById(R.id.button_logowanie);
+        button7.setOnClickListener(view -> openActivityLogowanie());
+
+        mAuth = FirebaseAuth.getInstance();
+
+        button8 = findViewById(R.id.button_wyloguj);
+        button8.setOnClickListener(view -> openActivityWyloguj());
 
     }
     public void openActivityBudowlany(){
@@ -108,7 +83,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivityLogowanie(){
+
         Intent intent = new Intent(this, activity_logowanie.class);
+        startActivity(intent);
+    }
+
+    public void openActivityWyloguj(){
+        Toast.makeText(MainActivity.this, "Wylogowano pomyslnie", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this,activity_logowanie.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 }

@@ -10,14 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
-            android:name=".activity_logowanie_new"
+            android:name=".activity_settings"
             android:exported="false" />
-        <activity
-            android:name=".activity_rejestracja_new"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ActivityResultLauncher"-->
-<!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".ActivityResultLauncher" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".activity_logowanie"
             android:exported="false"
