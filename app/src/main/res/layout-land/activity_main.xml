@@ -11,31 +11,31 @@
 
     <ImageButton
         android:id="@+id/budowlany"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
+        android:layout_width="99dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="563dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="601dp"
         android:layout_marginBottom="94dp"
         android:background="@drawable/button_budowlany"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/bank"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
 
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="179dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="445dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="433dp"
         android:layout_marginBottom="94dp"
         android:background="@drawable/button_bank"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -43,15 +43,15 @@
 
     <ImageButton
         android:id="@+id/magazyn"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="418dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="206dp"
+        android:layout_marginStart="396dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="189dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/button_magazyn"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -60,45 +60,45 @@
     <ImageButton
         android:id="@+id/studio"
         android:layout_width="107dp"
-        android:layout_height="223dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="297dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="327dp"
+        android:layout_marginStart="267dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="309dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/button_studio"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/meblowy"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="536dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginStart="521dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="67dp"
         android:layout_marginBottom="94dp"
         android:background="@drawable/button_meblowy"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="107dp"
+        android:layout_height="81dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="314dp"
-        android:layout_marginEnd="604dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="563dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/button_menu"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -123,9 +123,9 @@
 
     <Button
         android:id="@+id/button_wyloguj"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="532dp"
+        android:layout_marginStart="467dp"
         android:layout_toEndOf="@+id/button_logowanie"
         android:text="WYLOGUJ" />
 

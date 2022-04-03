@@ -3,7 +3,6 @@ package com.example.studiograficzne;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class activity_magazyn extends AppCompatActivity {
