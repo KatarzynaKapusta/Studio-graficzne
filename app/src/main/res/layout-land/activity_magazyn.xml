@@ -6,34 +6,37 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText"
     android:orientation="horizontal"
-    android:gravity="center"
     android:background="@drawable/storage_background">
 
     <TextView
         android:id="@+id/magazyn"
-        android:layout_width="wrap_content"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="261dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="261dp"
-        android:layout_marginBottom="327dp"
-        android:text="Magazyn"
+        android:layout_marginStart="286dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="287dp"
+        android:layout_marginBottom="328dp"
         android:background="@color/white"
+        android:text="Magazyn"
         android:textSize="100px"></TextView>
 
     <RelativeLayout
-
+        android:id="@+id/mission"
         android:layout_width="350dp"
         android:layout_height="288dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="21dp"
-        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="27dp"
         android:background="@color/white">
 
         <TextView
@@ -43,10 +46,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="135dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginBottom="229dp"
+            android:layout_marginStart="133dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="132dp"
+            android:layout_marginBottom="232dp"
             android:text="Praca"
             android:textSize="80px">
 
@@ -62,7 +65,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="79dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="72dp"
+            android:layout_marginBottom="71dp"
             android:text="Witaj w Pracy!
 \nAby zdobyć materiały na rozbudowę swojego studia,
 \n musisz przepracować 4h u swojego wujka w sklepie!
@@ -73,7 +76,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/odbierz_nagrody"
+        android:id="@+id/collect_rewards"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
