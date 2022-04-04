@@ -50,7 +50,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="418dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="94dp"
         android:layout_marginEnd="206dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/button_magazyn"
@@ -66,7 +66,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="297dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="94dp"
         android:layout_marginEnd="327dp"
         android:layout_marginBottom="95dp"
         android:background="@drawable/button_studio"
@@ -81,7 +81,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="536dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="94dp"
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="94dp"
         android:background="@drawable/button_meblowy"
@@ -103,6 +103,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
+        android:id="@+id/textViewUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -114,5 +115,19 @@
         android:layout_marginEnd="347dp"
         android:layout_marginBottom="362dp"
         android:text="MAIN" />
+
+    <Button
+        android:id="@+id/mainSignInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOWANIE" />
+
+    <Button
+        android:id="@+id/mainLogoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="532dp"
+        android:layout_toEndOf="@+id/mainSignInButton"
+        android:text="WYLOGUJ" />
 
 </RelativeLayout>

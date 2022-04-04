@@ -4,96 +4,132 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.firebase.ui.auth.data.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton button1;
-    private ImageButton button2;
-    private ImageButton button3;
-    private ImageButton button4;
-    private ImageButton button5;
-    private ImageButton button6;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1= (ImageButton) findViewById(R.id.budowlany);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityBudowlany();
-            }
-        });
+        mAuth = FirebaseAuth.getInstance();
 
-        button2 = (ImageButton) findViewById(R.id.bank);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityBank();
-            }
-        });
+        //Budowlany
+        ImageButton budowlanyButton = findViewById(R.id.budowlany);
+        budowlanyButton.setOnClickListener(view -> openActivityBudowlany());
 
-        button3 = (ImageButton) findViewById(R.id.studio);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityStudio();
-            }
-        });
+        //Bank
+        ImageButton bankButton = findViewById(R.id.bank);
+        bankButton.setOnClickListener(view -> openActivityBank());
 
-        button4 = (ImageButton) findViewById(R.id.magazyn);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityMagazyn();
-            }
-        });
+        //Studio
+        ImageButton studioButton = findViewById(R.id.studio);
+        studioButton.setOnClickListener(view -> openActivityStudio());
 
-        button5=(ImageButton) findViewById(R.id.meblowy);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityMeblowy();
-            }
-        });
+        //Storage
+        ImageButton storageButton = findViewById(R.id.magazyn);
+        storageButton.setOnClickListener(view -> openActivityStorage());
 
-        button6 = (ImageButton) findViewById(R.id.menu);
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivityMenu();
-            }
-        });
+        //Furniture
+        ImageButton furnitureStoreButton = findViewById(R.id.meblowy);
+        furnitureStoreButton.setOnClickListener(view -> openActivityFurnitureStore());
 
-    }
+        //Menu
+        ImageButton menuButton = findViewById(R.id.menu);
+        menuButton.setOnClickListener(view -> openActivityMenu());
+
+        //Sign in
+        Button mainSignInButton = findViewById(R.id.mainSignInButton);
+        mainSignInButton.setOnClickListener(view -> openActivitySignIn());
+
+        //Logout
+        Button mainLogoutButton = findViewById(R.id.mainLogoutButton);
+        mainLogoutButton.setOnClickListener(view -> openActivityWyloguj());
+
+        //Displaying user's login
+        FirebaseUser user = mAuth.getCurrentUser();
+        TextView textViewUserEmail =  findViewById(R.id.textViewUserEmail);
+        if(user != null){
+            String uid = user.getUid();
+            textViewUserEmail.setText(uid);
+        }
+        else {
+            textViewUserEmail.setText(R.string.strNotLogged);
+        }
+
+    } //OnCreate end
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Toast.makeText(MainActivity.this, "Jesteś zalogowany",
+                    Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Nie jesteś zalogowany",
+                    Toast.LENGTH_SHORT).show();
+            openActivitySignIn();
+        }
+    } //OnStart end
+
     public void openActivityBudowlany(){
         Intent intent = new Intent(this, activity_budowlany.class);
         startActivity(intent);
     }
+
     public void openActivityBank(){
         Intent intent = new Intent(this, activity_bank.class);
         startActivity(intent);
     }
+
     public void openActivityStudio(){
         Intent intent = new Intent(this, activity_studio.class);
         startActivity(intent);
     }
-    public void openActivityMagazyn(){
+
+    public void openActivityStorage(){
         Intent intent = new Intent(this, activity_magazyn.class);
         startActivity(intent);
     }
 
-    public void openActivityMeblowy(){
+    public void openActivityFurnitureStore(){
         Intent intent = new Intent(this, activity_meblowy.class);
         startActivity(intent);
     }
 
     public void openActivityMenu(){
         Intent intent = new Intent(this, activity_menu.class);
+        startActivity(intent);
+    }
+
+    public void openActivitySignIn(){
+        Intent intent = new Intent(this, activity_logowanie.class);
+        startActivity(intent);
+    }
+
+    public void openActivityWyloguj(){
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(MainActivity.this, "Wylogowano pomyślnie", Toast.LENGTH_SHORT).show();
+        reload();
+    }
+
+    private void reload() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
