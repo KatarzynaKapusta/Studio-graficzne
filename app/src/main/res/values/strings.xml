@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">StudioGraficzne</string>
     <string name="User1">user</string>
+    <string name="strNotLogged">Not logged</string>
 </resources>

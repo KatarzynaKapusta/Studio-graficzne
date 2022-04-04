@@ -6,9 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.firebase.ui.auth.data.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,14 +51,41 @@ public class MainActivity extends AppCompatActivity {
         menuButton.setOnClickListener(view -> openActivityMenu());
 
         //Sign in
-        Button mainSignInButton = findViewById(R.id.button_logowanie);
+        Button mainSignInButton = findViewById(R.id.mainSignInButton);
         mainSignInButton.setOnClickListener(view -> openActivitySignIn());
 
         //Logout
-        Button mainLogoutButton = findViewById(R.id.button_wyloguj);
+        Button mainLogoutButton = findViewById(R.id.mainLogoutButton);
         mainLogoutButton.setOnClickListener(view -> openActivityWyloguj());
 
+        //Displaying user's login
+        FirebaseUser user = mAuth.getCurrentUser();
+        TextView textViewUserEmail =  findViewById(R.id.textViewUserEmail);
+        if(user != null){
+            String uid = user.getUid();
+            textViewUserEmail.setText(uid);
+        }
+        else {
+            textViewUserEmail.setText(R.string.strNotLogged);
+        }
+
     } //OnCreate end
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Toast.makeText(MainActivity.this, "Jesteś zalogowany",
+                    Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Nie jesteś zalogowany",
+                    Toast.LENGTH_SHORT).show();
+            openActivitySignIn();
+        }
+    } //OnStart end
 
     public void openActivityBudowlany(){
         Intent intent = new Intent(this, activity_budowlany.class);
@@ -92,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivityWyloguj(){
         FirebaseAuth.getInstance().signOut();
-        Toast.makeText(MainActivity.this, "Wylogowano pomyslnie", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Wylogowano pomyślnie", Toast.LENGTH_SHORT).show();
+        reload();
+    }
+
+    private void reload() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
