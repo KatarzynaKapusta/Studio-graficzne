@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,7 +19,7 @@ import com.google.firebase.database.annotations.Nullable;
 public class activity_logowanie extends AppCompatActivity {
 
     Button createAccountButton, forgotPasswordButton, SignInButton;
-    private TextInputLayout emailInput, passwordInput;
+    private TextInputEditText emailInput, passwordInput;
 
     private static final String TAG = "EmailPassword";
 
@@ -82,8 +83,8 @@ public class activity_logowanie extends AppCompatActivity {
     }
 
     private void checkCredentials() {
-        String email = emailInput.getEditText().getText().toString();
-        String password = passwordInput.getEditText().getText().toString();
+        String email = emailInput.getText().toString();
+        String password = passwordInput.getText().toString();
         boolean flag = false;
 
         if (email.isEmpty() || !email.contains("@")) {
@@ -108,7 +109,7 @@ public class activity_logowanie extends AppCompatActivity {
         }
     }
 
-    private void showError(TextInputLayout input, String s) {
+    private void showError(TextInputEditText input, String s) {
         input.setError(s);
         input.requestFocus();
     }

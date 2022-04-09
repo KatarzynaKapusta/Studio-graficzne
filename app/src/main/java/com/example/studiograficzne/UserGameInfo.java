@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class UserGameInfo implements Parcelable {
-    private String UID = "Brak";
     private String nick = "Nick";
     private double level = 0;
     private double money = 0;
@@ -16,7 +15,6 @@ public class UserGameInfo implements Parcelable {
     }
 
     protected UserGameInfo(Parcel in) {
-        UID = in.readString();
         nick = in.readString();
         level = in.readDouble();
         money = in.readDouble();
@@ -35,10 +33,6 @@ public class UserGameInfo implements Parcelable {
             return new UserGameInfo[size];
         }
     };
-
-    public void setUID(String UID) {
-        this.UID = UID;
-    }
 
     //Gettery i settery
     public String getNick() {
@@ -94,7 +88,6 @@ public class UserGameInfo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(UID);
         parcel.writeString(nick);
         parcel.writeDouble(level);
         parcel.writeDouble(money);

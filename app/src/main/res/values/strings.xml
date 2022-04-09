@@ -2,4 +2,17 @@
     <string name="app_name">StudioGraficzne</string>
     <string name="User1">user</string>
     <string name="strNotLogged">Not logged</string>
+    <string name="alreadyHaveAnAcc">Masz już konto? Zaloguj się</string>
+    <string name="signUp">Zarejestruj się</string>
+    <string name="confirmPassword">Confirm password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="userName">Nazwa użytkownika</string>
+    <string name="createYourAccount">Utwórz swoje konto</string>
+    <string name="rejestracja_w_mystudio">Rejestracja w MyStudio</string>
+    <string name="logo">logo</string>
+    <string name="enterCorrectNickname">Wpisz poprawną nazwę użytkownia</string>
+    <string name="invalidEmailAddreess">Niepoprawny adres email</string>
+    <string name="atLeast6CharInPasswd">Hasło musi zawierać przynajmniej 6 znakow</string>
+    <string name="passwDoNotMatch">Hasła nie pasują</string>
 </resources>
