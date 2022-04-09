@@ -3,7 +3,6 @@ package com.example.studiograficzne;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class activity_magazyn extends AppCompatActivity {
@@ -16,7 +15,7 @@ public class activity_magazyn extends AppCompatActivity {
         UserGameInfo User1 = getIntent().getParcelableExtra("user");
         Missions Mission1 = new Missions();
 
-        Button rewardsButton = findViewById(R.id.odbierz_nagrody);
+        Button rewardsButton = findViewById(R.id.collect_rewards);
         rewardsButton.setOnClickListener(view -> {
 
 
