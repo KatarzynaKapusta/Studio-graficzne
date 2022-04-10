@@ -1,95 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     tools:ignore="ExtraText"
     android:orientation="horizontal"
     android:background="@drawable/storage_background">
 
-    <TextView
-        android:id="@+id/magazyn"
-        android:layout_width="158dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="286dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="287dp"
-        android:layout_marginBottom="328dp"
-        android:background="@color/white"
-        android:text="Magazyn"
-        android:textSize="100px" />
 
-    <RelativeLayout
-        android:id="@+id/mission"
-        android:layout_width="350dp"
-        android:layout_height="288dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="191dp"
-        android:layout_marginBottom="27dp"
-        android:background="@color/white">
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_widthPercent="25%"
+        app:layout_heightPercent="15%"
+        app:layout_marginLeftPercent="38.5%"
+        app:layout_marginRightPercent="38.5%"
+        app:layout_marginTopPercent="5%"
+        app:layout_marginBottomPercent="50%">
+        <TextView
+            android:id="@+id/magazyn"
+            android:text="Magazyn"
+            android:textSize="100px"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="8%"
+            app:layout_marginRightPercent="3%"
+            app:layout_marginTopPercent="5%"
+            app:layout_marginBottomPercent="5%"/>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="25%"
+        app:layout_marginRightPercent="25%"
+        app:layout_marginTopPercent="25%">
 
         <TextView
-            android:layout_width="78dp"
-            android:layout_height="38dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="133dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="132dp"
-            android:layout_marginBottom="232dp"
-            android:text="Praca"
-            android:textSize="80px">
+            android:text="@string/praca"
+            android:textSize="80px"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="35%"
+            app:layout_marginTopPercent="5%">
 
         </TextView>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="137dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="79dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="71dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Witaj w Pracy!
 \nAby zdobyć materiały na rozbudowę swojego studia,
 \n musisz przepracować 4h u swojego wujka w sklepie!
 \nPo skończonej misji odbierzesz swoje nagrody:
-\n\n200 Punktów Doświadczenia\n500 Złota\n300 Materiałów"
-            android:textAlignment="center"></TextView>
+\n\n200 Punktów Doświadczenia\n300 Materiałów"
+            android:textAlignment="center"
+            app:layout_heightPercent="70%"
+            app:layout_marginBottomPercent="15%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="25%"
+            app:layout_widthPercent="100%">
 
-    </RelativeLayout>
+        </TextView>
 
-    <Button
-        android:id="@+id/collect_rewards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="257dp"
-        android:layout_marginTop="330dp"
-        android:layout_marginEnd="258dp"
-        android:layout_marginBottom="30dp"
-        android:text="Odbierz Nagrody">
+        <Button
+            android:id="@+id/collect_rewards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/odbierz_nagrody"
+            android:background="@color/lavender_blush"
+            android:visibility="invisible"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="45%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="28%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            >
+        </Button>
 
-    </Button>
+        <Button
+            android:id="@+id/start_mission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rozpocznij_misje"
+            android:background="@color/lavender_blush"
+            android:visibility="visible"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="45%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="28%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            >
+        </Button>
 
+        <TextView
+            android:id="@+id/text_view_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_start"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="45%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            tools:ignore="InvalidId">
 
-</RelativeLayout>
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</androidx.percentlayout.widget.PercentRelativeLayout>

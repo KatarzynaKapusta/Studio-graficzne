@@ -18,4 +18,8 @@
     <string name="logowanie">LOGOWANIE</string>
     <string name="main">MAIN</string>
     <string name="wyloguj">WYLOGUJ</string>
+    <string name="odbierz_nagrody">Odbierz Nagrody</string>
+    <string name="rozpocznij_misje">Rozpocznij misję</string>
+    <string name="praca">Praca</string>
+    <string name="timer_start">00:00</string>
 </resources>
