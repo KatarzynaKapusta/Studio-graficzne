@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/tlo_apki"
     tools:context=".MainActivity"
     tools:ignore="ExtraText"
@@ -11,81 +12,71 @@
 
     <ImageButton
         android:id="@+id/budowlany"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="563dp"
-        android:layout_marginBottom="94dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_budowlany"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="55%"
+        app:layout_marginTopPercent="22%"
+        app:layout_marginBottomPercent="15%"
+        app:layout_marginRightPercent="77%"
+        app:layout_marginLeftPercent="8%" />
+
 
     <ImageButton
         android:id="@+id/bank"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
-
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="179dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="445dp"
-        android:layout_marginBottom="94dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_bank"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="55%"
+        app:layout_marginTopPercent="22%"
+        app:layout_marginBottomPercent="15%"
+        app:layout_marginRightPercent="61%"
+        app:layout_marginLeftPercent="24%" />
 
 
     <ImageButton
         android:id="@+id/magazyn"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="418dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="206dp"
-        android:layout_marginBottom="95dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_magazyn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="55%"
+        app:layout_marginTopPercent="22%"
+        app:layout_marginBottomPercent="15%"
+        app:layout_marginRightPercent="29%"
+        app:layout_marginLeftPercent="56%"/>
 
 
     <ImageButton
         android:id="@+id/studio"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="297dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="327dp"
-        android:layout_marginBottom="95dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/button_studio"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="55%"
+        app:layout_marginTopPercent="22%"
+        app:layout_marginBottomPercent="15%"
+        app:layout_marginRightPercent="45%"
+        app:layout_marginLeftPercent="40%"/>
 
     <ImageButton
         android:id="@+id/meblowy"
-        android:layout_width="107dp"
-        android:layout_height="223dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="536dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="94dp"
         android:background="@drawable/button_meblowy"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="70%"
+        app:layout_heightPercent="55%"
+        app:layout_marginTopPercent="22%"
+        app:layout_marginBottomPercent="15%"
+        app:layout_marginRightPercent="13%"
+        app:layout_marginLeftPercent="72%"/>
 
     <ImageButton
         android:id="@+id/menu"
@@ -114,20 +105,30 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="347dp"
         android:layout_marginBottom="362dp"
-        android:text="MAIN" />
+        android:text="@string/main" />
 
     <Button
         android:id="@+id/mainSignInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGOWANIE" />
+        app:layout_widthPercent="30%"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="1%"
+        app:layout_marginBottomPercent="87%"
+        app:layout_marginRightPercent="80%"
+        app:layout_marginLeftPercent="2%"
+        android:text="@string/logowanie" />
 
     <Button
         android:id="@+id/mainLogoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="532dp"
-        android:layout_toEndOf="@+id/mainSignInButton"
-        android:text="WYLOGUJ" />
+        app:layout_widthPercent="30%"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="1%"
+        app:layout_marginBottomPercent="87%"
+        app:layout_marginRightPercent="2%"
+        app:layout_marginLeftPercent="80%"
+        android:text="@string/wyloguj"/>
 
-</RelativeLayout>
+</androidx.percentlayout.widget.PercentRelativeLayout>

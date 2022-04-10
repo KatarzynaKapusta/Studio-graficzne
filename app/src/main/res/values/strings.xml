@@ -15,4 +15,7 @@
     <string name="invalidEmailAddreess">Niepoprawny adres email</string>
     <string name="atLeast6CharInPasswd">Hasło musi zawierać przynajmniej 6 znakow</string>
     <string name="passwDoNotMatch">Hasła nie pasują</string>
+    <string name="logowanie">LOGOWANIE</string>
+    <string name="main">MAIN</string>
+    <string name="wyloguj">WYLOGUJ</string>
 </resources>
