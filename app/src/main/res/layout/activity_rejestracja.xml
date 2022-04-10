@@ -33,6 +33,7 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_person_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/userName"
@@ -46,6 +47,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_mail_outline_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
@@ -59,6 +61,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_lock_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -73,6 +76,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_lock_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirmPassword"

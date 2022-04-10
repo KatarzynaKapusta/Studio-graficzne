@@ -13,16 +13,17 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:src="@drawable/rejestracja_logo"/>
+        android:src="@drawable/rejestracja_logo"
+        android:contentDescription="@string/logo" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logowanie do aplikacji"
+        android:text="@string/logowanie_do_aplikacji"
         android:textSize="30sp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zaloguj się, aby kontynuować"
+        android:text="@string/zaloguj_aby_kontynuowac"
         android:textSize="15sp"/>
 
     <LinearLayout
@@ -32,9 +33,10 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_mail_outline_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/logEmailInput"
@@ -45,9 +47,10 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_lock_24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                 <com.google.android.material.textfield.TextInputEditText
@@ -64,8 +67,9 @@
         android:id="@+id/logForgotPasswordButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zapomniane hasło?"
-        android:textSize="10dp"
+        android:gravity="end"
+        android:text="@string/forgotPasswd"
+        android:textSize="11sp"
         android:background="#00000000"
         android:textColor="#000"
         android:layout_marginTop="5dp"/>
@@ -74,7 +78,7 @@
         android:id="@+id/logSignInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zaloguj się"
+        android:text="@string/zalologujSie"
         android:background="#2e2e48"
         android:textColor="#fff"
         android:layout_marginTop="5dp"/>
@@ -83,18 +87,9 @@
         android:id="@+id/logCreateAccountButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nie posiadasz konta? Utwórz je"
+        android:text="@string/doNotHaveAcc"
         android:background="#00000000"
         android:textColor="#000"
         android:layout_marginTop="5dp"/>
-
-<!--    <Button-->
-<!--        android:id="@+id/checkButton"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="SPRAWDZ CZY EMAIL ISTNIEJE"-->
-<!--        android:background="#00000000"-->
-<!--        android:textColor="#000"-->
-<!--        android:layout_marginTop="5dp"/>-->
 
 </LinearLayout>
