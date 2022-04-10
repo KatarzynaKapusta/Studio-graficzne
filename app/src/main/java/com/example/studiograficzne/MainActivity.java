@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -52,10 +53,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Sign in
         Button mainSignInButton = findViewById(R.id.mainSignInButton);
+        if (isRegistered()) {
+            mainSignInButton.setVisibility(View.INVISIBLE);
+        }
         mainSignInButton.setOnClickListener(view -> openActivitySignIn());
 
         //Logout
         Button mainLogoutButton = findViewById(R.id.mainLogoutButton);
+        if (!isRegistered()) {
+            mainSignInButton.setVisibility(View.INVISIBLE);
+        }
         mainLogoutButton.setOnClickListener(view -> openActivityWyloguj());
 
         //Displaying user's login
@@ -76,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if(isRegistered()){
             Toast.makeText(MainActivity.this, "Jesteś zalogowany",
                     Toast.LENGTH_SHORT).show();
         }
@@ -86,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
             openActivitySignIn();
         }
     } //OnStart end
+
+    public boolean isRegistered() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null)
+            return true;
+        else
+            return false;
+    }
 
     public void openActivityBudowlany(){
         Intent intent = new Intent(this, activity_budowlany.class);
