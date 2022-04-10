@@ -80,9 +80,8 @@ public class UserGameInfo implements Parcelable {
         this.resources = resources;
     }
 
-    public void addMissionRewards(double m_resources, double m_money, double m_experience) {
+    public void addMissionRewardsStorage(double m_resources, double m_experience) {
         this.resources += m_resources;
-        this.money += m_money;
         this.experience += m_experience;
     };
 

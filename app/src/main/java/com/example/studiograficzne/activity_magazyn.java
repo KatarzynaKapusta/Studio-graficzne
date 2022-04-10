@@ -71,13 +71,11 @@ public class activity_magazyn extends AppCompatActivity {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
                     {
                         experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
-                        money = keyId.child("UserGameInfo").child("money").getValue(Double.class);
                         resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
 
                         break;
                     }
                 }
-                User.setMoney(money);
                 User.setExperience(experience);
                 User.setResources(resources);
             }
@@ -105,7 +103,7 @@ public class activity_magazyn extends AppCompatActivity {
 
                 if(user!=null)
                 {
-                    User.addMissionRewards(Mission1.getM_resources(), Mission1.getM_money(), Mission1.getM_experience());
+                    User.addMissionRewardsStorage(Mission1.getM_resources(), Mission1.getM_experience());
                     updateDataToFirebase();
                 }
                 else
@@ -116,12 +114,12 @@ public class activity_magazyn extends AppCompatActivity {
 
                 resetTimer();
             System.out.println(User.getExperience());
-            System.out.println(User.getMoney());
             System.out.println(User.getResources());
             }
         });
     }
 
+    //Mission timer
     private void startTimer() {
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
         CountDownTimer mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
@@ -179,7 +177,9 @@ public class activity_magazyn extends AppCompatActivity {
             }
         }
     }
+    //Mission timer end
 
+    //Saving timer for running in background
     @Override
     protected void onStop() {
         super.onStop();
@@ -221,14 +221,15 @@ public class activity_magazyn extends AppCompatActivity {
             }
         }
     }
+    //End of saving timer information
 
+    //Updating data to firebase
     private void updateDataToFirebase() {
 
         FirebaseUser user = mAuth.getCurrentUser();
 
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("resources", User.getResources());
-        childUpdates.put("money", User.getMoney());
         childUpdates.put("experience", User.getExperience());
 
         databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
