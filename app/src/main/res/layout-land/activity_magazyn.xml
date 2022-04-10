@@ -22,14 +22,14 @@
         app:layout_marginBottomPercent="50%">
         <TextView
             android:id="@+id/magazyn"
-            android:text="Magazyn"
-            android:textSize="100px"
+            android:text="@string/magazyn"
+            android:textSize="90px"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_marginLeftPercent="8%"
-            app:layout_marginRightPercent="3%"
-            app:layout_marginTopPercent="5%"
+            app:layout_marginLeftPercent="9%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="8%"
             app:layout_marginBottomPercent="5%"/>
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
