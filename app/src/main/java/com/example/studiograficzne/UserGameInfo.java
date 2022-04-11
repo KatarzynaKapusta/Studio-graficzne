@@ -9,9 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserGameInfo implements Parcelable {
-    private String nick = "Nick";
     private double level = 0;
-    private double money = 0;
+    private double money = 10;
     private double experience = 0;
     private double resources = 0;
 
@@ -20,7 +19,6 @@ public class UserGameInfo implements Parcelable {
     }
 
     protected UserGameInfo(Parcel in) {
-        nick = in.readString();
         level = in.readDouble();
         money = in.readDouble();
         experience = in.readDouble();
@@ -40,14 +38,6 @@ public class UserGameInfo implements Parcelable {
     };
 
     //Gettery i settery
-    public String getNick() {
-        return nick;
-    }
-
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
     public double getLevel() {
         return level;
     }
@@ -92,7 +82,6 @@ public class UserGameInfo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(nick);
         parcel.writeDouble(level);
         parcel.writeDouble(money);
         parcel.writeDouble(experience);

@@ -3,17 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2315" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/background_gradinet.xml" value="0.2475" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/button_shape.xml" value="0.2475" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_baseline_attach_money_24.xml" value="0.2315" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_baseline_carpenter_24.xml" value="0.2315" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_baseline_construction_24.xml" value="0.2315" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_baseline_drive_file_rename_outline_24.xml" value="0.2315" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_baseline_grid_3x3_24.xml" value="0.2315" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_baseline_stars_24.xml" value="0.2315" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_email.xml" value="0.2235" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2315" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_outline_person_24.xml" value="0.259" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_person.xml" value="0.259" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_security.xml" value="0.259" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_logowanie.xml" value="0.33" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_magazyn.xml" value="0.31040564373897706" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_main.xml" value="0.25" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_menu.xml" value="0.3078125" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_rejestracja.xml" value="0.31040564373897706" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_studio.xml" value="0.31040564373897706" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_logowanie.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_logowanie_new.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_magazyn.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_menu.xml" value="0.2708333333333333" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_rejestracja.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_rejestracja_new.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_result_launcher1.xml" value="0.36666666666666664" />

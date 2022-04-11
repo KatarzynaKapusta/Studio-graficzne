@@ -4,11 +4,11 @@
     <string name="strNotLogged">Not logged</string>
     <string name="alreadyHaveAnAcc">Masz już konto? Zaloguj się</string>
     <string name="signUp">Zarejestruj się</string>
-    <string name="confirmPassword">Confirm password</string>
-    <string name="password">Password</string>
+    <string name="confirmPassword">Potwierdź hasło</string>
+    <string name="password">Hasło</string>
     <string name="email">Email</string>
     <string name="userName">Nazwa użytkownika</string>
-    <string name="createYourAccount">Utwórz swoje konto</string>
+    <string name="createYourAccount">Utwórz tutaj swoje konto</string>
     <string name="rejestracja_w_mystudio">Rejestracja w MyStudio</string>
     <string name="logo">logo</string>
     <string name="enterCorrectNickname">Wpisz poprawną nazwę użytkownia</string>
@@ -23,4 +23,15 @@
     <string name="praca">Praca</string>
     <string name="timer_start">00:00</string>
     <string name="magazyn">Magazyn</string>
+    <string name="forgotPasswd">Zapomniane hasło?</string>
+    <string name="zalologujSie">Zaloguj się</string>
+    <string name="doNotHaveAcc">Nie posiadasz konta? Utwórz je</string>
+    <string name="logowanie_do_aplikacji">Logowanie do aplikacji</string>
+    <string name="zaloguj_aby_kontynuowac">Zaloguj się, aby kontynuować</string>
+    <string name="username">user username</string>
+    <string name="user_email">user email</string>
+    <string name="user_level">user level</string>
+    <string name="user_money">user money</string>
+    <string name="user_resources">user resources</string>
+    <string name="user_studio_name">user studio name</string>
 </resources>
