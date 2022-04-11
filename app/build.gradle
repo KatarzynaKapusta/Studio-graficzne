@@ -46,4 +46,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
     //Firebase authentication ui (auth by email)
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+
 }

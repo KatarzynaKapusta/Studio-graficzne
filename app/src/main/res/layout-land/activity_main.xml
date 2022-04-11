@@ -120,7 +120,8 @@
         android:id="@+id/mainSignInButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGOWANIE" />
+        android:text="LOGOWANIE"
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/mainLogoutButton"
@@ -128,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="532dp"
         android:layout_toEndOf="@+id/mainSignInButton"
-        android:text="WYLOGUJ" />
+        android:text="WYLOGUJ"
+        android:visibility="visible"/>
 
 </RelativeLayout>
