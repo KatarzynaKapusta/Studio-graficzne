@@ -1,9 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_bank_timed_missions">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText"
+    android:orientation="horizontal"
+    android:background="@drawable/bank_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_widthPercent="25%"
+        app:layout_heightPercent="15%"
+        app:layout_marginLeftPercent="38.5%"
+        app:layout_marginRightPercent="38.5%"
+        app:layout_marginTopPercent="5%"
+        app:layout_marginBottomPercent="50%">
+
+        <TextView
+            android:id="@+id/magazyn"
+            android:text="@string/bank"
+            android:textSize="90px"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="9%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="8%"
+            app:layout_marginBottomPercent="5%"/>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="1%"
+        app:layout_marginRightPercent="68%"
+        app:layout_marginTopPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Misja 1"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="70%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="90%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/mission1_button"
+            android:text="@string/rozpocznij_misje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/lavender_blush"
+            android:visibility="visible"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+        <Button
+            android:id="@+id/collect_rewards1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lavender_blush"
+            android:text="@string/odbierz_nagrody"
+            android:visibility="invisible"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/text_view_countdown1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_start"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="45%"
+            tools:ignore="InvalidId">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="35%"
+        app:layout_marginRightPercent="35%"
+        app:layout_marginTopPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Misja 2"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="70%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/mission2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lavender_blush"
+            android:text="@string/rozpocznij_misje"
+            android:textColor="@color/black"
+            android:visibility="visible"
+            app:layout_heightPercent="30%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="50%">
+
+        </Button>
+
+        <Button
+            android:id="@+id/collect_rewards2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lavender_blush"
+            android:text="@string/odbierz_nagrody"
+            android:visibility="invisible"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/text_view_countdown2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_start"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="45%"
+            tools:ignore="InvalidId">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="68%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Misja 3"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="70%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="90%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/mission3_button"
+            android:text="@string/rozpocznij_misje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/lavender_blush"
+            android:visibility="visible"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+        <Button
+            android:id="@+id/collect_rewards3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lavender_blush"
+            android:text="@string/odbierz_nagrody"
+            android:visibility="invisible"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/text_view_countdown3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_start"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="45%"
+            tools:ignore="InvalidId">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</androidx.percentlayout.widget.PercentRelativeLayout>

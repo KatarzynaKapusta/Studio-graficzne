@@ -88,7 +88,9 @@
             app:layout_marginLeftPercent="28%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="75%"
-            app:layout_widthPercent="45%"></Button>
+            app:layout_widthPercent="45%">
+
+        </Button>
 
         <Button
             android:id="@+id/start_mission"
@@ -102,7 +104,9 @@
             app:layout_marginLeftPercent="28%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="75%"
-            app:layout_widthPercent="45%"></Button>
+            app:layout_widthPercent="45%">
+
+        </Button>
 
         <TextView
             android:id="@+id/text_view_countdown"

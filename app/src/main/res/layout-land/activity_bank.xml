@@ -19,6 +19,7 @@
         app:layout_marginRightPercent="38.5%"
         app:layout_marginTopPercent="5%"
         app:layout_marginBottomPercent="50%">
+
         <TextView
             android:id="@+id/magazyn"
             android:text="@string/bank"
@@ -70,17 +71,17 @@
 
         <Button
             android:id="@+id/timed_missions_button"
-            android:text="@string/przejdz_do_misji"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:background="@color/lavender_blush"
+            android:text="@string/przejdz_do_misji"
+            android:textColor="@color/black"
             app:layout_heightPercent="30%"
-            app:layout_widthPercent="50%"
             app:layout_marginBottomPercent="6%"
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
-            app:layout_marginTopPercent="80%">
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="50%">
 
         </Button>
 
