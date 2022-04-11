@@ -20,4 +20,10 @@
     <string name="doNotHaveAcc">Nie posiadasz konta? Utwórz je</string>
     <string name="logowanie_do_aplikacji">Logowanie do aplikacji</string>
     <string name="zaloguj_aby_kontynuowac">Zaloguj się, aby kontynuować</string>
+    <string name="username">user username</string>
+    <string name="user_email">user email</string>
+    <string name="user_level">user level</string>
+    <string name="user_money">user money</string>
+    <string name="user_resources">user resources</string>
+    <string name="user_studio_name">user studio name</string>
 </resources>
