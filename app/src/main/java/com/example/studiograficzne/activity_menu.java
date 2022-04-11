@@ -21,18 +21,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 public class activity_menu extends AppCompatActivity {
-    private TextView occupationTxtView, nameTxtView, workTxtView;
-    private TextView emailTxtView, phoneTxtView, videoTxtView, facebookTxtView, twitterTxtView;
-    private ImageView userImageView, emailImageView, phoneImageView, videoImageView;
-    private ImageView facebookImageView, twitterImageView;
+    private TextView nicknameTxtView, userIdTxtView, emailTxtView, studioNameTxtView, levelTxtView, moneyTxtView, resourcesTxtView;
+    private ImageView userProfImgImageView;
     private final String TAG = this.getClass().getName().toUpperCase();
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
     private Map<String, String> userMap;
     private String email;
-    private String userid;
     private static final String USERS = "Users";
-
     private FirebaseAuth mAuth;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,43 +42,53 @@ public class activity_menu extends AppCompatActivity {
         DatabaseReference userRef = rootRef.child(USERS);
         Log.v("USERID", userRef.getKey());
 
-        occupationTxtView = findViewById(R.id.occupation_textview);
-        nameTxtView = findViewById(R.id.name_textview);
-        workTxtView = findViewById(R.id.workplace_textview);
-        emailTxtView = findViewById(R.id.email_textview);
-        phoneTxtView = findViewById(R.id.phone_textview);
-        videoTxtView = findViewById(R.id.video_textview);
-        facebookTxtView = findViewById(R.id.facebook_textview);
+        nicknameTxtView = findViewById(R.id.usrProfNicknameTextView);
+        userIdTxtView = findViewById(R.id.usrProfUserIdTextView);
+        emailTxtView = findViewById(R.id.usrProfEmailTextView);
+        studioNameTxtView = findViewById(R.id.usrProfStudioNameTextView);
+        levelTxtView = findViewById(R.id.usrProfLevelTextView);
+        moneyTxtView = findViewById(R.id.usrProfMoneyTextView);
+        resourcesTxtView = findViewById(R.id.usrProfResourcesTextView);
 
-        userImageView = findViewById(R.id.user_imageview);
-        emailImageView = findViewById(R.id.email_imageview);
-        phoneImageView = findViewById(R.id.phone_imageview);
-        videoImageView = findViewById(R.id.phone_imageview);
-        facebookImageView = findViewById(R.id.facebook_imageview);
+        userProfImgImageView = findViewById(R.id.usrProfUserImage);
 
-//        FirebaseUser user1 = mAuth.getCurrentUser();
-//        String UID = user1.getUid();
-
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if(user != null){
+            String uid = user.getUid();
+            userIdTxtView.setText(uid);
+        } else {
+            userIdTxtView.setText(R.string.strNotLogged);
+        }
 
         // Read from the database
         userRef.addValueEventListener(new ValueEventListener() {
-            String nickname, mail, moneyString;
-            Double money;
+            String nickname, mail, moneyString, levelString, resourcesString, uidString;
+            Double money, level, resources;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
+                    if (keyId.child("UserInfo").child("email").getValue().equals(email))
                     {
+                        nickname = keyId.child("UserInfo").child("nickname").getValue(String.class);
+                        mail = keyId.child("UserInfo").child("email").getValue(String.class);
+
                         money = keyId.child("UserGameInfo").child("money").getValue(Double.class);
                         moneyString = String.valueOf(money);
-                        nickname = keyId.child("nickname").getValue(String.class);
-                        mail = keyId.child("email").getValue(String.class);
+                        level = keyId.child("UserGameInfo").child("level").getValue(Double.class);
+                        levelString = String.valueOf(level);
+                        resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
+                        resourcesString = String.valueOf(resources);
 
                         break;
                     }
                 }
-                nameTxtView.setText(nickname);
+
+                nicknameTxtView.setText(nickname);
                 emailTxtView.setText(mail);
-                phoneTxtView.setText(moneyString);
+                moneyTxtView.setText(moneyString);
+                levelTxtView.setText(levelString);
+                resourcesTxtView.setText(resourcesString);
             }
 
             @Override
