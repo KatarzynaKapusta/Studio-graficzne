@@ -34,4 +34,7 @@
     <string name="user_money">user money</string>
     <string name="user_resources">user resources</string>
     <string name="user_studio_name">user studio name</string>
+    <string name="bank">Bank</string>
+    <string name="przejdz_do_misji">Przejdź do misji</string>
+    <string name="misje_szukania">Misje szukania</string>
 </resources>

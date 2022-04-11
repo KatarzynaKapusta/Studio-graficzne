@@ -1,18 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     tools:ignore="ExtraText"
     android:orientation="horizontal"
-    android:gravity="center">
+    android:background="@drawable/bank_background">
 
-    <TextView
+    <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bank">
+        android:background="@drawable/mission_storage_background"
+        app:layout_widthPercent="25%"
+        app:layout_heightPercent="15%"
+        app:layout_marginLeftPercent="38.5%"
+        app:layout_marginRightPercent="38.5%"
+        app:layout_marginTopPercent="5%"
+        app:layout_marginBottomPercent="50%">
+        <TextView
+            android:id="@+id/magazyn"
+            android:text="@string/bank"
+            android:textSize="90px"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="9%"
+            app:layout_marginRightPercent="2%"
+            app:layout_marginTopPercent="8%"
+            app:layout_marginBottomPercent="5%"/>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
 
-    </TextView>
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginRightPercent="55%"
+        app:layout_marginTopPercent="25%">
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Misje czasowe"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="70%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="90%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/timed_missions_button"
+            android:text="@string/przejdz_do_misji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/lavender_blush"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="55%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/misje_szukania"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="70%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="90%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/match_missions_button"
+            android:text="@string/przejdz_do_misji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@color/lavender_blush"
+            app:layout_heightPercent="30%"
+            app:layout_widthPercent="50%"
+            app:layout_marginBottomPercent="6%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="80%">
+
+        </Button>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+</androidx.percentlayout.widget.PercentRelativeLayout>
