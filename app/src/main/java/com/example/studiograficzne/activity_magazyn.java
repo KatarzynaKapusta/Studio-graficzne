@@ -34,7 +34,8 @@ public class activity_magazyn extends AppCompatActivity {
     private Button collect_rewards_button;
     private Button start_mission_button;
 
-    CountDownTimer mCountDownTimer;
+    private CountDownTimer mCountDownTimer;
+
     private boolean mTimeRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     private long mEndTime;
@@ -47,15 +48,16 @@ public class activity_magazyn extends AppCompatActivity {
     FirebaseAuth mAuth;
     UserGameInfo User;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magazyn);
 
-        //
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
-        //
+
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference("Users");
@@ -68,7 +70,7 @@ public class activity_magazyn extends AppCompatActivity {
         User = new UserGameInfo();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
-            Double money, experience, resources;
+            Double experience, resources;
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
@@ -100,33 +102,30 @@ public class activity_magazyn extends AppCompatActivity {
             }
         });
 
-        collect_rewards_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            FirebaseUser user = mAuth.getCurrentUser();
+        collect_rewards_button.setOnClickListener(view -> {
+        FirebaseUser user = mAuth.getCurrentUser();
 
-                if(user!=null)
-                {
-                    User.addMissionRewardsStorage(Mission1.getM_resources(), Mission1.getM_experience());
-                    updateDataToFirebase();
-                }
-                else
-                {
-                    Toast.makeText(activity_magazyn.this, "BŁĄD",
-                            Toast.LENGTH_SHORT).show();
-                }
+            if(user!=null)
+            {
+                User.addMissionRewardsStorage(Mission1.getM_resources(), Mission1.getM_experience());
+                updateDataToFirebase();
 
-                resetTimer();
-            System.out.println(User.getExperience());
-            System.out.println(User.getResources());
             }
+            else
+            {
+                Toast.makeText(activity_magazyn.this, "BŁĄD",
+                        Toast.LENGTH_SHORT).show();
+            }
+            resetTimer();
+        System.out.println(User.getExperience());
+        System.out.println(User.getResources());
         });
     }
 
     //Mission timer
     private void startTimer() {
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
-        CountDownTimer mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
@@ -204,7 +203,7 @@ public class activity_magazyn extends AppCompatActivity {
 
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
 
-        mTimeLeftInMillis = prefs.getLong("milisLeft", START_TIME_IN_MILLIS);
+        mTimeLeftInMillis = prefs.getLong("millisLeft", START_TIME_IN_MILLIS);
         mTimeRunning = prefs.getBoolean("timerRunning", false);
 
         updateCountDownText();
@@ -229,13 +228,17 @@ public class activity_magazyn extends AppCompatActivity {
 
     //Updating data to firebase
     private void updateDataToFirebase() {
-
         FirebaseUser user = mAuth.getCurrentUser();
 
-        Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("resources", User.getResources());
-        childUpdates.put("experience", User.getExperience());
+        if (user!=null)
+        {
+            String uid = user.getUid();
 
-        databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+            Map<String, Object> childUpdates = new HashMap<>();
+            childUpdates.put("resources", User.getResources());
+            childUpdates.put("experience", User.getExperience());
+
+            databaseReference.child(uid).child("UserGameInfo").updateChildren(childUpdates);
+        }
     }
 }
