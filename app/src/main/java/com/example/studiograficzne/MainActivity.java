@@ -118,7 +118,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivityStorage(){
+        FirebaseUser currentUser = mAuth.getCurrentUser();
         Intent intent = new Intent(this, activity_magazyn.class);
+        intent.putExtra("email", currentUser.getEmail());
         startActivity(intent);
     }
 
