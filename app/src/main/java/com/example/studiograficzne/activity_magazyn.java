@@ -1,5 +1,6 @@
 package com.example.studiograficzne;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -46,13 +47,15 @@ public class activity_magazyn extends AppCompatActivity {
     FirebaseAuth mAuth;
     UserGameInfo User;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magazyn);
 
+        //
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        //
         mAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
         databaseReference = firebaseDatabase.getReference("Users");
@@ -69,6 +72,7 @@ public class activity_magazyn extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
+                    if (keyId.child("UserInfo").child("email").getValue().equals(email))
                     {
                         experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                         resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
