@@ -37,4 +37,5 @@
     <string name="bank">Bank</string>
     <string name="przejdz_do_misji">Przejdź do misji</string>
     <string name="misje_szukania">Misje szukania</string>
+    <string name="powrot">Powrót</string>
 </resources>

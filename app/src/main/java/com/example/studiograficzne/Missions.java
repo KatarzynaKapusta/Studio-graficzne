@@ -35,3 +35,93 @@ class BankTimedMission3 extends Missions{
     public double getExp_3() { return exp_3; }
 }
 
+class BankMatchMission1 extends Missions{
+
+    double bm_money;
+    double bm_exp;
+
+    public double getBm_exp() { return bm_exp; }
+    public double getBm_money() { return bm_money; }
+
+    public void setBm_exp(double bm_exp) { this.bm_exp = bm_exp; }
+    public void setBm_money(double bm_money) { this.bm_money = bm_money; }
+
+    public void HowManyMatched(int counter)
+    {
+        switch (counter)
+        {
+            case 1:
+                setBm_exp(50); setBm_money(75);
+                break;
+            case 2:
+                setBm_exp(75); setBm_money(100);
+                break;
+            case 3:
+                setBm_exp(100); setBm_money(125);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + counter);
+        }
+    }
+}
+
+class BankMatchMission2 extends Missions{
+
+    double bm_money;
+    double bm_exp;
+
+    public double getBm_exp() { return bm_exp; }
+    public double getBm_money() { return bm_money; }
+
+    public void setBm_exp(double bm_exp) { this.bm_exp = bm_exp; }
+    public void setBm_money(double bm_money) { this.bm_money = bm_money; }
+
+    public void HowManyMatched(int counter)
+    {
+        switch (counter)
+        {
+            case 1:
+                setBm_exp(75); setBm_money(100);
+                break;
+            case 2:
+                setBm_exp(100); setBm_money(125);
+                break;
+            case 3:
+                setBm_exp(125); setBm_money(150);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + counter);
+        }
+    }
+}
+
+class BankMatchMission3 extends Missions{
+
+    double bm_money;
+    double bm_exp;
+
+    public double getBm_exp() { return bm_exp; }
+    public double getBm_money() { return bm_money; }
+
+    public void setBm_exp(double bm_exp) { this.bm_exp = bm_exp; }
+    public void setBm_money(double bm_money) { this.bm_money = bm_money; }
+
+    public void HowManyMatched(int counter)
+    {
+        switch (counter)
+        {
+            case 1:
+                setBm_exp(100); setBm_money(125);
+                break;
+            case 2:
+                setBm_exp(125); setBm_money(150);
+                break;
+            case 3:
+                setBm_exp(150); setBm_money(175);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + counter);
+        }
+    }
+}
+
