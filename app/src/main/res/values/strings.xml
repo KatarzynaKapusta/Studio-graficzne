@@ -38,4 +38,6 @@
     <string name="przejdz_do_misji">Przejdź do misji</string>
     <string name="misje_szukania">Misje szukania</string>
     <string name="powrot">Powrót</string>
+    <string name="match_missions_text">Wykonaj jedną z 3 dostępnych misji.\nZnajdź obrazki pasujące do podanego wzorca.\nKażda z misji posiada inny poziom trudności oraz różne nagrody.\nIlość poprawnych dopasowań ma znaczenie!</string>
+    <string name="timed_missions_text">Wykonaj jedną z 3 dostępnych misji.\nMusisz odczekać odpowiedni czas, aby otrzymać nagrody.\nKażda z misji posiada inny czas potrzebny do jej wykonania oraz różne nagrody.</string>
 </resources>

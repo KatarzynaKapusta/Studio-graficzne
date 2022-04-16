@@ -12,7 +12,7 @@
         android:id="@+id/mission1_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/mission_storage_background"
+        android:background="@drawable/mission_bank_background"
         android:visibility="visible"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="3%"
@@ -23,14 +23,14 @@
             android:id="@+id/button_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender_blush"
+            android:background="@color/alice_blue"
             android:text="Wybierz"
-            app:layout_widthPercent="50%"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
-            app:layout_marginTopPercent="75%">
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -41,7 +41,7 @@
         android:id="@+id/mission2_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/mission_storage_background"
+        android:background="@drawable/mission_bank_background"
         android:visibility="visible"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="35%"
@@ -52,7 +52,7 @@
             android:id="@+id/button_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender_blush"
+            android:background="@color/alice_blue"
             android:text="Wybierz"
             app:layout_widthPercent="50%"
             app:layout_heightPercent="15%"
@@ -69,7 +69,7 @@
         android:id="@+id/mission3_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/mission_storage_background"
+        android:background="@drawable/mission_bank_background"
         android:visibility="visible"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="67%"
@@ -80,14 +80,14 @@
             android:id="@+id/button_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender_blush"
+            android:background="@color/alice_blue"
             android:text="Wybierz"
-            app:layout_widthPercent="50%"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
-            app:layout_marginTopPercent="75%">
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -98,7 +98,7 @@
         android:id="@+id/timed_mission_layout"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:background="@drawable/mission_storage_background"
+        android:background="@drawable/mission_bank_background"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="25%"
         app:layout_marginRightPercent="25%"
@@ -163,7 +163,7 @@
             android:id="@+id/start_timed_mission"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender_blush"
+            android:background="@color/alice_blue"
             android:text="@string/rozpocznij_misje"
             app:layout_widthPercent="50%"
             app:layout_heightPercent="15%"
@@ -177,29 +177,30 @@
             android:id="@+id/back_to_missions_choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender_blush"
+            android:background="@color/alice_blue"
             android:text="@string/powrot"
-            app:layout_widthPercent="50%"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginTopPercent="70%"
             app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%">
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="50%">
+
         </androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/collect_timed_rewards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lavender_blush"
+            android:background="@color/alice_blue"
             android:text="@string/odbierz_nagrody"
-            app:layout_widthPercent="50%"
+            android:visibility="invisible"
             app:layout_heightPercent="15%"
-            app:layout_marginBottomPercent="10%"
+            app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
-            app:layout_marginTopPercent="50%"
-            android:visibility="invisible">
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="50%">
 
         </androidx.appcompat.widget.AppCompatButton>
     </androidx.percentlayout.widget.PercentRelativeLayout>

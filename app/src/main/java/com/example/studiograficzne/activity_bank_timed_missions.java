@@ -243,11 +243,14 @@ public class activity_bank_timed_missions extends AppCompatActivity {
     private void updateButtons(){
         if(mTimeRunning) {
             start_timed_mission_button.setVisibility(View.INVISIBLE);
+            back_to_missions_button.setVisibility(View.INVISIBLE);
         }
         else {
             start_timed_mission_button.setVisibility(View.VISIBLE);
+            back_to_missions_button.setVisibility(View.VISIBLE);
             if(mTimeLeftInMillis < 1000) {
                 start_timed_mission_button.setVisibility(View.INVISIBLE);
+                back_to_missions_button.setVisibility(View.INVISIBLE);
             }
             else {
                 start_timed_mission_button.setVisibility(View.VISIBLE);
@@ -263,19 +266,16 @@ public class activity_bank_timed_missions extends AppCompatActivity {
     }
     //Mission timer end
 
+    //Layout update
     private void updateLayout() {
-        if(mTimeRunning)
-        {
+        if(mTimeRunning) {
             updateLayoutINVIS();
         }
-        else
-        {
-            if(rewardsCollected)
-            {
+        else {
+            if(rewardsCollected) {
                 updateLayoutVIS();
             }
-            else
-            {
+            else {
                 updateLayoutINVIS();
             }
         }
