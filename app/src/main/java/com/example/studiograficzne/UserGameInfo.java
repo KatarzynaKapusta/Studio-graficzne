@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class UserGameInfo implements Parcelable {
     private double level = 0;
-    private double money = 10;
+    private double money = 0;
     private double experience = 0;
     private double resources = 0;
 

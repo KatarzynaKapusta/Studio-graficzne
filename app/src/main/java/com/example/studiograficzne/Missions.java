@@ -7,9 +7,7 @@ public class Missions {
 
     public String getMission_name() { return mission_name; }
 
-    public double getM_resources() {
-        return m_resources;
-    }
+    public double getM_resources() { return m_resources; }
 
     public double getM_experience() {
         return m_experience;
