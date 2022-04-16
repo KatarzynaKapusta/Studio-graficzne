@@ -69,6 +69,7 @@ public class activity_magazyn extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
+
                     {
                         experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                         resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
