@@ -40,4 +40,8 @@
     <string name="powrot">Powrót</string>
     <string name="match_missions_text">Wykonaj jedną z 3 dostępnych misji.\nZnajdź obrazki pasujące do podanego wzorca.\nKażda z misji posiada inny poziom trudności oraz różne nagrody.\nIlość poprawnych dopasowań ma znaczenie!</string>
     <string name="timed_missions_text">Wykonaj jedną z 3 dostępnych misji.\nMusisz odczekać odpowiedni czas, aby otrzymać nagrody.\nKażda z misji posiada inny czas potrzebny do jej wykonania oraz różne nagrody.</string>
+    <string name="misja_1">Misja I</string>
+    <string name="misja_2">Misja II</string>
+    <string name="misja_3">Misja III</string>
+    <string name="match_mission_text">Wybierz obrazek pasujący do wzorca podanego poniżej.</string>
 </resources>

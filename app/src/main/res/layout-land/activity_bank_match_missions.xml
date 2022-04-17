@@ -1,9 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_bank_match_missions">
+    tools:context=".activity_bank_timed_missions"
+    android:background="@drawable/bank_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Misja 1 -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission1_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="3%"
+        app:layout_marginRightPercent="67%"
+        app:layout_marginTopPercent="25%">
+
+        <!--Tytuł-->
+        <TextView
+            android:text="@string/misja_1"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="20%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginBottomPercent="70%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <!--Tekst misji-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:text="Misja"
+            app:layout_widthPercent="90%"
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="Wybierz"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <!-- Misja 2 -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission2_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="35%"
+        app:layout_marginRightPercent="35%"
+        app:layout_marginTopPercent="25%">
+
+        <!--Tytuł-->
+        <TextView
+            android:text="@string/misja_2"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="70%"
+            app:layout_heightPercent="20%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginBottomPercent="70%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <!--Tekst misji-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:text="Misja"
+            app:layout_widthPercent="90%"
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="Wybierz"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+    <!-- Misja 3 -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission3_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="3%"
+        app:layout_marginTopPercent="25%">
+
+        <!--Tytuł-->
+        <TextView
+            android:text="@string/misja_3"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="60%"
+            app:layout_heightPercent="20%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginBottomPercent="70%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <!--Tekst misji-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:text="Misja"
+            app:layout_widthPercent="90%"
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="Wybierz"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <!-- Timer -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/timed_mission_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="invisible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="25%"
+        app:layout_marginRightPercent="25%"
+        app:layout_marginTopPercent="25%"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/praca"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="35%"
+            app:layout_marginRightPercent="35%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="30%"
+            tools:ignore="InvalidId">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission1_ic1"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="45%"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+        </ImageView>
+
+        <!--Treść okienka -->
+        <TextView
+            android:id="@+id/text_view_match_mission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/match_mission_text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="28%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/start_timed_mission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/rozpocznij_misje"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="50%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_to_missions_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/powrot"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="50%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/collect_timed_rewards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/odbierz_nagrody"
+            android:visibility="invisible"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="50%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="13%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_widthPercent="13%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="43%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="70%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="%"
+            app:layout_marginLeftPercent="61%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="13%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>
