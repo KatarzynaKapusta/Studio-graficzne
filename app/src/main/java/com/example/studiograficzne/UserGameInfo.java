@@ -79,6 +79,13 @@ public class UserGameInfo implements Parcelable {
         this.experience += b_exp;
     };
 
+    public void addMatchMissionRewardsBank(double b_mon, double b_exp) {
+        this.money += b_mon;
+        this.experience += b_exp;
+    };
+
+
+
     @Override
     public int describeContents() {
         return 0;

@@ -50,6 +50,9 @@ class BankMatchMission1 extends Missions{
     {
         switch (counter)
         {
+            case 0:
+                setBm_exp(0); setBm_money(0);
+                break;
             case 1:
                 setBm_exp(50); setBm_money(75);
                 break;
@@ -80,6 +83,9 @@ class BankMatchMission2 extends Missions{
     {
         switch (counter)
         {
+            case 0:
+                setBm_exp(0); setBm_money(0);
+                break;
             case 1:
                 setBm_exp(75); setBm_money(100);
                 break;
@@ -110,6 +116,9 @@ class BankMatchMission3 extends Missions{
     {
         switch (counter)
         {
+            case 0:
+                setBm_exp(0); setBm_money(0);
+                break;
             case 1:
                 setBm_exp(100); setBm_money(125);
                 break;
