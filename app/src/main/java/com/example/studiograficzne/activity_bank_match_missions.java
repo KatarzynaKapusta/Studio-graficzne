@@ -48,6 +48,9 @@ public class activity_bank_match_missions extends AppCompatActivity {
     private boolean rewardsCollectedMatch = false;
     private boolean missionMatchStarted = false;
 
+    private long money;
+    private long exp;
+
     private int levelCounter =0;
     //DATABASE
 //    FirebaseDatabase firebaseDatabase;
@@ -96,6 +99,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
         Img2Mission1 = findViewById(R.id.img2mission1);
         Img3Mission1 = findViewById(R.id.img3mission1);
 
+        BankMatchMission1 m1 = new BankMatchMission1();
 
         User = new UserGameInfo();
         //Database
@@ -172,9 +176,9 @@ public class activity_bank_match_missions extends AppCompatActivity {
         collect_match_rewards_button.setOnClickListener(view -> {
             if(MissionChosen1)
             {
-                BankMatchMission1 m1 = new BankMatchMission1();
-                m1.HowManyMatched(matchedCounter);
-                User.addMatchMissionRewardsBank(m1.getBm_money(), m1.getBm_exp());
+                double moneyR = Double.longBitsToDouble(money);
+                double expR = Double.longBitsToDouble(exp);
+                User.addMatchMissionRewardsBank(moneyR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getMoney());
             }
@@ -238,12 +242,18 @@ public class activity_bank_match_missions extends AppCompatActivity {
         //Mission 1 - Level 3
         bm17.setOnClickListener(view -> {
             levelCounter++;
+            m1.HowManyMatched(matchedCounter);
+            money = Double.doubleToLongBits(m1.getBm_money()) ;
+            exp = Double.doubleToLongBits(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
             rewardsCollectedMatch = false;
         });
 
         bm18.setOnClickListener(view -> {
             levelCounter++;
+            m1.HowManyMatched(matchedCounter);
+            money = Double.doubleToLongBits(m1.getBm_money()) ;
+            exp = Double.doubleToLongBits(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
             rewardsCollectedMatch = false;
         });
@@ -251,8 +261,12 @@ public class activity_bank_match_missions extends AppCompatActivity {
         bm19.setOnClickListener(view -> {
             levelCounter++;
             matchedCounter++;
+            m1.HowManyMatched(matchedCounter);
+            money = Double.doubleToLongBits(m1.getBm_money()) ;
+            exp = Double.doubleToLongBits(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
             rewardsCollectedMatch = false;
+
         });
 
     }
@@ -350,6 +364,8 @@ public class activity_bank_match_missions extends AppCompatActivity {
         SharedPreferences prefsBankMatch = getSharedPreferences("prefsBankMatch", MODE_PRIVATE);
         SharedPreferences.Editor editorBankMatch = prefsBankMatch.edit();
 
+        editorBankMatch.putLong("moneyRewards", money);
+        editorBankMatch.putLong("expRewards", exp);
         editorBankMatch.putBoolean("rewardsCollected", rewardsCollectedMatch);
         editorBankMatch.putBoolean("MissionChosen1", MissionChosen1);
         editorBankMatch.putBoolean("MissionChosen2", MissionChosen2);
@@ -365,6 +381,8 @@ public class activity_bank_match_missions extends AppCompatActivity {
 
         SharedPreferences prefsBankMatch = getSharedPreferences("prefsBankMatch", MODE_PRIVATE);
 
+        money = prefsBankMatch.getLong("moneyRewards", 0);
+        exp = prefsBankMatch.getLong("expRewards", 0);
         rewardsCollectedMatch = prefsBankMatch.getBoolean("rewardsCollected", false);
         MissionChosen1 = prefsBankMatch.getBoolean("MissionChosen1", false);
         MissionChosen2 = prefsBankMatch.getBoolean("MissionChosen2", false);
