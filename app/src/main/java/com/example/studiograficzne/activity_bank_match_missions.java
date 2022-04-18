@@ -139,6 +139,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
 //        });
         //End of reading database
 
+        //Mission Choice
         match_button1.setOnClickListener(view -> {
             MissionChosen1 = true;
             updateLayoutINVIS();
@@ -154,6 +155,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
             MissionChosen3 = true;
             updateLayoutINVIS();
         });
+        //
 
         start_matched_mission_button.setOnClickListener(view -> {
             missionMatchStarted = true;
@@ -262,7 +264,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
             levelCounter++;
             matchedCounter++;
             m1.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m1.getBm_money()) ;
+            money = Double.doubleToLongBits(m1.getBm_money());
             exp = Double.doubleToLongBits(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
             rewardsCollectedMatch = false;
@@ -308,7 +310,6 @@ public class activity_bank_match_missions extends AppCompatActivity {
             start_matched_mission_button.setVisibility(View.INVISIBLE);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
-
     }
 
     private void updateButtonsMission1(int level){
