@@ -44,4 +44,5 @@
     <string name="misja_2">Misja II</string>
     <string name="misja_3">Misja III</string>
     <string name="match_mission_text">Wybierz obrazek pasujący do wzorca podanego poniżej.</string>
+    <string name="wybierz">Wybierz</string>
 </resources>
