@@ -28,7 +28,7 @@ import java.util.Map;
 public class activity_magazyn extends AppCompatActivity {
 
     //MISSION TIMER
-    private static final long START_TIME_IN_MILLIS =60000;
+    private static final long START_TIME_IN_MILLIS =10000;
     private TextView mTextViewCountDown;
 
     private Button collect_rewards_button;
@@ -47,7 +47,6 @@ public class activity_magazyn extends AppCompatActivity {
     Missions Mission1 = new Missions();
     FirebaseAuth mAuth;
     UserGameInfo User;
-
 
 
     @Override
