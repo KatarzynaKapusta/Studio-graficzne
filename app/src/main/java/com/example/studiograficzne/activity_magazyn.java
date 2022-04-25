@@ -34,8 +34,7 @@ public class activity_magazyn extends AppCompatActivity {
     private Button collect_rewards_button;
     private Button start_mission_button;
 
-    private CountDownTimer mCountDownTimer;
-
+    CountDownTimer mCountDownTimer;
     private boolean mTimeRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
     private long mEndTime;
@@ -75,6 +74,7 @@ public class activity_magazyn extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
                     if (keyId.child("UserInfo").child("email").getValue().equals(email))
+
                     {
                         experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                         resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
@@ -228,6 +228,7 @@ public class activity_magazyn extends AppCompatActivity {
 
     //Updating data to firebase
     private void updateDataToFirebase() {
+
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user!=null)
