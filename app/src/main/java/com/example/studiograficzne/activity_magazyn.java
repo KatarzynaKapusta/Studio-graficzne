@@ -1,6 +1,5 @@
 package com.example.studiograficzne;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -28,7 +27,7 @@ import java.util.Map;
 public class activity_magazyn extends AppCompatActivity {
 
     //MISSION TIMER
-    private static final long START_TIME_IN_MILLIS =6000;
+    private static final long START_TIME_IN_MILLIS =60000;
     private TextView mTextViewCountDown;
 
     private Button collect_rewards_button;
@@ -229,6 +228,7 @@ public class activity_magazyn extends AppCompatActivity {
 
     //Updating data to firebase
     private void updateDataToFirebase() {
+
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user!=null)

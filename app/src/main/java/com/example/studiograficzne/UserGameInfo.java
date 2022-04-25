@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class UserGameInfo implements Parcelable {
     private double level = 0;
-    private double money = 10;
+    private double money = 0;
     private double experience = 0;
     private double resources = 0;
 
@@ -74,6 +74,18 @@ public class UserGameInfo implements Parcelable {
         this.resources += m_resources;
         this.experience += m_experience;
     };
+
+    public void addTimedMissionRewardsBank(double b_mon, double b_exp) {
+        this.money += b_mon;
+        this.experience += b_exp;
+    };
+
+    public void addMatchMissionRewardsBank(double b_mon, double b_exp) {
+        this.money += b_mon;
+        this.experience += b_exp;
+    };
+
+
 
     @Override
     public int describeContents() {

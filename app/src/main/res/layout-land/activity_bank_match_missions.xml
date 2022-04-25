@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_bank_timed_missions"
+    android:background="@drawable/bank_background">
+
+    <!-- Misja 1 -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission1_layout_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="3%"
+        app:layout_marginRightPercent="67%"
+        app:layout_marginTopPercent="25%">
+
+        <!--Tytuł-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/misja_1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="70%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="50%">
+
+        </TextView>
+
+        <!--Tekst misji-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Misja"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mbutton_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/wybierz"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <!-- Misja 2 -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission2_layout_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="35%"
+        app:layout_marginRightPercent="35%"
+        app:layout_marginTopPercent="25%">
+
+        <!--Tytuł-->
+        <TextView
+            android:text="@string/misja_2"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="70%"
+            app:layout_heightPercent="20%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginBottomPercent="70%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <!--Tekst misji-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:text="Misja"
+            app:layout_widthPercent="90%"
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mbutton_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="Wybierz"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+    <!-- Misja 3 -->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission3_layout_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="3%"
+        app:layout_marginTopPercent="25%">
+
+        <!--Tytuł-->
+        <TextView
+            android:text="@string/misja_3"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="60%"
+            app:layout_heightPercent="20%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginBottomPercent="70%"
+            app:layout_marginTopPercent="10%">
+
+        </TextView>
+
+        <!--Tekst misji-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:text="Misja"
+            app:layout_widthPercent="90%"
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginTopPercent="30%">
+
+        </TextView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mbutton_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="Wybierz"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <!-- Początek misji-->
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/timed_mission_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_bank_background"
+        android:visibility="invisible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="20%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="5%"
+        tools:visibility="visible">
+
+        <!--Tytuł-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/praca"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="35%"
+            app:layout_marginRightPercent="35%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="30%"
+            tools:ignore="InvalidId">
+
+        </TextView>
+
+
+        <!--Treść okienka -->
+        <TextView
+            android:id="@+id/text_view_match_mission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/match_mission_text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="28%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible">
+
+        </TextView>
+
+        <!--Przycisk rozpocznij misje-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/start_match_mission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/rozpocznij_misje"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="50%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Przycisk powrót-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_to_match_missions_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/powrot"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="50%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!-- Przycisk odbierz nagrody-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/collect_match_rewards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/alice_blue"
+            android:text="@string/odbierz_nagrody"
+            android:visibility="invisible"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="50%">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Poziom 1.1-->
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img1mission1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="20%"
+            tools:visibility="invisible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="43%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="61%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!-- Poziom 1.2-->
+
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img2mission1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="20%"
+            tools:visibility="invisible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="43%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="61%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!-- Poziom 1.3-->
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img3mission1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission3_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="20%"
+            tools:visibility="invisible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="43%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="17%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="61%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="65%"
+            app:layout_widthPercent="13%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+
+        <!-- Misja 2 -->
+        <!-- Poziom 2.1-->
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img3mission2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission3_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="34%"
+            app:layout_widthPercent="20%"
+            tools:visibility="invisible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m211"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m212"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m213"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible" />
+
+        <!--Obrazek 4-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m214"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 5-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m215"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 6-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m216"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible"/>
+        <!--Poziom 2.2-->
+
+        <ImageView
+            android:id="@+id/img2mission2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="34%"
+            app:layout_widthPercent="20%"
+            tools:visibility="invisible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m221"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m223"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible" />
+
+        <!--Obrazek 4-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m224"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 5-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m225"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 6-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m226"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible"/>
+
+
+        <!-- Poziom 2.3-->
+        <ImageView
+            android:id="@+id/img1mission2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="34%"
+            app:layout_widthPercent="20%"
+            tools:visibility="invisible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m231"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m232"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m233"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible" />
+
+        <!--Obrazek 4-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m234"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 5-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m235"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 6-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m236"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="12%"
+            tools:visibility="invisible" />
+
+
+        <!-- Misja 3 -->
+        <!-- Poziom 3.1-->
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img1mission3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="34%"
+            app:layout_widthPercent="20%"
+            tools:visibility="visible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m311"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m312"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m313"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible" />
+
+        <!--Obrazek 4-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m314"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 5-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m315"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 6-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m316"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 7-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m317"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 8-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m318"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 9-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m319"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission1_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+
+        <!-- Poziom 3.2-->
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img2mission3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="34%"
+            app:layout_widthPercent="20%"
+            tools:visibility="visible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m321"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m322"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m323"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible" />
+
+        <!--Obrazek 4-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m324"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 5-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m325"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 6-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m326"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 7-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m327"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 8-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m328"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 9-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m329"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission2_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+
+        <!-- Poziom 3.3-->
+        <!-- Obrazek do matchowania-->
+        <ImageView
+            android:id="@+id/img3mission3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/match_mission3_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="34%"
+            app:layout_widthPercent="20%"
+            tools:visibility="visible">
+
+        </ImageView>
+
+        <!--Obrazek 1-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/match_m331"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic1"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 2-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m332"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 3-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="53%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible" />
+
+        <!--Obrazek 4-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m334"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 5-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m335"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <!--Obrazek 6-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m336"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="67%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 7-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m337"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="30%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 8-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m338"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="44.5%"
+            app:layout_marginRightPercent="37%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+        <!--Obrazek 9-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/no_match_m339"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/match_mission3_ic2"
+            android:visibility="invisible"
+            app:layout_heightPercent="14%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="59%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="81%"
+            app:layout_widthPercent="12%"
+            tools:visibility="visible"/>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>
