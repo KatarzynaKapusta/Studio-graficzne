@@ -10,10 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
+            android:name=".activity_magazyn_timed_missions"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
+        <activity
             android:name=".activity_bank_timed_missions"
             android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen"/>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
         <activity
             android:name=".activity_bank_match_missions"
             android:exported="false"

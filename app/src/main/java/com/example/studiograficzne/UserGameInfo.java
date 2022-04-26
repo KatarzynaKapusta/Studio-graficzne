@@ -70,11 +70,6 @@ public class UserGameInfo implements Parcelable {
         this.resources = resources;
     }
 
-    public void addMissionRewardsStorage(double m_resources, double m_experience) {
-        this.resources += m_resources;
-        this.experience += m_experience;
-    };
-
     public void addTimedMissionRewardsBank(double b_mon, double b_exp) {
         this.money += b_mon;
         this.experience += b_exp;
@@ -83,6 +78,16 @@ public class UserGameInfo implements Parcelable {
     public void addMatchMissionRewardsBank(double b_mon, double b_exp) {
         this.money += b_mon;
         this.experience += b_exp;
+    };
+
+    public void addTimedMissionRewardsStorage(double s_res, double s_exp) {
+        this.resources += s_res;
+        this.experience += s_exp;
+    };
+
+    public void addMatchMissionRewardsStorage(double s_res, double s_exp) {
+        this.resources += s_res;
+        this.experience += s_exp;
     };
 
 

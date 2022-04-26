@@ -21,17 +21,17 @@
         app:layout_marginBottomPercent="50%">
 
         <TextView
-            android:id="@+id/magazyn"
-            android:text="@string/bank"
-            android:textSize="40sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
+            android:id="@+id/bank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/bank"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="20%"
             app:layout_marginRightPercent="5%"
-            app:layout_marginTopPercent="8%"
-            app:layout_marginBottomPercent="5%"/>
+            app:layout_marginTopPercent="8%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
     <androidx.percentlayout.widget.PercentRelativeLayout
@@ -75,7 +75,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/timed_missions_button"
+            android:id="@+id/bank_timed_missions_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/alice_blue"
@@ -133,18 +133,18 @@
         </TextView>
 
         <Button
-            android:id="@+id/match_missions_button"
-            android:text="@string/przejdz_do_misji"
+            android:id="@+id/bank_match_missions_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:background="@color/alice_blue"
+            android:text="@string/przejdz_do_misji"
+            android:textColor="@color/black"
             app:layout_heightPercent="30%"
-            app:layout_widthPercent="50%"
             app:layout_marginBottomPercent="10%"
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
-            app:layout_marginTopPercent="75%">
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="50%">
 
         </Button>
 

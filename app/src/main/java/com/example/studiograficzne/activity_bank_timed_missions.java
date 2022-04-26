@@ -120,21 +120,18 @@ public class activity_bank_timed_missions extends AppCompatActivity {
 
         //Mission choice
         time_button1.setOnClickListener(view -> {
-            rewardsCollectedBank = false;
             long time1 = 60000;
             setTimeBank(time1);
             updateLayoutINVIS();
         });
 
         time_button2.setOnClickListener(view -> {
-            rewardsCollectedBank = false;
             long time2 = 120000;
             setTimeBank(time2);
             updateLayoutINVIS();
         });
 
         time_button3.setOnClickListener(view -> {
-            rewardsCollectedBank = false;
             long time3 = 180000;
             setTimeBank(time3);
             updateLayoutINVIS();
@@ -195,7 +192,7 @@ public class activity_bank_timed_missions extends AppCompatActivity {
     }
 
     //Mission timer
-    private  void setTimeBank(long milliseconds)
+    private void setTimeBank(long milliseconds)
     {
         mStartTimeInMillisBank = milliseconds;
         resetTimerBank();
