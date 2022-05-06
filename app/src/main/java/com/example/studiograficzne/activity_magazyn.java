@@ -23,19 +23,19 @@ public class activity_magazyn extends AppCompatActivity {
         String email = intent.getStringExtra("email");
 
         Button go_to_missions_button1 = findViewById(R.id.storage_timed_missions_button);
-        //Button go_to_missions_button2 = findViewById(R.id.storage_match_missions_button);
+        Button go_to_missions_button2 = findViewById(R.id.storage_match_missions_button);
 
         go_to_missions_button1.setOnClickListener(view -> openActivityStorageTimedMissions());
-        //go_to_missions_button2.setOnClickListener(view -> openActivityStorageMatchMissions());
+        go_to_missions_button2.setOnClickListener(view -> openActivityStorageMatchMissions());
 
     }
 
-//    private void openActivityStorageMatchMissions() {
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        Intent intent = new Intent(this, activity_magazyn_match_missions.class);
-//        intent.putExtra("email", currentUser.getEmail());
-//        startActivity(intent);
-//    }
+    private void openActivityStorageMatchMissions() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        Intent intent = new Intent(this, activity_magazyn_match_missions.class);
+        intent.putExtra("email", currentUser.getEmail());
+        startActivity(intent);
+    }
 
     private void openActivityStorageTimedMissions() {
         FirebaseUser currentUser = mAuth.getCurrentUser();

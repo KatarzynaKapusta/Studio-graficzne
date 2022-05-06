@@ -85,7 +85,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
         layout2 = findViewById(R.id.mission2_layout_m);
         layout3 = findViewById(R.id.mission3_layout_m);
 
-        layout_m = findViewById(R.id.timed_mission_layout);
+        layout_m = findViewById(R.id.match_mission_layout);
 
         //Choice buttons
         match_button1 = findViewById(R.id.mbutton_1);
@@ -914,7 +914,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
 
         editorBankMatch.putLong("moneyRewards", money);
         editorBankMatch.putLong("expRewards", exp);
-        editorBankMatch.putBoolean("rewardsCollected", rewardsCollectedMatch);
+        editorBankMatch.putBoolean("rewardsCollectedMatch", rewardsCollectedMatch);
         editorBankMatch.putBoolean("MissionChosen1", MissionChosen1);
         editorBankMatch.putBoolean("MissionChosen2", MissionChosen2);
         editorBankMatch.putBoolean("MissionChosen3", MissionChosen3);
@@ -930,7 +930,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
 
         money = prefsBankMatch.getLong("moneyRewards", 0);
         exp = prefsBankMatch.getLong("expRewards", 0);
-        rewardsCollectedMatch = prefsBankMatch.getBoolean("rewardsCollected", false);
+        rewardsCollectedMatch = prefsBankMatch.getBoolean("rewardsCollectedMatch", false);
         MissionChosen1 = prefsBankMatch.getBoolean("MissionChosen1", false);
         MissionChosen2 = prefsBankMatch.getBoolean("MissionChosen2", false);
         MissionChosen3 = prefsBankMatch.getBoolean("MissionChosen3", false);
