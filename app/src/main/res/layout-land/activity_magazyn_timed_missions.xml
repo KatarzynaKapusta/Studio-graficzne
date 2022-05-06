@@ -40,16 +40,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
-            android:textAlignment="center"
-            android:text="Misja"
-            app:layout_widthPercent="90%"
             app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="30%"
             app:layout_marginLeftPercent="5%"
             app:layout_marginRightPercent="5%"
-            app:layout_marginBottomPercent="30%"
-            app:layout_marginTopPercent="30%">
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="90%">
 
         </TextView>
 
