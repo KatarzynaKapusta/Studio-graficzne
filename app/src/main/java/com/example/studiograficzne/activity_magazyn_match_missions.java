@@ -71,7 +71,6 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
     private int levelCounterStorage =0, matchedCounterStorage =0;
 
     //TextView Rewards
-    private String expString ="0", resString="0";
     private TextView Experience;
     private TextView vExperience;
     private TextView Resources;

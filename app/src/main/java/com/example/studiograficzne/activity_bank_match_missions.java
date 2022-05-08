@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -68,6 +69,13 @@ public class activity_bank_match_missions extends AppCompatActivity {
     private long money, exp;
 
     private int levelCounter =0, matchedCounter =0;
+
+    //TextView Rewards
+    private TextView Experience;
+    private TextView vExperience;
+    private TextView Money;
+    private TextView vMoney;
+    private TextView RewardsAcquired;
     //DATABASE
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -79,6 +87,13 @@ public class activity_bank_match_missions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_match_missions);
+
+        //Rewards TextViews
+        Experience = findViewById(R.id.rewards_exp_bm);
+        vExperience = findViewById(R.id.rewards_exp_bmv);
+        Money = findViewById(R.id.rewards_mon_bm);
+        vMoney = findViewById(R.id.rewards_mon_bmv);
+        RewardsAcquired = findViewById(R.id.rewards_acquired_bm);
 
         //Layout
         layout1 = findViewById(R.id.mission1_layout_m);
@@ -268,28 +283,27 @@ public class activity_bank_match_missions extends AppCompatActivity {
         collect_match_rewards_button.setOnClickListener(view -> {
             if(MissionChosen1)
             {
-                double moneyR = Double.longBitsToDouble(money);
-                double expR = Double.longBitsToDouble(exp);
+                double moneyR = (double)(money);
+                double expR = (double)(exp);
                 User.addMatchMissionRewardsBank(moneyR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getMoney());
             }
             else if(MissionChosen2)
             {
-                double moneyR=Double.longBitsToDouble(money);
-                double expR=Double.longBitsToDouble(exp);
+                double moneyR=(double)(money);
+                double expR=(double)(exp);
                 User.addMatchMissionRewardsBank(moneyR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getMoney());
             }
             else
             {
-                double moneyR=Double.longBitsToDouble(money);
-                double expR=Double.longBitsToDouble(exp);
+                double moneyR=(double)(money);
+                double expR=(double)(exp);
                 User.addMatchMissionRewardsBank(moneyR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getMoney());
-                updateDataToFirebase();
             }
             updateDataToFirebase();
 
@@ -298,6 +312,8 @@ public class activity_bank_match_missions extends AppCompatActivity {
             levelCounter = 0;
             matchedCounter = 0;
             rewardsCollectedMatch = true;
+
+            updateTextView();
             updateButtonsStart();
             updateLayoutVIS();
         });
@@ -348,29 +364,26 @@ public class activity_bank_match_missions extends AppCompatActivity {
         bm17.setOnClickListener(view -> {
             levelCounter++;
             m1.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m1.getBm_money()) ;
-            exp = Double.doubleToLongBits(m1.getBm_exp());
+            money = (long)(m1.getBm_money()) ;
+            exp = (long)(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm18.setOnClickListener(view -> {
             levelCounter++;
             m1.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m1.getBm_money()) ;
-            exp = Double.doubleToLongBits(m1.getBm_exp());
+            money = (long)(m1.getBm_money()) ;
+            exp = (long)(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm19.setOnClickListener(view -> {
             levelCounter++;
             matchedCounter++;
             m1.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m1.getBm_money());
-            exp = Double.doubleToLongBits(m1.getBm_exp());
+            money = (long)(m1.getBm_money());
+            exp = (long)(m1.getBm_exp());
             updateButtonsMission1(levelCounter);
-            rewardsCollectedMatch = false;
 
         });
 
@@ -445,55 +458,49 @@ public class activity_bank_match_missions extends AppCompatActivity {
             levelCounter++;
             matchedCounter++;
             m2.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m2.getBm_money()) ;
-            exp = Double.doubleToLongBits(m2.getBm_exp());
+            money = (long)(m2.getBm_money()) ;
+            exp = (long)(m2.getBm_exp());
             updateButtonsMission2(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm232.setOnClickListener(view -> {
             levelCounter++;
             m2.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m2.getBm_money()) ;
-            exp = Double.doubleToLongBits(m2.getBm_exp());
+            money = (long)(m2.getBm_money()) ;
+            exp = (long)(m2.getBm_exp());
             updateButtonsMission2(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm233.setOnClickListener(view -> {
             levelCounter++;
             m2.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m2.getBm_money()) ;
-            exp = Double.doubleToLongBits(m2.getBm_exp());
+            money = (long)(m2.getBm_money()) ;
+            exp = (long)(m2.getBm_exp());
             updateButtonsMission2(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm234.setOnClickListener(view -> {
             levelCounter++;
             m2.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m2.getBm_money()) ;
-            exp = Double.doubleToLongBits(m2.getBm_exp());
+            money = (long)(m2.getBm_money()) ;
+            exp = (long)(m2.getBm_exp());
             updateButtonsMission2(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm235.setOnClickListener(view -> {
             levelCounter++;
             m2.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m2.getBm_money()) ;
-            exp = Double.doubleToLongBits(m2.getBm_exp());
+            money = (long)(m2.getBm_money()) ;
+            exp = (long)(m2.getBm_exp());
             updateButtonsMission2(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm236.setOnClickListener(view -> {
             levelCounter++;
             m2.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m2.getBm_money()) ;
-            exp = Double.doubleToLongBits(m2.getBm_exp());
+            money = (long)(m2.getBm_money()) ;
+            exp = (long)(m2.getBm_exp());
             updateButtonsMission2(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         ///////////////////
@@ -598,87 +605,104 @@ public class activity_bank_match_missions extends AppCompatActivity {
             levelCounter++;
             matchedCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm332.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm333.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm334.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm335.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm336.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm337.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm338.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
         bm339.setOnClickListener(view -> {
             levelCounter++;
             m3.HowManyMatched(matchedCounter);
-            money = Double.doubleToLongBits(m3.getBm_money()) ;
-            exp = Double.doubleToLongBits(m3.getBm_exp());
+            money = (long)(m3.getBm_money()) ;
+            exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
-            rewardsCollectedMatch = false;
         });
 
     }
 
+    private void updateTextView(){
+        if(rewardsCollectedMatch)
+        {
+            RewardsAcquired.setVisibility(View.INVISIBLE);
 
+            vMoney.setVisibility(View.INVISIBLE);
+            Money.setVisibility(View.INVISIBLE);
+            vExperience.setVisibility(View.INVISIBLE);
+            Experience.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            RewardsAcquired.setVisibility(View.VISIBLE);
+
+            vMoney.setVisibility(View.VISIBLE);
+            Money.setVisibility(View.VISIBLE);
+            vExperience.setVisibility(View.VISIBLE);
+            Experience.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void setTextView(long monRew, long expRew){
+        String expString = String.valueOf(monRew);
+        String monString = String.valueOf(expRew);
+        vExperience.setText(expString);
+        vMoney.setText(monString);
+    }
 
     private void updateLayoutMatch(){
         if(rewardsCollectedMatch)
@@ -761,6 +785,9 @@ public class activity_bank_match_missions extends AppCompatActivity {
             bm18.setVisibility(View.INVISIBLE);
             bm19.setVisibility(View.INVISIBLE);
 
+            rewardsCollectedMatch = false;
+            updateTextView();
+            setTextView(money, exp);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
     }
@@ -821,6 +848,9 @@ public class activity_bank_match_missions extends AppCompatActivity {
             bm235.setVisibility(View.INVISIBLE);
             bm236.setVisibility(View.INVISIBLE);
 
+            rewardsCollectedMatch = false;
+            updateTextView();
+            setTextView(money, exp);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
     }
@@ -900,6 +930,9 @@ public class activity_bank_match_missions extends AppCompatActivity {
             bm338.setVisibility(View.INVISIBLE);
             bm339.setVisibility(View.INVISIBLE);
 
+            rewardsCollectedMatch = false;
+            updateTextView();
+            setTextView(money, exp);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
     }
@@ -935,6 +968,8 @@ public class activity_bank_match_missions extends AppCompatActivity {
         MissionChosen2 = prefsBankMatch.getBoolean("MissionChosen2", false);
         MissionChosen3 = prefsBankMatch.getBoolean("MissionChosen3", false);
 
+        updateTextView();
+        setTextView(money, exp);
         updateLayoutMatch();
         updateButtonsStart();
 

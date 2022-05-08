@@ -54,6 +54,17 @@ public class activity_bank_timed_missions extends AppCompatActivity {
 
     private final String TAG = this.getClass().getName().toUpperCase();
 
+    //TextView Rewards
+    private TextView Experience;
+    private TextView vExperience;
+    private TextView Money;
+    private TextView vMoney;
+    private TextView RewardsAcquiredBank;
+    private long mon, exp;
+    BankTimedMission1 m1;
+    BankTimedMission2 m2;
+    BankTimedMission3 m3;
+
     //DATABASE
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -64,6 +75,13 @@ public class activity_bank_timed_missions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_timed_missions);
+
+        //Rewards TextViews
+        Experience = findViewById(R.id.rewards_exp_bt);
+        vExperience = findViewById(R.id.rewards_exp_btv);
+        Money = findViewById(R.id.rewards_mon_bt);
+        vMoney = findViewById(R.id.rewards_mon_btv);
+        RewardsAcquiredBank = findViewById(R.id.rewards_acquired_bt);
 
         time_button1 = findViewById(R.id.button_1);
         time_button2 = findViewById(R.id.button_2);
@@ -91,6 +109,9 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         String email = intent.getStringExtra("email");
 
         User = new UserGameInfo();
+        m1 = new BankTimedMission1();
+        m2 = new BankTimedMission2();
+        m3 = new BankTimedMission3();
 
         //Reading database
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -141,6 +162,7 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         //Chosen timed mission
         start_timed_mission_button.setOnClickListener(view -> {
             rewardsCollectedBank = false;
+            mTextViewCountDownBank.setVisibility(View.VISIBLE);
             if(mTimeRunningBank){
 
             }
@@ -153,30 +175,24 @@ public class activity_bank_timed_missions extends AppCompatActivity {
             FirebaseUser user = mAuth.getCurrentUser();
             if (user != null) {
                 if (mStartTimeInMillisBank == 60000) {
-                    BankTimedMission1 m1 = new BankTimedMission1();
                     User.addTimedMissionRewardsBank(m1.getMoney_1(), m1.getExp_1());
                     updateDataToFirebase();
 
                     Toast.makeText(activity_bank_timed_missions.this, "Przyznano nagrody",
                             Toast.LENGTH_SHORT).show();
 
-                    rewardsCollectedBank =true;
                 } else if (mStartTimeInMillisBank == 120000) {
-                    BankTimedMission2 m2 = new BankTimedMission2();
                     User.addTimedMissionRewardsBank(m2.getMoney_2(), m2.getExp_2());
                     updateDataToFirebase();
 
                     Toast.makeText(activity_bank_timed_missions.this, "Przyznano nagrody",
                             Toast.LENGTH_SHORT).show();
-                    rewardsCollectedBank =true;
                 } else {
-                    BankTimedMission3 m3 = new BankTimedMission3();
                     User.addTimedMissionRewardsBank(m3.getMoney_3(), m3.getExp_3());
                     updateDataToFirebase();
 
                     Toast.makeText(activity_bank_timed_missions.this, "Przyznano nagrody",
                             Toast.LENGTH_SHORT).show();
-                    rewardsCollectedBank =true;
                 }
             }
             else
@@ -184,17 +200,25 @@ public class activity_bank_timed_missions extends AppCompatActivity {
                 Toast.makeText(activity_bank_timed_missions.this, "BŁĄD",
                         Toast.LENGTH_SHORT).show();
             }
+
+            mTextViewCountDownBank.setVisibility(View.INVISIBLE);
+            rewardsCollectedBank = true;
             resetTimerBank();
             updateLayoutVIS();
+            updateTextViewINVIS();
         });
 
-        back_to_missions_button.setOnClickListener(view -> updateLayoutVIS());
+        back_to_missions_button.setOnClickListener(view -> {
+            rewardsCollectedBank=true;
+            updateLayoutVIS();
+        });
     }
 
     //Mission timer
     private void setTimeBank(long milliseconds)
     {
         mStartTimeInMillisBank = milliseconds;
+        setTextView();
         resetTimerBank();
     }
 
@@ -211,6 +235,7 @@ public class activity_bank_timed_missions extends AppCompatActivity {
             public void onFinish() {
                 mTimeRunningBank = false;
                 updateButtonsBank();
+                updateTextViewVIS();
             }
         }.start();
 
@@ -237,23 +262,30 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         if(mTimeRunningBank) {
             start_timed_mission_button.setVisibility(View.INVISIBLE);
             back_to_missions_button.setVisibility(View.INVISIBLE);
+            mTextViewCountDownBank.setVisibility(View.VISIBLE);
         }
         else {
             start_timed_mission_button.setVisibility(View.VISIBLE);
             back_to_missions_button.setVisibility(View.VISIBLE);
+            mTextViewCountDownBank.setVisibility(View.INVISIBLE);
+
             if(mTimeLeftInMillisBank < 1000) {
                 start_timed_mission_button.setVisibility(View.INVISIBLE);
                 back_to_missions_button.setVisibility(View.INVISIBLE);
+                mTextViewCountDownBank.setVisibility(View.VISIBLE);
             }
             else {
                 start_timed_mission_button.setVisibility(View.VISIBLE);
+                mTextViewCountDownBank.setVisibility(View.VISIBLE);
             }
 
             if(mTimeLeftInMillisBank < mStartTimeInMillisBank) {
                 collect_timed_rewards_button.setVisibility(View.VISIBLE);
+                mTextViewCountDownBank.setVisibility(View.INVISIBLE);
             }
             else {
                 collect_timed_rewards_button.setVisibility(View.INVISIBLE);
+                mTextViewCountDownBank.setVisibility(View.VISIBLE);
             }
         }
     }
@@ -263,13 +295,16 @@ public class activity_bank_timed_missions extends AppCompatActivity {
     private void updateLayoutBank() {
         if(mTimeRunningBank) {
             updateLayoutINVIS();
+            updateTextViewINVIS();
         }
         else {
             if(rewardsCollectedBank) {
                 updateLayoutVIS();
+                updateTextViewINVIS();
             }
             else {
                 updateLayoutINVIS();
+                updateTextViewVIS();
             }
         }
     }
@@ -287,7 +322,44 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         layout3.setVisibility(View.VISIBLE);
         layout_m.setVisibility(View.INVISIBLE);
     }
+
+    private void updateTextViewVIS(){
+        RewardsAcquiredBank.setVisibility(View.VISIBLE);
+
+        vMoney.setVisibility(View.VISIBLE);
+        Money.setVisibility(View.VISIBLE);
+        vExperience.setVisibility(View.VISIBLE);
+        Experience.setVisibility(View.VISIBLE);
+    }
+
+    private void updateTextViewINVIS(){
+        RewardsAcquiredBank.setVisibility(View.INVISIBLE);
+
+        vMoney.setVisibility(View.INVISIBLE);
+        Money.setVisibility(View.INVISIBLE);
+        vExperience.setVisibility(View.INVISIBLE);
+        Experience.setVisibility(View.INVISIBLE);
+    }
     //End of Layout update
+
+    private void setTextView(){
+
+        if (mStartTimeInMillisBank == 60000) {
+            mon = (long)(m1.getMoney_1());
+            exp = (long)(m1.getExp_1());
+        } else if (mStartTimeInMillisBank == 120000) {
+            mon = (long)(m2.getMoney_2());
+            exp = (long)(m2.getExp_2());
+        } else {
+            mon = (long)(m3.getMoney_3());
+            exp = (long)(m3.getExp_3());
+        }
+        String expString = String.valueOf(mon);
+        String resString = String.valueOf(exp);
+
+        vExperience.setText(expString);
+        vMoney.setText(resString);
+    }
 
     //Saving timer for running in background
     @Override
@@ -302,6 +374,9 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         editorBank.putBoolean("timerRunningBank", mTimeRunningBank);
         editorBank.putBoolean("rewardsCollectedBank", rewardsCollectedBank);
         editorBank.putLong("endTimeBank", mEndTimeBank);
+
+        editorBank.putLong("monRew", mon);
+        editorBank.putLong("expRew", exp);
 
         editorBank.apply();
 
@@ -322,9 +397,13 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         mTimeRunningBank = prefsBank.getBoolean("timerRunningBank", false);
         rewardsCollectedBank = prefsBank.getBoolean("rewardsCollectedBank", false);
 
+        mon= prefsBank.getLong("monRew",0);
+        exp= prefsBank.getLong("expRew",0);
+
         updateCountDownTextBank();
         updateButtonsBank();
         updateLayoutBank();
+        setTextView();
 
         if (mTimeRunningBank) {
             mEndTimeBank = prefsBank.getLong("endTimeBank", 0);

@@ -13,12 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/mission_bank_background"
-        app:layout_widthPercent="20%"
         app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="50%"
         app:layout_marginLeftPercent="40%"
         app:layout_marginRightPercent="40%"
         app:layout_marginTopPercent="5%"
-        app:layout_marginBottomPercent="50%">
+        app:layout_widthPercent="20%">
 
         <TextView
             android:id="@+id/bank"
