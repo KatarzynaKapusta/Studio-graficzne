@@ -21,12 +21,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 public class activity_menu extends AppCompatActivity {
+
     private TextView nicknameTxtView, userIdTxtView, emailTxtView, studioNameTxtView, levelTxtView, moneyTxtView, resourcesTxtView;
     private ImageView userProfImgImageView;
     private final String TAG = this.getClass().getName().toUpperCase();
-    private FirebaseDatabase database;
-    private DatabaseReference mDatabase;
-    private Map<String, String> userMap;
     private String email;
     private static final String USERS = "Users";
     private FirebaseAuth mAuth;

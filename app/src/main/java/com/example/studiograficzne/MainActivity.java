@@ -25,91 +25,95 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private TextView lvlTxtView, expTxtView, moneyTxtView, resTxtView;
-    private static final String LEVELS = "Levels";
-    private static final String USERS = "Users";
-    private FirebaseAuth mAuth;
-    private String email;
+    private static final String LEVELS = "Levels", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
-    private final List<Double> lvlList = new ArrayList<>();
-    DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
-    private FirebaseDatabase database;
 
-//    LevelsInfo LvlInfo = new LevelsInfo();
+    // Database variables
+    private FirebaseAuth mAuth;
+    DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+    private String email;
+
+    // List for levels
+    private final List<Double> lvlList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Checking if user is logged or not and getting his email
         mAuth = FirebaseAuth.getInstance();
-
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             email = currentUser.getEmail();
+            Toast.makeText(MainActivity.this, "You are logged in",
+                    Toast.LENGTH_SHORT).show();
         }
 
         DatabaseReference userRef = rootRef.child(USERS);
         DatabaseReference lvlRef = rootRef.child(LEVELS);
         Log.v("USERID", userRef.getKey());
 
+        // TextView fields
         lvlTxtView = findViewById(R.id.lvlStarTextView);
         expTxtView = findViewById(R.id.expBarTextView);
         moneyTxtView = findViewById(R.id.moneyBarTextView);
         resTxtView = findViewById(R.id.resBarTextView);
 
-        //Budowlany
+        // All buildings buttons
+        // Budowlany
         ImageButton budowlanyButton = findViewById(R.id.budowlany);
         budowlanyButton.setOnClickListener(view -> openActivityBudowlany());
 
-        //Bank
+        // Bank
         ImageButton bankButton = findViewById(R.id.bank);
         bankButton.setOnClickListener(view -> openActivityBank());
 
-        //Studio
+        // Studio
         ImageButton studioButton = findViewById(R.id.studio);
         studioButton.setOnClickListener(view -> openActivityStudio());
 
-        //Storage
+        // Storage
         ImageButton storageButton = findViewById(R.id.magazyn);
         storageButton.setOnClickListener(view -> openActivityStorage());
 
-        //Furniture
+        // Furniture
         ImageButton furnitureStoreButton = findViewById(R.id.meblowy);
         furnitureStoreButton.setOnClickListener(view -> openActivityFurnitureStore());
 
-        //Menu
+        // Menu tablet
         ImageButton menuButton = findViewById(R.id.menu);
         menuButton.setOnClickListener(view -> openActivityMenu());
 
-        //Logout
+        // Logout button
         Button mainLogoutButton = findViewById(R.id.mainLogoutButton);
-        if (isRegistered()) {
+        if (isLogged()) {
             mainLogoutButton.setOnClickListener(view -> openActivityWyloguj());
         }
 
-
-        //Displaying user's id
-        FirebaseUser user = mAuth.getCurrentUser();
+        // Displaying user's id
         TextView textViewUserEmail =  findViewById(R.id.textViewUserEmail);
-        if(user != null){
-            String uid = user.getUid();
+        if (currentUser != null){
+            String uid = currentUser.getUid();
             textViewUserEmail.setText(uid);
-        } else {
+        }
+        else {
             textViewUserEmail.setText(R.string.strNotLogged);
         }
 
-        if (user != null) {
-            // Read from the database
+        // Reading information from the database if user is logged
+        if (currentUser != null) {
+            // Read from "Users" branch in db
             userRef.addValueEventListener(new ValueEventListener() {
-                Double money, level, resources, experience, exp;
-                String moneyString, levelString, resourcesString, experienceString;
+                Double money, level, resources, experience;
+                String moneyString, resourcesString, experienceString;
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                         if (keyId.child("UserInfo").child("email").getValue().equals(email)) {
                             money = keyId.child("UserGameInfo").child("money").getValue(Double.class);
-                            moneyString = String.valueOf(money);
+                            moneyString = String.valueOf(money.intValue());
                             level = keyId.child("UserGameInfo").child("level").getValue(Double.class);
                             resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
                             resourcesString = String.valueOf(resources.intValue());
@@ -119,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    //TUTAJ
+                    // Read from "Levels" branch in db
                     lvlRef.addValueEventListener(new ValueEventListener() {
                         Double exp;
                         String levelString;
@@ -130,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
                                 exp = keyId.getValue(Double.class);
                                 lvlList.add(exp);
                             }
+
+                            // Checking if level from db is correct and replacing it (if not correct)
                             Double result;
                             result = checkUserLevel(experience, level, lvlList);
                             levelString = String.valueOf(result.intValue());
@@ -141,14 +147,13 @@ public class MainActivity extends AppCompatActivity {
                             // Failed to read value
                             Log.w(TAG, "Failed to read value.", error.toException());
                         }
-                    });
-                    //TUTAJ END
+                    }); // End of reading from "Levels" branch
 
                     moneyTxtView.setText(moneyString);
                     resTxtView.setText(resourcesString);
                     expTxtView.setText(experienceString);
 
-                }
+                } // End of reading from "Users" branch
 
                 @Override
                 public void onCancelled(DatabaseError error) {
@@ -157,28 +162,67 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-    } //OnCreate end
+    } // End of OnCreate()
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        if (isRegistered()){
-            Toast.makeText(MainActivity.this, "Jesteś zalogowany",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(MainActivity.this, "Nie jesteś zalogowany",
+
+        // If user is not logged open sign in activity
+        if (!isLogged()){
+            Toast.makeText(MainActivity.this, "You are not logged in",
                     Toast.LENGTH_SHORT).show();
             openActivitySignIn();
         }
-    } //OnStart end
 
-    public boolean isRegistered() {
+    } // End of OnStart()
+
+    public boolean isLogged() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null)
-            return true;
-        else
-            return false;
+        return currentUser != null;
+    }
+
+    private void reload() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {
+        double localLvl = 0, lastLvlValue = lvlList.get(lvlList.size()-1);
+        int listSize = lvlList.size();
+
+        for (int i = 0; i < lvlList.size()-1 ; ) {
+            // If exp is greater than maximum lvl value in db
+            if (exp >= lastLvlValue) {
+                updateUserLvl((double) listSize);
+                lvlList.clear();
+                return (double) listSize;
+            }
+            if (exp >= lvlList.get(i) && exp < lvlList.get(i + 1)) {
+                localLvl = (double) i + 1;
+                break;
+            }
+            else {
+                i += 1;
+            }
+        }
+
+        if (lvl != localLvl) {
+            updateUserLvl(localLvl);
+        }
+
+        lvlList.clear();
+        return localLvl;
+    }
+
+    private void updateUserLvl(Double localLvl) {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            String uid = currentUser.getUid();
+            FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
+            rootRef = database.getReference("Users");
+            rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
+        }
     }
 
     public void openActivityBudowlany(){
@@ -189,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
     public void openActivityBank(){
         FirebaseUser currentUser = mAuth.getCurrentUser();
         Intent intent = new Intent(this, activity_bank.class);
-        intent.putExtra("email", currentUser.getEmail());
+        intent.putExtra("email", currentUser != null ? currentUser.getEmail() : null);
         startActivity(intent);
     }
 
@@ -201,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
     public void openActivityStorage(){
         FirebaseUser currentUser = mAuth.getCurrentUser();
         Intent intent = new Intent(this, activity_magazyn.class);
-        intent.putExtra("email", currentUser.getEmail());
+        intent.putExtra("email", currentUser != null ? currentUser.getEmail() : null);
         startActivity(intent);
     }
 
@@ -213,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
     public void openActivityMenu(){
         FirebaseUser currentUser = mAuth.getCurrentUser();
         Intent intent = new Intent(this, activity_menu.class);
-        intent.putExtra("email", currentUser.getEmail());
+        intent.putExtra("email", currentUser != null ? currentUser.getEmail() : null);
         startActivity(intent);
     }
 
@@ -224,50 +268,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivityWyloguj(){
         FirebaseAuth.getInstance().signOut();
-        Toast.makeText(MainActivity.this, "Wylogowano pomyślnie", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, R.string.loggedOutSucc, Toast.LENGTH_SHORT).show();
         reload();
     }
 
-    private void reload() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {
-        double localLvl = 0;
-        for (int i = 0; i < lvlList.size()-1 ; )
-        {
-            if (exp >= lvlList.get(i) && exp < lvlList.get(i+1))
-            {
-                double d = i;
-                localLvl = d + 1;
-                break;
-            }
-            else {
-                i+=1;
-            }
-        }
-
-        if(lvl != localLvl)
-        {
-            updateUserLvl(localLvl);
-        }
-
-        lvlList.clear();
-        return localLvl;
-    }
-
-    private void updateUserLvl(Double localLvl) {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            String uid = user.getUid();
-            database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
-            rootRef = database.getReference("Users");
-
-            String keyid = rootRef.push().getKey();
-            rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
-        }
-    }
-
-
-} //End of all
+} // End of MainActivity
