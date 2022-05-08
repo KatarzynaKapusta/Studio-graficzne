@@ -48,4 +48,5 @@
     <string name="mission_match1_storage">Twój team zamierza wykorzystać część grafik z poprzedniego projektu. Musisz znaleźć zagubione dokumenty żeby kontynuować nad nim pracę!</string>
     <string name="mission_match2_storage">W magazynie widzisz, że kable od zasilaczy do tabletów graficznych są w złych pojemnikach. Poukładaj \tje, aby nie było problemu z ich znalezieniem.</string>
     <string name="mission_match3_storage">Kolega z pracy poprosił Cię abyś sprawdził opinie na temat ostatniego plakatu wystawionego na stronie. Sprawdź z komputera w magazynie ilość sprzedaży.</string>
+    <string name="timed_text_mission">Musisz jeszcze chwilę poczekać.\nTwoja misja za niedługo się skończy.\n</string>
 </resources>

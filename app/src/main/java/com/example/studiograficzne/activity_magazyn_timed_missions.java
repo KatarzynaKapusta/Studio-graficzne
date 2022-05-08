@@ -51,6 +51,18 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
     private long mTimeLeftInMillisStorage;
     private long mEndTimeStorage;
 
+    //TextView Rewards
+    private String expString ="0", resString="0";
+    private TextView Experience;
+    private TextView vExperience;
+    private TextView Resources;
+    private TextView vResources;
+    private TextView RewardsAcquired;
+    private long res, exp;
+    StorageTimedMission1 m1;
+    StorageTimedMission2 m2;
+    StorageTimedMission3 m3;
+
     //Database
     private final String TAG = this.getClass().getName().toUpperCase();
 
@@ -72,6 +84,13 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("Users");
         Log.v("USERID", databaseReference.getKey());
 
+        //Rewards TextViews
+        Experience = findViewById(R.id.rewards_exp_st);
+        vExperience = findViewById(R.id.rewards_exp_stv);
+        Resources = findViewById(R.id.rewards_res_st);
+        vResources = findViewById(R.id.rewards_res_stv);
+        RewardsAcquired = findViewById(R.id.rewards_acquired_st);
+
         time_button1 = findViewById(R.id.storage_button_1);
         time_button2 = findViewById(R.id.storage_button_2);
         time_button3 = findViewById(R.id.storage_button_3);
@@ -89,6 +108,11 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         mTextViewCountDownStorage = findViewById(R.id.text_view_countdown_timed_storage);
 
         User = new UserGameInfo();
+        m1 = new StorageTimedMission1();
+        m2 = new StorageTimedMission2();
+        m3 = new StorageTimedMission3();
+
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             Double experience, resources;
@@ -138,8 +162,8 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         //Mission
         start_timed_mission_button.setOnClickListener(view -> {
             rewardsCollectedStorage = false;
+            mTextViewCountDownStorage.setVisibility(View.VISIBLE);
             if (mTimeRunningStorage) {
-
             } else {
                 startTimerStorage();
             }
@@ -149,7 +173,6 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
             FirebaseUser user = mAuth.getCurrentUser();
             if (user != null) {
                 if (mStartTimeInMillisStorage == 60000) {
-                    StorageTimedMission1 m1 = new StorageTimedMission1();
                     User.addTimedMissionRewardsStorage(m1.getRes_1(), m1.getExp_1());
                     updateDataToFirebase();
 
@@ -158,7 +181,6 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
 
 
                 } else if (mStartTimeInMillisStorage == 120000) {
-                    StorageTimedMission2 m2 = new StorageTimedMission2();
                     User.addTimedMissionRewardsStorage(m2.getRes_2(), m2.getExp_2());
                     updateDataToFirebase();
 
@@ -166,7 +188,6 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                 } else {
-                    StorageTimedMission3 m3 = new StorageTimedMission3();
                     User.addTimedMissionRewardsStorage(m3.getRes_3(), m3.getExp_3());
                     updateDataToFirebase();
 
@@ -181,9 +202,11 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
 
+            mTextViewCountDownStorage.setVisibility(View.INVISIBLE);
             rewardsCollectedStorage = true;
             resetTimerStorage();
             updateLayoutVIS();
+            updateTextViewINVIS();
 
         });
 
@@ -196,6 +219,7 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
 
     private void setTimeStorage(long milliseconds){
         mStartTimeInMillisStorage = milliseconds;
+        setTextView();
         resetTimerStorage();
     }
 
@@ -212,6 +236,7 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
             public void onFinish() {
                 mTimeRunningStorage = false;
                 updateButtonsStorage();
+                updateTextViewVIS();
             }
         }.start();
 
@@ -237,23 +262,29 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         if(mTimeRunningStorage) {
             start_timed_mission_button.setVisibility(View.INVISIBLE);
             back_to_missions_button.setVisibility(View.INVISIBLE);
+            mTextViewCountDownStorage.setVisibility(View.VISIBLE);
         }
         else {
             start_timed_mission_button.setVisibility(View.VISIBLE);
             back_to_missions_button.setVisibility(View.VISIBLE);
+            mTextViewCountDownStorage.setVisibility(View.INVISIBLE);
             if(mTimeLeftInMillisStorage < 1000) {
                 start_timed_mission_button.setVisibility(View.INVISIBLE);
                 back_to_missions_button.setVisibility(View.INVISIBLE);
+                mTextViewCountDownStorage.setVisibility(View.VISIBLE);
             }
             else {
                 start_timed_mission_button.setVisibility(View.VISIBLE);
+                mTextViewCountDownStorage.setVisibility(View.VISIBLE);
             }
 
             if(mTimeLeftInMillisStorage < mStartTimeInMillisStorage) {
                 collect_timed_rewards_button.setVisibility(View.VISIBLE);
+                mTextViewCountDownStorage.setVisibility(View.INVISIBLE);
             }
             else {
                 collect_timed_rewards_button.setVisibility(View.INVISIBLE);
+                mTextViewCountDownStorage.setVisibility(View.VISIBLE);
             }
         }
     }
@@ -262,16 +293,20 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         if(mTimeRunningStorage)
         {
             updateLayoutINVIS();
+            updateTextViewINVIS();
         }
         else
         {
+            updateTextViewVIS();
             if(rewardsCollectedStorage)
             {
                 updateLayoutVIS();
+                updateTextViewINVIS();
             }
             else
             {
                 updateLayoutINVIS();
+                updateTextViewVIS();
             }
         }
     }
@@ -290,6 +325,43 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         layout_m.setVisibility(View.INVISIBLE);
     }
 
+    private void updateTextViewVIS(){
+        RewardsAcquired.setVisibility(View.VISIBLE);
+
+        vResources.setVisibility(View.VISIBLE);
+        Resources.setVisibility(View.VISIBLE);
+        vExperience.setVisibility(View.VISIBLE);
+        Experience.setVisibility(View.VISIBLE);
+    }
+
+    private void updateTextViewINVIS(){
+        RewardsAcquired.setVisibility(View.INVISIBLE);
+
+        vResources.setVisibility(View.INVISIBLE);
+        Resources.setVisibility(View.INVISIBLE);
+        vExperience.setVisibility(View.INVISIBLE);
+        Experience.setVisibility(View.INVISIBLE);
+    }
+
+    private void setTextView(){
+
+        if (mStartTimeInMillisStorage == 60000) {
+            res = (long)(m1.getRes_1());
+            exp = (long)(m1.getExp_1());
+        } else if (mStartTimeInMillisStorage == 120000) {
+            res = (long)(m2.getRes_2());
+            exp = (long)(m2.getExp_2());
+        } else {
+            res = (long)(m3.getRes_3());
+            exp = (long)(m3.getExp_3());
+        }
+        String expString = String.valueOf(res);
+        String resString = String.valueOf(exp);
+
+        vExperience.setText(expString);
+        vResources.setText(resString);
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -302,6 +374,9 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         editorStorage.putBoolean("timerRunningStorage", mTimeRunningStorage);
         editorStorage.putBoolean("rewardsCollectedStorage", rewardsCollectedStorage);
         editorStorage.putLong("endTimeStorage", mEndTimeStorage);
+
+        editorStorage.putLong("resRew", res);
+        editorStorage.putLong("expRew", exp);
 
         editorStorage.apply();
 
@@ -322,10 +397,13 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
 
         mTimeRunningStorage = prefsStorage.getBoolean("timerRunningStorage", false);
         rewardsCollectedStorage = prefsStorage.getBoolean("rewardsCollectedStorage", false);
+        res= prefsStorage.getLong("resRew",0);
+        exp= prefsStorage.getLong("expRew",0);
 
         updateCountDownTextStorage();
         updateButtonsStorage();
         updateLayoutStorage();
+        setTextView();
 
         if (mTimeRunningStorage) {
             mEndTimeStorage = prefsStorage.getLong("endTimeStorage", 0);

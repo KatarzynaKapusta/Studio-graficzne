@@ -1,18 +1,25 @@
 package com.example.studiograficzne;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,6 +69,15 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
     private long res, exp;
 
     private int levelCounterStorage =0, matchedCounterStorage =0;
+
+    //TextView Rewards
+    private String expString ="0", resString="0";
+    private TextView Experience;
+    private TextView vExperience;
+    private TextView Resources;
+    private TextView vResources;
+    private TextView RewardsAcquired;
+
     //DATABASE
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -73,6 +89,13 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magazyn_match_missions);
+
+        //Rewards TextViews
+        Experience = findViewById(R.id.rewards_exp_sm);
+        vExperience = findViewById(R.id.rewards_exp_smv);
+        Resources = findViewById(R.id.rewards_res_sm);
+        vResources = findViewById(R.id.rewards_res_smv);
+        RewardsAcquired = findViewById(R.id.rewards_acquired_sm);
 
         //Layout
         layout1 = findViewById(R.id.mission1_layout_s);
@@ -116,6 +139,107 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
 
 
         User = new UserGameInfo();
+
+        //Mission 2 - match buttons
+        sm211 = findViewById(R.id.match_s211);
+        sm212 = findViewById(R.id.no_match_s212);
+        sm213 = findViewById(R.id.no_match_s213);
+        sm214 = findViewById(R.id.no_match_s214);
+        sm215 = findViewById(R.id.no_match_s215);
+        sm216 = findViewById(R.id.no_match_s216);
+
+        sm221 = findViewById(R.id.match_s221);
+        sm222 = findViewById(R.id.no_match_s222);
+        sm223 = findViewById(R.id.no_match_s223);
+        sm224 = findViewById(R.id.no_match_s224);
+        sm225 = findViewById(R.id.no_match_s225);
+        sm226 = findViewById(R.id.no_match_s226);
+
+        sm231 = findViewById(R.id.match_s231);
+        sm232 = findViewById(R.id.no_match_s232);
+        sm233 = findViewById(R.id.no_match_s233);
+        sm234 = findViewById(R.id.no_match_s234);
+        sm235 = findViewById(R.id.no_match_s235);
+        sm236 = findViewById(R.id.no_match_s236);
+
+        //Mission 2 - images
+        Img1Mission2 = findViewById(R.id.sm2_img21);
+        Img2Mission2 = findViewById(R.id.sm2_img22);
+        Img3Mission2 = findViewById(R.id.sm2_img23);
+
+        //Mission 3 - match buttons
+        sm311 = findViewById(R.id.match_s311);
+        sm312 = findViewById(R.id.no_match_s312);
+        sm313 = findViewById(R.id.no_match_s313);
+        sm314 = findViewById(R.id.no_match_s314);
+        sm315 = findViewById(R.id.no_match_s315);
+        sm316 = findViewById(R.id.no_match_s316);
+        sm317 = findViewById(R.id.no_match_s317);
+        sm318 = findViewById(R.id.no_match_s318);
+        sm319 = findViewById(R.id.no_match_s319);
+
+        sm321 = findViewById(R.id.match_s321);
+        sm322 = findViewById(R.id.no_match_s322);
+        sm323 = findViewById(R.id.no_match_s323);
+        sm324 = findViewById(R.id.no_match_s324);
+        sm325 = findViewById(R.id.no_match_s325);
+        sm326 = findViewById(R.id.no_match_s326);
+        sm327 = findViewById(R.id.no_match_s327);
+        sm328 = findViewById(R.id.no_match_s328);
+        sm329 = findViewById(R.id.no_match_s329);
+
+        sm331 = findViewById(R.id.match_s331);
+        sm332 = findViewById(R.id.no_match_s332);
+        sm333 = findViewById(R.id.no_match_s333);
+        sm334 = findViewById(R.id.no_match_s334);
+        sm335 = findViewById(R.id.no_match_s335);
+        sm336 = findViewById(R.id.no_match_s336);
+        sm337 = findViewById(R.id.no_match_s337);
+        sm338 = findViewById(R.id.no_match_s338);
+        sm339 = findViewById(R.id.no_match_s339);
+
+        //Mission 3 - images
+        Img1Mission3 = findViewById(R.id.sm3_img31);
+        Img2Mission3 = findViewById(R.id.sm3_img32);
+        Img3Mission3 = findViewById(R.id.sm3_img33);
+
+        //Database
+        mAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
+        databaseReference = firebaseDatabase.getReference("Users");
+        Log.v("USERID", databaseReference.getKey());
+
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+
+
+
+        //Reading database
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            Double res, experience;
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot keyId: dataSnapshot.getChildren()) {
+                    if (keyId.child("UserInfo").child("email").getValue().equals(email))
+                    {
+                        experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
+                        res = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
+
+                        break;
+                    }
+                }
+                User.setExperience(experience);
+                User.setResources(res);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        //End of reading database
 
 
 
@@ -165,35 +289,37 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
         collect_match_rewards_button.setOnClickListener(view -> {
             if(SMissionChosen1)
             {
-                double resR = Double.longBitsToDouble(res);
-                double expR = Double.longBitsToDouble(exp);
+                double resR=(double)(res);
+                double expR=(double)(exp);
                 User.addMatchMissionRewardsStorage(resR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getResources());
             }
             else if(SMissionChosen2)
             {
-                double resR=Double.longBitsToDouble(res);
-                double expR=Double.longBitsToDouble(exp);
+                double resR=(double)(res);
+                double expR=(double)(exp);
                 User.addMatchMissionRewardsStorage(resR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getResources());
             }
             else
             {
-                double resR=Double.longBitsToDouble(res);
-                double expR=Double.longBitsToDouble(exp);
+                double resR=(double)(res);
+                double expR=(double)(exp);
                 User.addMatchMissionRewardsStorage(resR, expR);
                 System.out.println(User.getExperience());
                 System.out.println(User.getResources());
             }
-            //updateDataToFirebase();
+            updateDataToFirebase();
 
             Toast.makeText(activity_magazyn_match_missions.this, "Przyznano nagrody",
                     Toast.LENGTH_SHORT).show();
             levelCounterStorage = 0;
             matchedCounterStorage = 0;
             rewardsCollectedMatchStorage = true;
+
+            updateTextView();
             updateButtonsStart();
             updateLayoutVIS();
         });
@@ -244,334 +370,369 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
         sm17.setOnClickListener(view -> {
             levelCounterStorage++;
             m1.HowManyMatched(matchedCounterStorage);
-            res = Double.doubleToLongBits(m1.getSm_res()) ;
-            exp = Double.doubleToLongBits(m1.getSm_exp());
+            res = (long)(m1.getSm_res()) ;
+            exp = (long)(m1.getSm_exp());
+
+
             updateButtonsMission1(levelCounterStorage);
-            rewardsCollectedMatchStorage = false;
         });
 
         sm18.setOnClickListener(view -> {
             levelCounterStorage++;
             m1.HowManyMatched(matchedCounterStorage);
-            res = Double.doubleToLongBits(m1.getSm_res()) ;
-            exp = Double.doubleToLongBits(m1.getSm_exp());
+            res = (long)(m1.getSm_res()) ;
+            exp = (long)(m1.getSm_exp());
+
+
             updateButtonsMission1(levelCounterStorage);
-            rewardsCollectedMatchStorage = false;
         });
 
         sm19.setOnClickListener(view -> {
             levelCounterStorage++;
             matchedCounterStorage++;
             m1.HowManyMatched(matchedCounterStorage);
-            res = Double.doubleToLongBits(m1.getSm_res()) ;
-            exp = Double.doubleToLongBits(m1.getSm_exp());
+            res = (long)(m1.getSm_res()) ;
+            exp = (long)(m1.getSm_exp());
+
+
             updateButtonsMission1(levelCounterStorage);
-            rewardsCollectedMatchStorage = false;
+        });
+
+        ////////////////////////////////////////
+        //Mission 2 - level 1
+        sm211.setOnClickListener(view -> {
+            levelCounterStorage++;
+            matchedCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
 
         });
 
-//        ////////////////////////////////////////
-//        //Mission 2 - level 1
-//        sm211.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            matchedCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//
-//        });
-//
-//        sm212.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm213.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm214.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm215.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm216.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        //Mission 2 - level 2
-//        sm221.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            matchedCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm222.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm223.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm224.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm225.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        sm226.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission2(levelCounterStorage);
-//        });
-//
-//        //Mission 2 - level 3
-//        sm231.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            matchedCounterStorage++;
-//            m2.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m2.getSm_res()) ;
-//            exp = Double.doubleToLongBits(m2.getSm_exp());
-//            updateButtonsMission2(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm232.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m2.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m2.getSm_res()) ;
-//            exp = Double.doubleToLongBits(m2.getSm_exp());
-//            updateButtonsMission2(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm233.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m2.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m2.getSm_res()) ;
-//            exp = Double.doubleToLongBits(m2.getSm_exp());
-//            updateButtonsMission2(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm234.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m2.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m2.getSm_res()) ;
-//            exp = Double.doubleToLongBits(m2.getSm_exp());
-//            updateButtonsMission2(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm235.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m2.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m2.getSm_res()) ;
-//            exp = Double.doubleToLongBits(m2.getSm_exp());
-//            updateButtonsMission2(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm236.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m2.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m2.getSm_res()) ;
-//            exp = Double.doubleToLongBits(m2.getSm_exp());
-//            updateButtonsMission2(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
+        sm212.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
 
-//        ///////////////////
-//        //Mission  3 - level 1
-//
-//        sm311.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            matchedCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm312.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm313.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm314.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm315.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm316.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm317.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm318.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm319.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        //Mission 3 - level 2
-//        sm321.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            matchedCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm322.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm323.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm324.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm325.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm326.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm327.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm328.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        sm329.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            updateButtonsMission3(levelCounterStorage);
-//        });
-//
-//        //Mission  3 - level 3
-//
-//        sm331.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            matchedCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm332.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm333.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm334.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm335.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm336.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm337.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm338.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
-//
-//        sm339.setOnClickListener(view -> {
-//            levelCounterStorage++;
-//            m3.HowManyMatched(matchedCounterStorage);
-//            res = Double.doubleToLongBits(m3.getSm_res());
-//            exp = Double.doubleToLongBits(m3.getSm_exp());
-//            updateButtonsMission3(levelCounterStorage);
-//            rewardsCollectedMatchStorage = false;
-//        });
+        sm213.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
 
+        sm214.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm215.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm216.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        //Mission 2 - level 2
+        sm221.setOnClickListener(view -> {
+            levelCounterStorage++;
+            matchedCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm222.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm223.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm224.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm225.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm226.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        //Mission 2 - level 3
+        sm231.setOnClickListener(view -> {
+            levelCounterStorage++;
+            matchedCounterStorage++;
+            m2.HowManyMatched(matchedCounterStorage);
+            res = (long)(m2.getSm_res());
+            exp = (long)(m2.getSm_exp());
+
+            updateButtonsMission2(levelCounterStorage);
+
+        });
+
+        sm232.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m2.HowManyMatched(matchedCounterStorage);
+            res = (long)(m2.getSm_res());
+            exp = (long)(m2.getSm_exp());
+            updateButtonsMission2(levelCounterStorage);
+
+
+        });
+
+        sm233.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m2.HowManyMatched(matchedCounterStorage);
+            res = (long)(m2.getSm_res());
+            exp = (long)(m2.getSm_exp());
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm234.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m2.HowManyMatched(matchedCounterStorage);
+            res = (long)(m2.getSm_res());
+            exp = (long)(m2.getSm_exp());
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        sm235.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m2.HowManyMatched(matchedCounterStorage);
+            res = (long)(m2.getSm_res());
+            exp = (long)(m2.getSm_exp());
+            updateButtonsMission2(levelCounterStorage);
+
+
+        });
+
+        sm236.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m2.HowManyMatched(matchedCounterStorage);
+            res = (long)(m2.getSm_res());
+            exp = (long)(m2.getSm_exp());
+            updateButtonsMission2(levelCounterStorage);
+        });
+
+        ///////////////////
+        //Mission  3 - level 1
+
+        sm311.setOnClickListener(view -> {
+            levelCounterStorage++;
+            matchedCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm312.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm313.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm314.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm315.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm316.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm317.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm318.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm319.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        //Mission 3 - level 2
+        sm321.setOnClickListener(view -> {
+            levelCounterStorage++;
+            matchedCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm322.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm323.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm324.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm325.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm326.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm327.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm328.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm329.setOnClickListener(view -> {
+            levelCounterStorage++;
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        //Mission  3 - level 3
+
+        sm331.setOnClickListener(view -> {
+            levelCounterStorage++;
+            matchedCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+
+        });
+
+        sm332.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+        });
+
+        sm333.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+
+        });
+
+        sm334.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+
+        });
+
+        sm335.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+
+        });
+
+        sm336.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+
+        });
+
+        sm337.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+        });
+
+        sm338.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+
+        });
+
+        sm339.setOnClickListener(view -> {
+            levelCounterStorage++;
+            m3.HowManyMatched(matchedCounterStorage);
+            res = (long)(m3.getSm_res());
+            exp = (long)(m3.getSm_exp());
+            updateButtonsMission3(levelCounterStorage);
+
+        });
+
+    }
+
+    private void updateTextView(){
+        if(rewardsCollectedMatchStorage)
+        {
+            RewardsAcquired.setVisibility(View.INVISIBLE);
+
+            vResources.setVisibility(View.INVISIBLE);
+            Resources.setVisibility(View.INVISIBLE);
+            vExperience.setVisibility(View.INVISIBLE);
+            Experience.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            RewardsAcquired.setVisibility(View.VISIBLE);
+
+            vResources.setVisibility(View.VISIBLE);
+            Resources.setVisibility(View.VISIBLE);
+            vExperience.setVisibility(View.VISIBLE);
+            Experience.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void setTextView(long resRew, long expRew){
+        String expString = String.valueOf(resRew);
+        String resString = String.valueOf(expRew);
+        vExperience.setText(expString);
+        vResources.setText(resString);
     }
 
     private void updateLayoutMatch(){
@@ -613,7 +774,7 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
         }
     }
 
-    private void updateButtonsMission1(int level){
+    private void updateButtonsMission1(int level) {
         if(level==1)
         {
             back_to_matched_missions_button.setVisibility(View.INVISIBLE);
@@ -655,6 +816,9 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
             sm18.setVisibility(View.INVISIBLE);
             sm19.setVisibility(View.INVISIBLE);
 
+            rewardsCollectedMatchStorage = false;
+            updateTextView();
+            setTextView(res, exp);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
     }
@@ -715,12 +879,14 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
             sm235.setVisibility(View.INVISIBLE);
             sm236.setVisibility(View.INVISIBLE);
 
+            rewardsCollectedMatchStorage = false;
+            updateTextView();
+            setTextView(res, exp);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
     }
 
-    private void updateButtonsMission3(int level)
-    {
+    private void updateButtonsMission3(int level) {
         if(level==1) {
             back_to_matched_missions_button.setVisibility(View.INVISIBLE);
             start_matched_mission_button.setVisibility(View.INVISIBLE);
@@ -794,57 +960,63 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
             sm338.setVisibility(View.INVISIBLE);
             sm339.setVisibility(View.INVISIBLE);
 
+            rewardsCollectedMatchStorage = false;
+            updateTextView();
+            setTextView(res, exp);
             collect_match_rewards_button.setVisibility(View.VISIBLE);
         }
     }
 
 
-//    //
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        SharedPreferences prefsStorageMatch = getSharedPreferences("prefsStorageMatch", MODE_PRIVATE);
-//        SharedPreferences.Editor editorStorageMatch = prefsStorageMatch.edit();
-//
-//        editorStorageMatch.putLong("resourcesRewards", res);
-//        editorStorageMatch.putLong("expRewards", exp);
-//        editorStorageMatch.putBoolean("rewardsCollectedMatchStorage", rewardsCollectedMatchStorage);
-//        editorStorageMatch.putBoolean("SMissionChosen1", SMissionChosen1);
-//        editorStorageMatch.putBoolean("SMissionChosen2", SMissionChosen2);
-//        editorStorageMatch.putBoolean("SMissionChosen3", SMissionChosen3);
-//
-//        editorStorageMatch.apply();
-//    }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//
-//        SharedPreferences prefsStorageMatch = getSharedPreferences("prefsStorageMatch", MODE_PRIVATE);
-//
-//        res = prefsStorageMatch.getLong("resourcesRewards", 0);
-//        exp = prefsStorageMatch.getLong("expRewards", 0);
-//        rewardsCollectedMatchStorage = prefsStorageMatch.getBoolean("rewardsCollectedMatchStorage", false);
-//        SMissionChosen1 = prefsStorageMatch.getBoolean("SMissionChosen1", false);
-//        SMissionChosen2 = prefsStorageMatch.getBoolean("SMissionChosen2", false);
-//        SMissionChosen3 = prefsStorageMatch.getBoolean("SMissionChosen3", false);
-//
-//        updateLayoutMatch();
-//        updateButtonsStart();
-//
-//    }
-//
-//    //Updating data to firebase
-//    private void updateDataToFirebase() {
-//
-//        FirebaseUser user = mAuth.getCurrentUser();
-//
-//        if(user!=null) {
-//            Map<String, Object> childUpdates = new HashMap<>();
-//            childUpdates.put("experience", User.getExperience());
-//            childUpdates.put("resources", User.getResources());
-//
-//            databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
-//        }
-//    }
+    //
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences prefsStorageMatch = getSharedPreferences("prefsStorageMatch", MODE_PRIVATE);
+        SharedPreferences.Editor editorStorageMatch = prefsStorageMatch.edit();
+
+        editorStorageMatch.putLong("resourcesRewards", res);
+        editorStorageMatch.putLong("expRewards", exp);
+        editorStorageMatch.putBoolean("rewardsCollectedMatchStorage", rewardsCollectedMatchStorage);
+        editorStorageMatch.putBoolean("SMissionChosen1", SMissionChosen1);
+        editorStorageMatch.putBoolean("SMissionChosen2", SMissionChosen2);
+        editorStorageMatch.putBoolean("SMissionChosen3", SMissionChosen3);
+
+        editorStorageMatch.apply();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences prefsStorageMatch = getSharedPreferences("prefsStorageMatch", MODE_PRIVATE);
+
+        res = prefsStorageMatch.getLong("resourcesRewards", 0);
+        exp = prefsStorageMatch.getLong("expRewards", 0);
+
+        rewardsCollectedMatchStorage = prefsStorageMatch.getBoolean("rewardsCollectedMatchStorage", false);
+        SMissionChosen1 = prefsStorageMatch.getBoolean("SMissionChosen1", false);
+        SMissionChosen2 = prefsStorageMatch.getBoolean("SMissionChosen2", false);
+        SMissionChosen3 = prefsStorageMatch.getBoolean("SMissionChosen3", false);
+
+        updateTextView();
+        setTextView(res, exp);
+        updateLayoutMatch();
+        updateButtonsStart();
+
+    }
+
+    //Updating data to firebase
+    private void updateDataToFirebase() {
+
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if(user!=null) {
+            Map<String, Object> childUpdates = new HashMap<>();
+            childUpdates.put("experience", User.getExperience());
+            childUpdates.put("resources", User.getResources());
+
+            databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+        }
+    }
 }

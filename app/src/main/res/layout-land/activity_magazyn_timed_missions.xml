@@ -7,6 +7,31 @@
     tools:context=".activity_magazyn_timed_missions"
     android:background="@drawable/storage_background">
 
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mission_storage_background"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="50%"
+        app:layout_marginLeftPercent="37%"
+        app:layout_marginRightPercent="37%"
+        app:layout_marginTopPercent="5%"
+        app:layout_widthPercent="30%">
+
+        <TextView
+            android:id="@+id/magazyn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/magazyn"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="8%" />
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
     <!-- Misja 1 -->
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:id="@+id/mission1_layout_storage"
@@ -40,7 +65,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Twój współpracownik zgubił w magazynie ważne dokumenty pomóż mu je odnaleźć."
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -49,6 +74,23 @@
             app:layout_marginLeftPercent="5%"
             app:layout_marginRightPercent="5%"
             app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CZAS: 1 min"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="60%"
             app:layout_widthPercent="90%">
 
         </TextView>
@@ -106,7 +148,7 @@
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textAlignment="center"
-            android:text="Misja"
+            android:text="Przyjechała dostawa wkładów do drukarek 3D. Rozładuj dostawę i wymień wkłady."
             app:layout_widthPercent="90%"
             app:layout_heightPercent="50%"
             app:layout_marginLeftPercent="5%"
@@ -115,6 +157,24 @@
             app:layout_marginTopPercent="30%">
 
         </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CZAS: 2 min"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="60%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/storage_button_2"
             android:layout_width="wrap_content"
@@ -164,7 +224,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Misja"
+            android:text="Brak porządku może utrudnić pracę. Skategoryzuj stare projekty Twojego studia alfabetycznie."
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -173,6 +233,23 @@
             app:layout_marginLeftPercent="5%"
             app:layout_marginRightPercent="5%"
             app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CZAS: 3 min"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="30%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="60%"
             app:layout_widthPercent="90%">
 
         </TextView>
@@ -202,9 +279,10 @@
         android:background="@drawable/mission_storage_background"
         android:visibility="invisible"
         app:layout_marginBottomPercent="5%"
-        app:layout_marginLeftPercent="25%"
-        app:layout_marginRightPercent="25%"
-        app:layout_marginTopPercent="25%">
+        app:layout_marginLeftPercent="20%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="5%"
+        tools:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -229,14 +307,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/timer_start"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="40dp"
+            android:visibility="visible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="40%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="35%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="21%"
+            app:layout_widthPercent="30%"
             tools:ignore="InvalidId">
 
         </TextView>
@@ -245,15 +325,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Musisz jeszcze chwilę poczekać.\nTwoja misja za niedługo się skończy.\n"
+            android:text="@string/timed_text_mission"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="18dp"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
             app:layout_marginLeftPercent="5%"
             app:layout_marginRightPercent="5%"
-            app:layout_marginTopPercent="35%"
+            app:layout_marginTopPercent="28%"
             app:layout_widthPercent="100%"
             tools:ignore="InvalidId">
 
@@ -270,7 +350,10 @@
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="50%"></androidx.appcompat.widget.AppCompatButton>
+            app:layout_widthPercent="50%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/back_to_missions_choice_storage"
@@ -283,7 +366,8 @@
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="50%">
+            app:layout_widthPercent="50%"
+            tools:visibility="invisible">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -299,8 +383,100 @@
             app:layout_marginLeftPercent="25%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="50%">
+            app:layout_widthPercent="50%"
+            tools:visibility="visible">
 
         </androidx.appcompat.widget.AppCompatButton>
+
+        <!--ILOSC ZDOBYDYCH NAGROD-->
+        <TextView
+            android:id="@+id/rewards_acquired_st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            android:text="Zdobyte nagrody:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="43%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/rewards_res_st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="Materiały:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="50%"
+            app:layout_marginTopPercent="52%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/rewards_exp_st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="Doświadczenie:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="40%"
+            app:layout_marginTopPercent="60%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/rewards_res_stv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="50%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="52%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/rewards_exp_stv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="50%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="60%"
+            app:layout_widthPercent="100%"
+            tools:visibility="visible" />
+
+
+
     </androidx.percentlayout.widget.PercentRelativeLayout>
 </androidx.percentlayout.widget.PercentRelativeLayout>
