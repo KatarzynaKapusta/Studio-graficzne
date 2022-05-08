@@ -2,11 +2,13 @@ package com.example.studiograficzne;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -14,6 +16,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +36,10 @@ public class activity_meblowy extends AppCompatActivity {
 
     // List for levels
     private final List<Double> lvlList = new ArrayList<>();
+
+    // Fragments
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +61,18 @@ public class activity_meblowy extends AppCompatActivity {
         expTxtView = findViewById(R.id.expBarTextView);
         moneyTxtView = findViewById(R.id.moneyBarTextView);
         resTxtView = findViewById(R.id.resBarTextView);
+
+        // Fragments
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new plants_fragment(), "PLANTS");
+        adapter.addFragment(new tables_fragment(), "TABLES");
+        adapter.addFragment(new floor_fragment(), "FLOOR");
+        viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.tabView);
+        tabLayout.setupWithViewPager(viewPager);
+        // End of fragments
 
         // Reading information from the database if user is logged
         if (currentUser != null) {
@@ -154,4 +175,32 @@ public class activity_meblowy extends AppCompatActivity {
         }
     }
 
+    class ViewPagerAdapter extends FragmentPagerAdapter{
+        private final List<Fragment> fragmentList = new ArrayList<>();
+        private final List<String> fragmentTitle = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager fragmentManager){
+            super(fragmentManager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title){
+            fragmentList.add(fragment);
+            fragmentTitle.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position){
+            return fragmentTitle.get(position);
+        }
+    }
 }

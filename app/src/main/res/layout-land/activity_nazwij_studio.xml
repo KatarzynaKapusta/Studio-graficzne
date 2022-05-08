@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_logowanie"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#fff"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/rejestracja_logo"
+        android:contentDescription="@string/logo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zaczynamy"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/najpierw_nadaj_nazw_swojemu_studiu"
+        android:textSize="15sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_outline_house_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/moje_studio"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/studioNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/setStudioNameButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rozpocznij_przygod"
+        android:background="#2e2e48"
+        app:backgroundTint="#2e2e48"
+        android:textColor="#fff"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

@@ -67,16 +67,16 @@
 
     <ImageButton
         android:id="@+id/meblowy"
-        android:background="@drawable/button_meblowy"
-        tools:ignore="SpeakableTextPresentCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_widthPercent="70%"
+        android:background="@drawable/button_meblowy"
         app:layout_heightPercent="55%"
-        app:layout_marginTopPercent="22%"
         app:layout_marginBottomPercent="15%"
+        app:layout_marginLeftPercent="72%"
         app:layout_marginRightPercent="13%"
-        app:layout_marginLeftPercent="72%"/>
+        app:layout_marginTopPercent="22%"
+        app:layout_widthPercent="70%"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/menu"

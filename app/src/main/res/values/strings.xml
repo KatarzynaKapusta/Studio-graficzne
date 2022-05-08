@@ -46,4 +46,9 @@
     <string name="match_mission_text">Wybierz obrazek pasujący do wzorca podanego poniżej.</string>
     <string name="wybierz">Wybierz</string>
     <string name="loggedOutSucc">Wylogowano pomyślnie</string>
+    <string name="najpierw_nadaj_nazw_swojemu_studiu">Najpierw nadaj nazwę swojemu studiu</string>
+    <string name="zaczynamy">Zaczynamy!</string>
+    <string name="moje_studio">Moje studio</string>
+    <string name="rozpocznij_przygod">Dalej</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
