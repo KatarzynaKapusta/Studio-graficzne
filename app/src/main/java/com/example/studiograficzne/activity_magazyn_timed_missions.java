@@ -267,9 +267,7 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
             start_timed_mission_button.setVisibility(View.VISIBLE);
             back_to_missions_button.setVisibility(View.VISIBLE);
             mTextViewCountDownStorage.setVisibility(View.INVISIBLE);
-
-            if (mTimeLeftInMillisStorage < 1000)
-            {
+            if (mTimeLeftInMillisStorage < 1000){
                 start_timed_mission_button.setVisibility(View.INVISIBLE);
                 back_to_missions_button.setVisibility(View.INVISIBLE);
                 mTextViewCountDownStorage.setVisibility(View.VISIBLE);
