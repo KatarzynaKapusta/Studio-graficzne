@@ -10,10 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
-            android:name=".activity_bank_timed_missions"
+            android:name=".activity_studio_panel"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen"/>
+        <activity
+            android:name=".activity_studio_view"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".activity_magazyn_match_missions"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".activity_magazyn_timed_missions"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".activity_bank_timed_missions"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
         <activity
             android:name=".activity_bank_match_missions"
             android:exported="false"

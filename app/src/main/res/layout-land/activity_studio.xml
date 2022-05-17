@@ -1,18 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     tools:ignore="ExtraText"
     android:orientation="horizontal"
+    android:background="@drawable/studio_background"
     android:gravity="center">
 
-    <TextView
+    <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Studio">
+        android:background="@drawable/choice_studio_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="5%"
+        app:layout_marginRightPercent="55%"
+        app:layout_marginTopPercent="25%">
 
-    </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zobacz swoje studio"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="10%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="70%">
 
-</RelativeLayout>
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ulepszaj studio, zatrudniaj pracowników, kupuj ozdoby.
+Twoje studio będzie się zmieniać razem z ulepszeniami.
+Zaglądaj tu czasem i sprawdź co się zmieniło!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/studio_view_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pink_snow"
+            android:text="Przejdz do studia"
+            android:textColor="@color/black"
+            app:layout_heightPercent="30%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="60%">
+
+        </Button>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/choice_studio_background"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="55%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panel Studia"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="80px"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="15%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="70%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="W Panelu Studia znajdziesz możliwość zatrudniania nowych pracowników w zaleźności od poziomu studia.
+Dodatkowo możesz nadać tutaj nazwę swojego studia."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_heightPercent="50%"
+            app:layout_marginBottomPercent="25%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/studio_panel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pink_snow"
+            android:text="Otwórz panel studia"
+            android:textColor="@color/black"
+            app:layout_heightPercent="30%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="60%">
+
+        </Button>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+</androidx.percentlayout.widget.PercentRelativeLayout>
