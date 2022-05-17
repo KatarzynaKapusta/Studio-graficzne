@@ -17,24 +17,44 @@
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_outline_person_24.xml" value="0.259" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_person.xml" value="0.259" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/ic_security.xml" value="0.259" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/drawable/stats_icon_background.xml" value="0.366" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_bank.xml" value="0.33" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_bank_match_missions.xml" value="0.31040564373897706" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_bank_timed_missions.xml" value="0.3072916666666667" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_budowlany.xml" value="0.3072916666666667" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_logowanie.xml" value="0.33" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_magazyn.xml" value="0.31040564373897706" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_main.xml" value="0.25" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_menu.xml" value="0.3078125" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_main.xml" value="0.33" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_meblowy.xml" value="0.3364215402431963" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_menu.xml" value="0.33" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_nazwij_studio.xml" value="0.28125" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_rejestracja.xml" value="0.31040564373897706" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/activity_studio.xml" value="0.31040564373897706" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/fragment_floor_fragment.xml" value="0.31040564373897706" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/fragment_plants_fragment.xml" value="0.31040564373897706" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout-land/fragment_tables_fragment.xml" value="0.31040564373897706" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_logowanie.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_logowanie_new.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_magazyn.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_main.xml" value="0.24456521739130435" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_meblowy.xml" value="0.26721014492753625" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_menu.xml" value="0.2708333333333333" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_nazwij_studio.xml" value="0.26992753623188404" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_rejestracja.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_rejestracja_new.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_result_launcher1.xml" value="0.36666666666666664" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_settings.xml" value="0.33" />
         <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/activity_studio.xml" value="0.2708333333333333" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/fragment_floor_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/fragment_plants_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Projekt_IO/Studio-graficzne/app/src/main/res/layout/fragment_tables_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1155" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_bank.xml" value="0.30952380952380953" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_bank_match_missions.xml" value="0.3090277777777778" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_bank.xml" value="0.33" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_bank_match_missions.xml" value="0.5" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_bank_timed_missions.xml" value="0.33" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_magazyn.xml" value="0.33" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_magazyn_match_missions.xml" value="0.33" />

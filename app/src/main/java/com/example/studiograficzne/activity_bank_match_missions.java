@@ -21,7 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class activity_bank_match_missions extends AppCompatActivity {
@@ -81,6 +83,12 @@ public class activity_bank_match_missions extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
 
+    // Resources bars & database
+    private TextView lvlTxtView, expTxtView, moneyTxtView, resTxtView;
+    DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+    private String email;
+    private final List<Double> lvlList = new ArrayList<>();
+
     UserGameInfo User;
 
     @Override
@@ -94,6 +102,23 @@ public class activity_bank_match_missions extends AppCompatActivity {
         Money = findViewById(R.id.rewards_mon_bm);
         vMoney = findViewById(R.id.rewards_mon_bmv);
         RewardsAcquired = findViewById(R.id.rewards_acquired_bm);
+
+        // Getting email from current user if loogged
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            email = currentUser.getEmail();
+        }
+
+        // Db refereces
+        DatabaseReference userRef = rootRef.child("Users");
+        DatabaseReference lvlRef = rootRef.child("Levels");
+
+        // Resources bars
+        lvlTxtView = findViewById(R.id.lvlStarTextView);
+        expTxtView = findViewById(R.id.expBarTextView);
+        moneyTxtView = findViewById(R.id.moneyBarTextView);
+        resTxtView = findViewById(R.id.resBarTextView);
 
         //Layout
         layout1 = findViewById(R.id.mission1_layout_m);
@@ -205,36 +230,67 @@ public class activity_bank_match_missions extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("Users");
         Log.v("USERID", databaseReference.getKey());
 
-        Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
 
+        // Reading from database
+        if(currentUser!=null) {
+            userRef.addValueEventListener(new ValueEventListener() {
+                Double money, level, resources, experience, result;
+                String moneyString, resourcesString, experienceString;
 
-
-        //Reading database
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            Double money, experience;
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot keyId: dataSnapshot.getChildren()) {
-                    if (keyId.child("UserInfo").child("email").getValue().equals(email))
-                    {
-                        experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
-                        money = keyId.child("UserGameInfo").child("money").getValue(Double.class);
-
-                        break;
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot keyId : dataSnapshot.getChildren()) {
+                        if (keyId.child("UserInfo").child("email").getValue().equals(email)) {
+                            money = keyId.child("UserGameInfo").child("money").getValue(Double.class);
+                            moneyString = String.valueOf(money.intValue());
+                            level = keyId.child("UserGameInfo").child("level").getValue(Double.class);
+                            resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
+                            resourcesString = String.valueOf(resources.intValue());
+                            experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
+                            experienceString = String.valueOf(experience.intValue());
+                            break;
+                        }
                     }
+
+                    // Read from "Levels" branch in db
+                    lvlRef.addValueEventListener(new ValueEventListener() {
+                        Double exp;
+                        String levelString;
+
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot keyId : dataSnapshot.getChildren()) {
+                                exp = keyId.getValue(Double.class);
+                                lvlList.add(exp);
+                            }
+
+                            // Checking if level from db is correct and replacing it (if not correct)
+                            result = checkUserLevel(experience, level, lvlList);
+                            levelString = String.valueOf(result.intValue());
+                            lvlTxtView.setText(levelString);
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError error) {
+                            // Failed to read value
+                            Log.w(TAG, "Failed to read value.", error.toException());
+                        }
+                    }); // End of reading from "Levels" branch
+
+                    moneyTxtView.setText(moneyString);
+                    resTxtView.setText(resourcesString);
+                    expTxtView.setText(experienceString);
+                    User.setExperience(experience);
+                    User.setMoney(money);
                 }
-                User.setExperience(experience);
-                User.setMoney(money);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    // Failed to read value
+                    Log.w(TAG, "Failed to read value.", error.toException());
+                }
+            });
+        }
         //End of reading database
 
         //Mission Choice
@@ -632,6 +688,7 @@ public class activity_bank_match_missions extends AppCompatActivity {
             money = (long)(m3.getBm_money()) ;
             exp = (long)(m3.getBm_exp());
             updateButtonsMission3(levelCounter);
+            rewardsCollectedMatch = false;
         });
 
         bm335.setOnClickListener(view -> {
@@ -985,7 +1042,45 @@ public class activity_bank_match_missions extends AppCompatActivity {
             childUpdates.put("experience", User.getExperience());
             childUpdates.put("money", User.getMoney());
 
-            databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+            rootRef.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+        }
+    }
+
+    private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {
+        double localLvl = 0, lastLvlValue = lvlList.get(lvlList.size()-1);
+        int listSize = lvlList.size();
+
+        for (int i = 0; i < lvlList.size()-1 ; ) {
+            // If exp is greater than maximum lvl value in db
+            if (exp >= lastLvlValue) {
+                updateUserLvl((double) listSize);
+                lvlList.clear();
+                return (double) listSize;
+            }
+            if (exp >= lvlList.get(i) && exp < lvlList.get(i + 1)) {
+                localLvl = (double) i + 1;
+                break;
+            }
+            else {
+                i += 1;
+            }
+        }
+
+        if (lvl != localLvl) {
+            updateUserLvl(localLvl);
+        }
+
+        lvlList.clear();
+        return localLvl;
+    }
+
+    private void updateUserLvl(Double localLvl) {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            String uid = currentUser.getUid();
+            FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
+            rootRef = database.getReference("Users");
+            rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
         }
     }
 }

@@ -30,6 +30,9 @@
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
         <activity
+            android:name=".activity_nazwij_studio"
+            android:exported="false" />
+        <activity
             android:name=".activity_bank_timed_missions"
             android:exported="false"
             android:screenOrientation="landscape"

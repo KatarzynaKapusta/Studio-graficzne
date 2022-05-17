@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class activity_rejestracja extends AppCompatActivity {
 
     protected User_info userInfo;
     protected UserGameInfo userGameInfo;
+    protected UserStudioInfo userStudioInfo;
 
     private FirebaseAuth mAuth;
 
@@ -42,6 +44,7 @@ public class activity_rejestracja extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rejestracja);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         nicknameTextInputEditText = findViewById(R.id.regLoginInput);
         emailTextInputEditText = findViewById(R.id.regEmailInput);
@@ -54,6 +57,7 @@ public class activity_rejestracja extends AppCompatActivity {
         database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
         mAuth = FirebaseAuth.getInstance();
         userGameInfo = new UserGameInfo();
+        userStudioInfo = new UserStudioInfo();
 
         registerButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -146,10 +150,7 @@ public class activity_rejestracja extends AppCompatActivity {
         input.requestFocus();
     }
 
-    /**
-     * adding user information to database and redirect to login screen
-     * @param currentUser
-     */
+    // Adding user information to database and redirect to login screen
     public void updateUI(FirebaseUser currentUser) {
         FirebaseUser user2 = mAuth.getCurrentUser();
         String uid = user2.getUid();
@@ -158,7 +159,8 @@ public class activity_rejestracja extends AppCompatActivity {
         String keyid = mDatabase.push().getKey();
         mDatabase.child(uid).child("UserInfo").setValue(userInfo); //adding user info to database
         mDatabase.child(uid).child("UserGameInfo").setValue(userGameInfo);
-        Intent loginIntent = new Intent(this, MainActivity.class);
+        mDatabase.child(uid).child("UserStudioInfo").setValue(userStudioInfo);
+        Intent loginIntent = new Intent(this, activity_nazwij_studio.class);
         startActivity(loginIntent);
     }
 

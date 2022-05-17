@@ -11,7 +11,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import android.content.Intent;
 import android.util.Log;
-        import android.widget.ImageView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
         import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,12 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 public class activity_menu extends AppCompatActivity {
+
     private TextView nicknameTxtView, userIdTxtView, emailTxtView, studioNameTxtView, levelTxtView, moneyTxtView, resourcesTxtView;
     private ImageView userProfImgImageView;
+    private ImageButton editStudioNameBtn;
     private final String TAG = this.getClass().getName().toUpperCase();
-    private FirebaseDatabase database;
-    private DatabaseReference mDatabase;
-    private Map<String, String> userMap;
     private String email;
     private static final String USERS = "Users";
     private FirebaseAuth mAuth;
@@ -49,6 +51,7 @@ public class activity_menu extends AppCompatActivity {
         levelTxtView = findViewById(R.id.usrProfLevelTextView);
         moneyTxtView = findViewById(R.id.usrProfMoneyTextView);
         resourcesTxtView = findViewById(R.id.usrProfResourcesTextView);
+        editStudioNameBtn = findViewById(R.id.editStudioNameButton);
 
         userProfImgImageView = findViewById(R.id.usrProfUserImage);
 
@@ -63,7 +66,7 @@ public class activity_menu extends AppCompatActivity {
 
         // Read from the database
         userRef.addValueEventListener(new ValueEventListener() {
-            String nickname, mail, moneyString, levelString, resourcesString, uidString;
+            String nickname, mail, moneyString, levelString, resourcesString, uidString, studioName;
             Double money, level, resources;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -72,13 +75,13 @@ public class activity_menu extends AppCompatActivity {
                     {
                         nickname = keyId.child("UserInfo").child("nickname").getValue(String.class);
                         mail = keyId.child("UserInfo").child("email").getValue(String.class);
-
                         money = keyId.child("UserGameInfo").child("money").getValue(Double.class);
                         moneyString = String.valueOf(money);
                         level = keyId.child("UserGameInfo").child("level").getValue(Double.class);
                         levelString = String.valueOf(level);
                         resources = keyId.child("UserGameInfo").child("resources").getValue(Double.class);
                         resourcesString = String.valueOf(resources);
+                        studioName = keyId.child("UserStudioInfo").child("studioName").getValue(String.class);
 
                         break;
                     }
@@ -89,6 +92,7 @@ public class activity_menu extends AppCompatActivity {
                 moneyTxtView.setText(moneyString);
                 levelTxtView.setText(levelString);
                 resourcesTxtView.setText(resourcesString);
+                studioNameTxtView.setText(studioName);
             }
 
             @Override
@@ -97,5 +101,14 @@ public class activity_menu extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
+        editStudioNameBtn.setOnClickListener(view -> openActivityactivity_nazwij_studio());
+
+
     } //OnCreate end
+
+    private void openActivityactivity_nazwij_studio() {
+        Intent intent = new Intent(this, activity_nazwij_studio.class);
+        startActivity(intent);
+    }
 }

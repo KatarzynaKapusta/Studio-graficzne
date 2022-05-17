@@ -15,13 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_budowlany"
-        tools:ignore="SpeakableTextPresentCheck"
-        app:layout_widthPercent="70%"
         app:layout_heightPercent="55%"
-        app:layout_marginTopPercent="22%"
         app:layout_marginBottomPercent="15%"
+        app:layout_marginLeftPercent="8%"
         app:layout_marginRightPercent="77%"
-        app:layout_marginLeftPercent="8%" />
+        app:layout_marginTopPercent="22%"
+        app:layout_widthPercent="70%"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
     <ImageButton
@@ -29,13 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_bank"
-        tools:ignore="SpeakableTextPresentCheck"
-        app:layout_widthPercent="70%"
         app:layout_heightPercent="55%"
-        app:layout_marginTopPercent="22%"
         app:layout_marginBottomPercent="15%"
+        app:layout_marginLeftPercent="24%"
         app:layout_marginRightPercent="61%"
-        app:layout_marginLeftPercent="24%" />
+        app:layout_marginTopPercent="22%"
+        app:layout_widthPercent="70%"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
     <ImageButton
@@ -67,16 +67,16 @@
 
     <ImageButton
         android:id="@+id/meblowy"
-        android:background="@drawable/button_meblowy"
-        tools:ignore="SpeakableTextPresentCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_widthPercent="70%"
+        android:background="@drawable/button_meblowy"
         app:layout_heightPercent="55%"
-        app:layout_marginTopPercent="22%"
         app:layout_marginBottomPercent="15%"
+        app:layout_marginLeftPercent="72%"
         app:layout_marginRightPercent="13%"
-        app:layout_marginLeftPercent="72%"/>
+        app:layout_marginTopPercent="22%"
+        app:layout_widthPercent="70%"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/menu"
@@ -130,46 +130,64 @@
             android:id="@+id/expBarTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/exp_bar"
-            android:gravity="center_horizontal"
+            android:autoSizeMaxTextSize="14dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="@drawable/stats_icon_background"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="2.5dp"
             android:text="exp"
             android:textColor="@color/black"
-            android:textSize="14dp"
             android:textStyle="bold"
             app:layout_heightPercent="65%"
-            app:layout_marginBottomPercent="0%"
-            app:layout_marginLeftPercent="3%"
+            app:layout_marginLeftPercent="3.5%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="29%"
             app:layout_widthPercent="10%" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lvl_star"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="6%" />
 
         <TextView
             android:id="@+id/lvlStarTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/lvl_star"
+            android:autoSizeTextType="uniform"
             android:text="lvl"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_heightPercent="100%"
-            app:layout_widthPercent="6%" />
+            app:layout_heightPercent="50%"
+            app:layout_marginLeftPercent="1.4%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="3%" />
+
 
         <!--        dwa-->
         <TextView
             android:id="@+id/moneyBarTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/exp_bar"
-            android:gravity="center_horizontal"
+            android:autoSizeMaxTextSize="14dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="@drawable/stats_icon_background"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="2.5dp"
             android:text="mani"
             android:textColor="@color/black"
             android:textSize="14dp"
             android:textStyle="bold"
             app:layout_heightPercent="65%"
             app:layout_marginBottomPercent="0%"
-            app:layout_marginLeftPercent="17.6%"
+            app:layout_marginLeftPercent="17.4%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="29%"
             app:layout_widthPercent="10%" />
@@ -192,15 +210,19 @@
             android:id="@+id/resBarTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/exp_bar"
-            android:gravity="center_horizontal"
+            android:autoSizeMaxTextSize="14dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="@drawable/stats_icon_background"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="2.5dp"
             android:text="tulsy"
             android:textColor="@color/black"
-            android:textSize="14dp"
             android:textStyle="bold"
             app:layout_heightPercent="65%"
             app:layout_marginBottomPercent="0%"
-            app:layout_marginLeftPercent="32.5%"
+            app:layout_marginLeftPercent="32.6%"
             app:layout_marginRightPercent="25%"
             app:layout_marginTopPercent="29%"
             app:layout_widthPercent="10%" />
@@ -224,11 +246,11 @@
         android:id="@+id/mainLogoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_widthPercent="30%"
+        android:text="@string/wyloguj"
         app:layout_heightPercent="20%"
-        app:layout_marginTopPercent="1%"
         app:layout_marginBottomPercent="87%"
-        app:layout_marginRightPercent="2%"
         app:layout_marginLeftPercent="80%"
-        android:text="@string/wyloguj"/>
+        app:layout_marginRightPercent="2%"
+        app:layout_marginTopPercent="1%"
+        app:layout_widthPercent="30%" />
 </androidx.percentlayout.widget.PercentRelativeLayout>
