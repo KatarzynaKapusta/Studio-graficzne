@@ -86,7 +86,6 @@
             app:layout_widthPercent="3%" />
 
 
-
         <!--        dwa-->
         <TextView
             android:id="@+id/moneyBarTextView"

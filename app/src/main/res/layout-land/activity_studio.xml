@@ -139,8 +139,6 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
         app:layout_marginTopPercent="2%">
 
 
-
-
         <TextView
             android:id="@+id/expBarTextView"
             android:layout_width="wrap_content"
