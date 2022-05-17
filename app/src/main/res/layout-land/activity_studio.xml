@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.percentlayout.widget.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,6 +19,7 @@
         app:layout_marginLeftPercent="5%"
         app:layout_marginRightPercent="55%"
         app:layout_marginTopPercent="25%">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,6 +72,7 @@ Zaglądaj tu czasem i sprawdź co się zmieniło!"
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
+
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -107,14 +110,25 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
             app:layout_marginLeftPercent="5%"
             app:layout_marginRightPercent="5%"
             app:layout_marginTopPercent="35%"
-            app:layout_widthPercent="90%">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_marginTopPercent="50%"
-        app:layout_marginLeftPercent="50%"
-        android:text="Studio"/>
+            app:layout_widthPercent="90%"/>
 
+            <Button
+                android:id="@+id/studio_panel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/pink_snow"
+                android:text="Otwórz panel studia"
+                android:textColor="@color/black"
+                app:layout_heightPercent="30%"
+                app:layout_marginBottomPercent="10%"
+                app:layout_marginLeftPercent="20%"
+                app:layout_marginRightPercent="20%"
+                app:layout_marginTopPercent="75%"
+                app:layout_widthPercent="60%">
+
+            </Button>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
 
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="match_parent"
@@ -123,6 +137,9 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
         app:layout_heightPercent="20%"
         app:layout_marginBottomPercent="88%"
         app:layout_marginTopPercent="2%">
+
+
+
 
         <TextView
             android:id="@+id/expBarTextView"
@@ -168,6 +185,7 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
 
 
         <!--        dwa-->
+
         <TextView
             android:id="@+id/moneyBarTextView"
             android:layout_width="wrap_content"
@@ -203,7 +221,9 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
             app:layout_marginLeftPercent="15%"
             app:layout_widthPercent="4.5%" />
 
-        <!--        trzy-->
+
+        <!--    trzy-->
+
         <TextView
             android:id="@+id/resBarTextView"
             android:layout_width="wrap_content"
@@ -225,7 +245,6 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
             app:layout_marginTopPercent="29%"
             app:layout_widthPercent="10%" />
 
-        </TextView>
         <ImageView
             android:id="@+id/resBagTextView"
             android:layout_width="match_parent"
@@ -240,24 +259,5 @@ Dodatkowo możesz nadać tutaj nazwę swojego studia."
             app:layout_marginTopPercent="5%"
             app:layout_widthPercent="4.5%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
-
-        <Button
-            android:id="@+id/studio_panel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/pink_snow"
-            android:text="Otwórz panel studia"
-            android:textColor="@color/black"
-            app:layout_heightPercent="30%"
-            app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="20%"
-            app:layout_marginRightPercent="20%"
-            app:layout_marginTopPercent="75%"
-            app:layout_widthPercent="60%">
-
-        </Button>
-    </androidx.percentlayout.widget.PercentRelativeLayout>
-
-</androidx.percentlayout.widget.PercentRelativeLayout>
 
 </androidx.percentlayout.widget.PercentRelativeLayout>

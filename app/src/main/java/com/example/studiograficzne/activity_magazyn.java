@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,13 +26,16 @@ import java.util.Map;
 public class activity_magazyn extends AppCompatActivity {
 
     FirebaseAuth mAuth;
+    private TextView lvlTxtView;
+    private TextView expTxtView;
+    private TextView moneyTxtView;
+    private TextView resTxtView;
 
     private final String TAG = this.getClass().getName().toUpperCase();
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
     private String email;
     private final List<Double> lvlList = new ArrayList<>();
 
-    Missions Mission1 = new Missions();
     UserGameInfo User;
 
 
