@@ -262,28 +262,35 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
             start_timed_mission_button.setVisibility(View.INVISIBLE);
             back_to_missions_button.setVisibility(View.INVISIBLE);
             mTextViewCountDownStorage.setVisibility(View.VISIBLE);
+            updateTextViewINVIS();
         }
         else {
             start_timed_mission_button.setVisibility(View.VISIBLE);
             back_to_missions_button.setVisibility(View.VISIBLE);
             mTextViewCountDownStorage.setVisibility(View.INVISIBLE);
+            updateTextViewVIS();
+
             if (mTimeLeftInMillisStorage < 1000){
                 start_timed_mission_button.setVisibility(View.INVISIBLE);
                 back_to_missions_button.setVisibility(View.INVISIBLE);
                 mTextViewCountDownStorage.setVisibility(View.VISIBLE);
+                updateTextViewINVIS();
             }
             else {
                 start_timed_mission_button.setVisibility(View.VISIBLE);
                 mTextViewCountDownStorage.setVisibility(View.VISIBLE);
+                updateTextViewINVIS();
             }
 
             if(mTimeLeftInMillisStorage < mStartTimeInMillisStorage) {
                 collect_timed_rewards_button.setVisibility(View.VISIBLE);
                 mTextViewCountDownStorage.setVisibility(View.INVISIBLE);
+                updateTextViewVIS();
             }
             else {
                 collect_timed_rewards_button.setVisibility(View.INVISIBLE);
                 mTextViewCountDownStorage.setVisibility(View.VISIBLE);
+                updateTextViewINVIS();
             }
         }
     }
@@ -296,7 +303,7 @@ public class activity_magazyn_timed_missions extends AppCompatActivity {
         }
         else
         {
-            updateTextViewVIS();
+            updateTextViewINVIS();
             if(rewardsCollectedStorage)
             {
                 updateLayoutVIS();
