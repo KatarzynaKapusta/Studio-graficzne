@@ -360,6 +360,7 @@ public class activity_bank_timed_missions extends AppCompatActivity {
             updateTextViewINVIS();
         }
         else {
+            updateTextViewINVIS();
             if(rewardsCollectedBank) {
                 updateLayoutVIS();
                 updateTextViewINVIS();

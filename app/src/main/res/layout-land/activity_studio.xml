@@ -15,6 +15,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="50%"
+        app:layout_marginLeftPercent="73%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="5%"
+        app:layout_widthPercent="30%">
+
+        <TextView
+            android:id="@+id/studio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Studio"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="14%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="8%" />
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/choice_studio_background"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="5%"
         app:layout_marginRightPercent="55%"
