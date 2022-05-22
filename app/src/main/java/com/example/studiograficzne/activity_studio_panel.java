@@ -3,11 +3,15 @@ package com.example.studiograficzne;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,7 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class activity_studio_panel extends AppCompatActivity {
 
@@ -41,11 +48,27 @@ public class activity_studio_panel extends AppCompatActivity {
     private Button employees_panel_button;
     private Button items_panel_button;
 
+    //TIMER
+
+    private TextView mTextViewCountDownStudioPanel;
+    CountDownTimer mCountDownTimerStudioPanel;
+
+//    private static final long START_TIME_IN_MILLIS = 86400000;
+    private static final long START_TIME_IN_MILLIS = 60000;
+    private boolean mTimeRunningStudioPanel;
+    private long mTimeLeftInMillisStudioPanel = START_TIME_IN_MILLIS;
+    private long mEndTimeStudioPanel;
+
+    private boolean earningsCollected;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_studio_panel);
+
+        UserStudioInfo Studio = new UserStudioInfo();
+        mTextViewCountDownStudioPanel = findViewById(R.id.text_view_countdown_earnings);
 
         collect_earnings_button = findViewById(R.id.collect_earnings_button);
         start_timer_earnings_button = findViewById(R.id.start_earnings_button);
@@ -73,7 +96,7 @@ public class activity_studio_panel extends AppCompatActivity {
         // Reading information from the database if user is logged
         if (currentUser != null) {
             userRef.addValueEventListener(new ValueEventListener() {
-                Double money, level, resources, experience, result;
+                Double money, level, resources, experience, result, studio_earnings;
                 String moneyString, resourcesString, experienceString;
 
                 @Override
@@ -122,6 +145,7 @@ public class activity_studio_panel extends AppCompatActivity {
 
                     User.setExperience(experience);
                     User.setResources(resources);
+                    User.setMoney(money);
                 }
 
                 @Override
@@ -135,31 +159,194 @@ public class activity_studio_panel extends AppCompatActivity {
         collect_earnings_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                FirebaseUser user = mAuth.getCurrentUser();
+                if (user != null) {
+                    User.addStudioEarnings(Studio.getEarningsSM());
+                    updateDataToFirebase();
+                    Toast.makeText(activity_studio_panel.this, "Przyznano zarobki",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(activity_studio_panel.this, "BŁĄD",
+                            Toast.LENGTH_SHORT).show();
+                }
+                earningsCollected = true;
+                resetTimerStudioPanel();
             }
         });
 
         start_timer_earnings_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                earningsCollected = false;
+                mTextViewCountDownStudioPanel.setVisibility(View.VISIBLE);
+                if(mTimeRunningStudioPanel){
 
+                }
+                else {
+                    startTimerStudioPanel();
+                }
             }
         });
 
         employees_panel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                openActivityStudioPanelEmployees();
             }
         });
 
         items_panel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                openActivityStudioPanelItems();
             }
         });
 
+    }
+
+    public void openActivityStudioPanelEmployees() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        Intent intent = new Intent(this, activity_studio_panel_employees.class);
+        intent.putExtra("email", currentUser.getEmail());
+        startActivity(intent);
+    }
+
+    public void openActivityStudioPanelItems() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        Intent intent = new Intent(this, activity_studio_panel_items.class);
+        intent.putExtra("email", currentUser.getEmail());
+        startActivity(intent);
+    }
+
+
+    //TIMER
+
+    private void startTimerStudioPanel() {
+        mEndTimeStudioPanel = System.currentTimeMillis() + mTimeLeftInMillisStudioPanel;
+        CountDownTimer mCountDownTimerBank = new CountDownTimer(mTimeLeftInMillisStudioPanel, 1000) {
+            @Override
+            public void onTick(long millisUntilFinishedStudioPanel) {
+                mTimeLeftInMillisStudioPanel = millisUntilFinishedStudioPanel;
+                updateCountDownTextStudioPanel();
+            }
+
+            @Override
+            public void onFinish() {
+                mTimeRunningStudioPanel = false;
+                updateButtonsStudioPanel();
+            }
+        }.start();
+
+        mTimeRunningStudioPanel = true;
+        updateButtonsStudioPanel();
+    }
+
+    private void resetTimerStudioPanel() {
+        mTimeLeftInMillisStudioPanel = START_TIME_IN_MILLIS;
+        updateCountDownTextStudioPanel();
+        updateButtonsStudioPanel();
+    }
+
+    private void updateCountDownTextStudioPanel() {
+        int hours = (int) (mTimeLeftInMillisStudioPanel /1000) / 3600;
+        int minutes = (int) ((mTimeLeftInMillisStudioPanel /1000) %3600)/ 60;
+        int seconds = (int) (mTimeLeftInMillisStudioPanel /1000) % 60;
+
+        String timeLeftFormattedStudioPanel = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours, minutes, seconds);
+
+        mTextViewCountDownStudioPanel.setText(timeLeftFormattedStudioPanel);
+    }
+
+    private void updateButtonsStudioPanel(){
+        if(mTimeRunningStudioPanel) {
+            start_timer_earnings_button.setVisibility(View.INVISIBLE);
+        }
+        else {
+            start_timer_earnings_button.setVisibility(View.VISIBLE);
+
+            if(mTimeLeftInMillisStudioPanel < 1000) {
+                start_timer_earnings_button.setVisibility(View.INVISIBLE);
+            }
+            else {
+                start_timer_earnings_button.setVisibility(View.VISIBLE);
+            }
+
+            if(mTimeLeftInMillisStudioPanel < START_TIME_IN_MILLIS) {
+                collect_earnings_button.setVisibility(View.VISIBLE);
+            }
+            else {
+                collect_earnings_button.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    //Saving timer for running in background
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        SharedPreferences prefsStudioPanel = getSharedPreferences("prefsStudioPanel", MODE_PRIVATE);
+        SharedPreferences.Editor editorStudioPanel = prefsStudioPanel.edit();
+
+        editorStudioPanel.putLong("millisLeftStudioPanel", mTimeLeftInMillisStudioPanel);
+        editorStudioPanel.putBoolean("timerRunningStudioPanel", mTimeRunningStudioPanel);
+        editorStudioPanel.putBoolean("earningsCollectedStudioPanel", earningsCollected);
+        editorStudioPanel.putLong("endTimeStudioPanel", mEndTimeStudioPanel);
+
+//        editorStudioPanel.putLong("monRew", mon);
+//        editorStudioPanel.putLong("expRew", exp);
+
+        editorStudioPanel.apply();
+
+        if(mCountDownTimerStudioPanel !=null){
+            mCountDownTimerStudioPanel.cancel();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences prefsStudioPanel = getSharedPreferences("prefsStudioPanel", MODE_PRIVATE);
+
+        mTimeLeftInMillisStudioPanel = prefsStudioPanel.getLong("millisLeftStudioPanel",START_TIME_IN_MILLIS );
+        mTimeRunningStudioPanel = prefsStudioPanel.getBoolean("timerRunningStudioPanel", false);
+        earningsCollected = prefsStudioPanel.getBoolean("rewardsCollectedStudioPanel", false);
+
+//        mon= prefsStudioPanel.getLong("monRew",0);
+//        exp= prefsStudioPanel.getLong("expRew",0);
+
+        updateCountDownTextStudioPanel();
+        updateButtonsStudioPanel();
+
+        if (mTimeRunningStudioPanel) {
+            mEndTimeStudioPanel = prefsStudioPanel.getLong("endTimeStudioPanel", 0);
+            mTimeLeftInMillisStudioPanel = mEndTimeStudioPanel - System.currentTimeMillis();
+
+            if (mTimeLeftInMillisStudioPanel < 0) {
+                mTimeLeftInMillisStudioPanel = 0;
+                mTimeRunningStudioPanel = false;
+                updateCountDownTextStudioPanel();
+                updateButtonsStudioPanel();
+            } else {
+                startTimerStudioPanel();
+            }
+        }
+    }
+
+    //Updating data to firebase
+    private void updateDataToFirebase() {
+
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if(user!=null) {
+            Map<String, Object> childUpdates = new HashMap<>();
+            childUpdates.put("money", User.getMoney());
+
+            rootRef.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+        }
     }
 
     private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {

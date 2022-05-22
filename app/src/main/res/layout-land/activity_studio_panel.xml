@@ -114,17 +114,17 @@
             android:id="@+id/text_view_countdown_earnings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timer_start"
+            android:text="00:00:00"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="40dp"
             android:visibility="visible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="20%"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="15%"
             app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="50%"
+            app:layout_widthPercent="80%"
             tools:ignore="InvalidId" />
 
 
@@ -218,7 +218,6 @@
         </Button>
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
-
 
 
     <androidx.percentlayout.widget.PercentRelativeLayout
