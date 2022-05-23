@@ -90,6 +90,10 @@ public class UserGameInfo implements Parcelable {
         this.experience += s_exp;
     };
 
+    public void addStudioEarnings(double earnings){
+        this.money+=earnings;
+    }
+
 
 
     @Override

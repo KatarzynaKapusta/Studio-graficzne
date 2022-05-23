@@ -56,13 +56,19 @@
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_magazyn_match_missions.xml" value="0.33" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_magazyn_timed_missions.xml" value="0.2248062015503876" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_meblowy.xml" value="0.1591710758377425" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_meblowy.xml" value="0.25" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_menu.xml" value="0.1591710758377425" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio.xml" value="0.25" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio_panel.xml" value="0.33" />
-        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio_panel_employees.xml" value="0.22707231040564374" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio_panel_employees.xml" value="0.33" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio_panel_items.xml" value="0.22707231040564374" />
-        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio_view.xml" value="0.23236331569664903" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_studio_view.xml" value="0.5" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/activity_timed_missions_storage.xml" value="0.33" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/fragment_employees_hire.xml" value="0.23633156966490299" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/fragment_employees_salary.xml" value="0.23633156966490299" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/fragment_floor_fragment.xml" value="0.23633156966490299" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/fragment_plants_fragment.xml" value="0.23633156966490299" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout-land/fragment_tables_fragment.xml" value="0.23633156966490299" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/activity_bank_match_missions.xml" value="0.25" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/activity_bank_timed_missions.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/activity_budowlany.xml" value="0.26145833333333335" />
@@ -73,6 +79,9 @@
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/activity_studio_panel_items.xml" value="0.2552083333333333" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/activity_studio_view.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/activity_timed_missions_storage.xml" value="0.2265625" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/fragment_employees_hire.xml" value="0.2791666666666667" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/fragment_employees_salary.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/Hp An-101nw/AndroidStudioProjects/Studio_Graficzne/app/src/main/res/layout/fragment_floor_fragment.xml" value="0.2791666666666667" />
       </map>
     </option>
   </component>
