@@ -91,14 +91,14 @@ public class activity_bank_timed_missions extends AppCompatActivity {
         vMoney = findViewById(R.id.rewards_mon_btv);
         RewardsAcquiredBank = findViewById(R.id.rewards_acquired_bt);
 
-        // Getting email from current user if loogged
+        // Getting email from current user if logged
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             email = currentUser.getEmail();
         }
 
-        // Db refereces
+        // Db references
         DatabaseReference userRef = rootRef.child("Users");
         DatabaseReference lvlRef = rootRef.child("Levels");
 

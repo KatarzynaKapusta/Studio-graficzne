@@ -8,6 +8,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/shopMainLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -16,70 +17,56 @@
         android:layout_marginBottom="20dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.038">
+        android:paddingBottom="0dp">
 
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/floor1_image"
+                android:id="@+id/floor1ImageView"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_imageview"
-                android:background="@drawable/floor1"/>
+                android:background="@drawable/floor1"
+                android:contentDescription="@string/floor1Description" />
 
             <TextView
-                android:id="@+id/floor1_name"
+                android:id="@+id/floor1NameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="184dp"
-                android:text="Podłoga 1"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/phone_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+                android:text="@string/floor1"
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/floor1_price"
+                android:id="@+id/floor1PriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-265dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="184dp"
-                android:text="Cena:"
+                android:text="@string/pricePL"
                 android:textSize="18sp" />
+
             <TextView
-                android:id="@+id/floor1_price_text_view"
+                android:id="@+id/floor1PriceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-170dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="184dp"
-                android:text="ITEM PRICE"
+                android:text="@string/item_price"
                 android:textSize="18sp" />
+
             <Button
                 android:id="@+id/floor1PreviewButton"
                 android:layout_width="wrap_content"
@@ -89,7 +76,8 @@
                 android:layout_marginEnd="10dp"
                 android:background="#FF9800"
                 app:backgroundTint="#FF9800"
-                android:text="Podgląd"/>
+                android:text="@string/previewPL"/>
+
             <Button
                 android:id="@+id/floor1BuyButton"
                 android:layout_width="wrap_content"
@@ -97,7 +85,7 @@
                 android:layout_gravity="center_vertical"
                 android:background="#FF9800"
                 app:backgroundTint="#FF9800"
-                android:text="Kup"/>
+                android:text="@string/buyPL"/>
         </LinearLayout>
 
         <LinearLayout
@@ -107,57 +95,49 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="0dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workplace_textview">
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/floor2_image"
+                android:id="@+id/floor2ImageView"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_imageview"
-                android:background="@drawable/floor2"/>
+                android:background="@drawable/floor2"
+                android:contentDescription="@string/floor2Description"/>
 
             <TextView
-                android:id="@+id/floor2_name"
+                android:id="@+id/floor2NameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
-                android:text="Podłoga 2"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/email_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/workplace_textview" />
+                android:text="@string/floor2"
+                android:textSize="18sp"/>
+
             <TextView
-                android:id="@+id/floor2_price"
+                android:id="@+id/floor2PriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-80dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="184dp"
-                android:text="Cena:"
+                android:text="@string/pricePL"
                 android:textSize="18sp" />
+
             <TextView
-                android:id="@+id/floor2_price_text_view"
+                android:id="@+id/floor2PriceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-170dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="184dp"
-                android:text="ITEM PRICE"
+                android:text="@string/item_price"
                 android:textSize="18sp" />
+
             <Button
                 android:id="@+id/floor2PreviewButton"
                 android:layout_width="wrap_content"
@@ -167,7 +147,8 @@
                 android:layout_marginEnd="10dp"
                 android:background="#FF9800"
                 app:backgroundTint="#FF9800"
-                android:text="Podgląd"/>
+                android:text="@string/previewPL"/>
+
             <Button
                 android:id="@+id/floor2BuyButton"
                 android:layout_width="wrap_content"
@@ -175,8 +156,7 @@
                 android:layout_gravity="center_vertical"
                 android:background="#FF9800"
                 app:backgroundTint="#FF9800"
-                android:text="Kup"/>
-
+                android:text="@string/buyPL"/>
         </LinearLayout>
 
         <LinearLayout
@@ -187,14 +167,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="20dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/workplace_textview">
+            android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/floor3_image"
+                android:id="@+id/floor3ImageView"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="0dp"
@@ -202,44 +178,38 @@
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
                 android:background="@drawable/floor3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.126"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_imageview" />
+                android:contentDescription="@string/floor3Description"/>
 
             <TextView
-                android:id="@+id/usrProfStudioNameTextView"
+                android:id="@+id/floor3NameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
-                android:text="Podłoga 3"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.031"
-                app:layout_constraintStart_toEndOf="@+id/email_imageview"
-                app:layout_constraintTop_toBottomOf="@+id/workplace_textview" />
+                android:text="@string/floor3"
+                android:textSize="18sp"/>
 
             <TextView
-                android:id="@+id/floor3_price"
+                android:id="@+id/floor3PriceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-80dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="184dp"
-                android:text="Cena:"
+                android:text="@string/pricePL"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/floor3_price_text_view"
+                android:id="@+id/floor3PriceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-170dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="184dp"
-                android:text="ITEM PRICE"
+                android:text="@string/item_price"
                 android:textSize="18sp" />
+
             <Button
                 android:id="@+id/floor3PreviewButton"
                 android:layout_width="wrap_content"
@@ -249,7 +219,8 @@
                 android:layout_marginEnd="10dp"
                 android:background="#FF9800"
                 app:backgroundTint="#FF9800"
-                android:text="Podgląd"/>
+                android:text="@string/previewPL"/>
+
             <Button
                 android:id="@+id/floor3BuyButton"
                 android:layout_width="wrap_content"
@@ -257,9 +228,7 @@
                 android:layout_gravity="center_vertical"
                 android:background="#FF9800"
                 app:backgroundTint="#FF9800"
-                android:text="Kup"/>
+                android:text="@string/buyPL"/>
         </LinearLayout>
     </LinearLayout>
-
-
 </RelativeLayout>

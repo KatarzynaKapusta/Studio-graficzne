@@ -37,6 +37,7 @@ public class activity_rejestracja extends AppCompatActivity {
     protected User_info userInfo;
     protected UserGameInfo userGameInfo;
     protected UserStudioInfo userStudioInfo;
+    protected UserOwnedItems userOwnedItems;
 
     private FirebaseAuth mAuth;
 
@@ -58,6 +59,7 @@ public class activity_rejestracja extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         userGameInfo = new UserGameInfo();
         userStudioInfo = new UserStudioInfo();
+        userOwnedItems = new UserOwnedItems();
 
         registerButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -160,7 +162,9 @@ public class activity_rejestracja extends AppCompatActivity {
         mDatabase.child(uid).child("UserInfo").setValue(userInfo); //adding user info to database
         mDatabase.child(uid).child("UserGameInfo").setValue(userGameInfo);
         mDatabase.child(uid).child("UserStudioInfo").setValue(userStudioInfo);
+        mDatabase.child(uid).child("UserOwnedItems").setValue(userOwnedItems);
         Intent loginIntent = new Intent(this, activity_nazwij_studio.class);
+//        Intent loginIntent = new Intent(this, MainActivity.class);
         startActivity(loginIntent);
     }
 

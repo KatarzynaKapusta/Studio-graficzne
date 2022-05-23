@@ -1011,11 +1011,13 @@ public class activity_magazyn_match_missions extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if(user!=null) {
-            Map<String, Object> childUpdates = new HashMap<>();
-            childUpdates.put("experience", User.getExperience());
-            childUpdates.put("resources", User.getResources());
-
-            databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+            databaseOperations.updateDatabase(user.getUid(),databaseReference,"experience",User.getExperience());
+            databaseOperations.updateDatabase(user.getUid(),databaseReference,"resources",User.getResources());
+//            Map<String, Object> childUpdates = new HashMap<>();
+//            childUpdates.put("experience", User.getExperience());
+//            childUpdates.put("resources", User.getResources());
+//
+//            databaseReference.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
         }
     }
 }
