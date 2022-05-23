@@ -55,4 +55,26 @@
     <string name="moje_studio">Moje studio</string>
     <string name="rozpocznij_przygod">Dalej</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="table1">Biurko 1</string>
+    <string name="pricePL">Cena:</string>
+    <string name="item_price">ITEM PRICE</string>
+    <string name="previewPL">Podgląd</string>
+    <string name="buyPL">Kup</string>
+    <string name="table2">Biurko 2</string>
+    <string name="table3">Biurko 3</string>
+    <string name="table1Description">table1Img</string>
+    <string name="table2Description">table2Img</string>
+    <string name="table3Description">table3Img</string>
+    <string name="floor1">Podłoga 1</string>
+    <string name="floor2">Podłoga 2</string>
+    <string name="floor3">Podłoga 3</string>
+    <string name="floor3Description">floor3Img</string>
+    <string name="floor2Description">floor2Img</string>
+    <string name="floor1Description">floor1Img</string>
+    <string name="plant1">Roślina 1</string>
+    <string name="plant2">Roślina 2</string>
+    <string name="plant3">Roślina 3</string>
+    <string name="plant3Description">plant3Img</string>
+    <string name="plant2Description">plant2Img</string>
+    <string name="plant1Description">plant1Img</string>
 </resources>
