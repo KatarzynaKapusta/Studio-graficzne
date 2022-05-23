@@ -75,6 +75,10 @@ public class activity_meblowy extends AppCompatActivity {
         // End of fragments
 
         // Reading information from the database if user is logged
+        readFromDatabase(currentUser, userRef, lvlRef);
+    } // OnCreate() end
+
+    private void readFromDatabase(FirebaseUser currentUser, DatabaseReference userRef, DatabaseReference lvlRef) {
         if (currentUser != null) {
             // Read from "Users" branch in db
             userRef.addValueEventListener(new ValueEventListener() {
@@ -135,7 +139,7 @@ public class activity_meblowy extends AppCompatActivity {
                 }
             });
         }
-    } // OnCreate() end
+    }
 
     private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {
         double localLvl = 0, lastLvlValue = lvlList.get(lvlList.size()-1);
