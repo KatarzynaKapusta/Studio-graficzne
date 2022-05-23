@@ -24,7 +24,7 @@ public class activity_nazwij_studio extends AppCompatActivity {
 
     //Declare auth
     private FirebaseAuth mAuth;
-    DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
+    DatabaseReference rootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

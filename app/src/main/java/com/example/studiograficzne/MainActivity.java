@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
     private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {
         double localLvl = 0, lastLvlValue = lvlList.get(lvlList.size()-1);
         int listSize = lvlList.size();
-
+        System.out.println("wywołuję sprawdzanie levela usera");
         for (int i = 0; i < lvlList.size()-1 ; ) {
             // If exp is greater than maximum lvl value in db
             if (exp >= lastLvlValue) {
@@ -221,7 +221,8 @@ public class MainActivity extends AppCompatActivity {
             String uid = currentUser.getUid();
             FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
             rootRef = database.getReference("Users");
-            rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
+            databaseOperations.updateDatabase(uid,rootRef,"level",localLvl);
+//            rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
         }
     }
 
