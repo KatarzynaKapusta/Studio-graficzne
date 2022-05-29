@@ -76,13 +76,13 @@ public class plants_fragment extends Fragment {
     private void performBuyItem(Plant p) {
         if(ableToBuy(p)) {
             if(p.getId().equals("p1"))
-                userOwnedItems.setP1(1);
+                userOwnedItems.setP1(ItemStatus.OWNED.value);
 
             if(p.getId().equals("p2"))
-                userOwnedItems.setP2(1);
+                userOwnedItems.setP2(ItemStatus.OWNED.value);
 
             if(p.getId().equals("p3"))
-                userOwnedItems.setP3(1);
+                userOwnedItems.setP3(ItemStatus.OWNED.value);
 
             updateItemStatus();
             ownedMoney-=p.getPrice();
@@ -173,13 +173,13 @@ public class plants_fragment extends Fragment {
     private boolean ableToBuy(Plant p) {
         if(p.getPrice()<=ownedMoney)
         {
-            if(p.getId().equals("p1") && userOwnedItems.getP1()!=1)
+            if(p.getId().equals("p1") && userOwnedItems.getP1()!=ItemStatus.OWNED.value)
                 return true;
 
-            if(p.getId().equals("p2") && userOwnedItems.getP2()!=1)
+            if(p.getId().equals("p2") && userOwnedItems.getP2()!=ItemStatus.OWNED.value)
                 return true;
 
-            if(p.getId().equals("p3") && userOwnedItems.getP3()!=1)
+            if(p.getId().equals("p3") && userOwnedItems.getP3()!=ItemStatus.OWNED.value)
                 return true;
         }
         return false;
