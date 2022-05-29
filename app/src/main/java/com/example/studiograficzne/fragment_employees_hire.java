@@ -36,12 +36,12 @@ public class fragment_employees_hire extends Fragment {
             hire_first_employee.setVisibility(View.INVISIBLE);
         });
 
-        hire_first_employee.setOnClickListener(view1 -> {
+        hire_second_employee.setOnClickListener(view1 -> {
             userEmployeesInfo.setEmployee2Hired(true);
             hire_second_employee.setVisibility(View.INVISIBLE);
         });
 
-        hire_first_employee.setOnClickListener(view1 -> {
+        hire_third_employee.setOnClickListener(view1 -> {
             userEmployeesInfo.setEmployee3Hired(true);
             hire_third_employee.setVisibility(View.INVISIBLE);
         });
