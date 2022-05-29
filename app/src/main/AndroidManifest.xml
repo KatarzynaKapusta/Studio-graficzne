@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
-            android:name=".activity_studio_panel_items"
+            android:name=".activity_studio_panel_info"
             android:exported="false"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen"/>
