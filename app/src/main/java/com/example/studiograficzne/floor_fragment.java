@@ -76,13 +76,13 @@ public class floor_fragment extends Fragment {
     private void performBuyItem(Floor f) {
         if(ableToBuy(f)) {
             if(f.getId().equals("f1"))
-                userOwnedItems.setF1(1);
+                userOwnedItems.setF1(ItemStatus.OWNED.value);
 
             if(f.getId().equals("f2"))
-                userOwnedItems.setF2(1);
+                userOwnedItems.setF2(ItemStatus.OWNED.value);
 
             if(f.getId().equals("f3"))
-                userOwnedItems.setF3(1);
+                userOwnedItems.setF3(ItemStatus.OWNED.value);
 
             updateItemStatus();
             ownedMoney-=f.getPrice();
@@ -173,13 +173,13 @@ public class floor_fragment extends Fragment {
     private boolean ableToBuy(Floor f) {
         if(f.getPrice()<=ownedMoney)
         {
-            if(f.getId().equals("f1") && userOwnedItems.getF1()!=1)
+            if(f.getId().equals("f1") && userOwnedItems.getF1()!=ItemStatus.OWNED.value)
                 return true;
 
-            if(f.getId().equals("f2") && userOwnedItems.getF2()!=1)
+            if(f.getId().equals("f2") && userOwnedItems.getF2()!=ItemStatus.OWNED.value)
                 return true;
 
-            if(f.getId().equals("f3") && userOwnedItems.getF3()!=1)
+            if(f.getId().equals("f3") && userOwnedItems.getF3()!=ItemStatus.OWNED.value)
                 return true;
         }
         return false;

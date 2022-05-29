@@ -76,13 +76,13 @@ public class tables_fragment extends Fragment {
     private void performBuyItem(Table t) {
         if(ableToBuy(t)) {
             if(t.getId().equals("t1"))
-                userOwnedItems.setT1(1);
+                userOwnedItems.setT1(ItemStatus.OWNED.value);
 
             if(t.getId().equals("t2"))
-                userOwnedItems.setT2(1);
+                userOwnedItems.setT2(ItemStatus.OWNED.value);
 
             if(t.getId().equals("t3"))
-                userOwnedItems.setT3(1);
+                userOwnedItems.setT3(ItemStatus.OWNED.value);
 
             updateItemStatus();
             ownedMoney-=t.getPrice();
@@ -173,13 +173,13 @@ public class tables_fragment extends Fragment {
     private boolean ableToBuy(Table t) {
         if(t.getPrice()<=ownedMoney)
         {
-            if(t.getId().equals("t1") && userOwnedItems.getT1()!=1)
+            if(t.getId().equals("t1") && userOwnedItems.getT1()!=ItemStatus.OWNED.value)
                 return true;
 
-            if(t.getId().equals("t2") && userOwnedItems.getT2()!=1)
+            if(t.getId().equals("t2") && userOwnedItems.getT2()!=ItemStatus.OWNED.value)
                 return true;
 
-            if(t.getId().equals("t3") && userOwnedItems.getT3()!=1)
+            if(t.getId().equals("t3") && userOwnedItems.getT3()!=ItemStatus.OWNED.value)
                 return true;
         }
         return false;
