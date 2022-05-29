@@ -1038,11 +1038,13 @@ public class activity_bank_match_missions extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if(user!=null) {
-            Map<String, Object> childUpdates = new HashMap<>();
-            childUpdates.put("experience", User.getExperience());
-            childUpdates.put("money", User.getMoney());
-
-            rootRef.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
+            databaseOperations.updateDatabase(user.getUid(),databaseReference,"experience",User.getExperience());
+            databaseOperations.updateDatabase(user.getUid(),databaseReference,"money",User.getMoney());
+//            Map<String, Object> childUpdates = new HashMap<>();
+//            childUpdates.put("experience", User.getExperience());
+//            childUpdates.put("money", User.getMoney());
+//
+//            rootRef.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
         }
     }
 
