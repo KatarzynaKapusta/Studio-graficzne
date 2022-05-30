@@ -66,8 +66,9 @@ public class activity_studio_panel_employees extends AppCompatActivity {
         // Fragments
         ViewPager viewPager = findViewById(R.id.viewPagerEmployees);
         activity_studio_panel_employees.ViewPagerAdapter adapter = new activity_studio_panel_employees.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new fragment_employees_hire(), "PRACOWNICY");
-        adapter.addFragment(new fragment_employees_salary(), "WYPŁATA");
+        adapter.addFragment(new fragment_employees_info(), "INFO");
+        adapter.addFragment(new fragment_employees_hire(), "ZATRUDNIJ");
+        adapter.addFragment(new fragment_employees_benefits(), "KORZYŚCI");
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = findViewById(R.id.tabViewEmployees);

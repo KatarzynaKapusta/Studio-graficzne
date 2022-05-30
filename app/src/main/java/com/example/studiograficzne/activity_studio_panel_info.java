@@ -55,6 +55,11 @@ public class activity_studio_panel_info extends AppCompatActivity {
         User = new UserGameInfo();
 
         // Reading information from the database if user is logged
+
+
+    }
+
+    private void readFromDatabase(FirebaseUser currentUser, DatabaseReference userRef, DatabaseReference lvlRef) {
         if (currentUser != null) {
             userRef.addValueEventListener(new ValueEventListener() {
                 Double money, level, resources, experience, result;
