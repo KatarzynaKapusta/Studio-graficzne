@@ -2,8 +2,12 @@
 <androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/studio_background">
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="match_parent"
@@ -133,6 +137,7 @@
             app:layout_widthPercent="4.5%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
+<<<<<<< HEAD
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabViewEmployees"
         android:layout_width="match_parent"
@@ -163,4 +168,6 @@
         android:layout_height="wrap_content" />
 
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 </androidx.percentlayout.widget.PercentRelativeLayout>

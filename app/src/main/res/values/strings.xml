@@ -77,7 +77,10 @@
     <string name="plant3Description">plant3Img</string>
     <string name="plant2Description">plant2Img</string>
     <string name="plant1Description">plant1Img</string>
+<<<<<<< HEAD
     <string name="studio_level">Poziom studia:</string>
     <string name="item_lvl">ITEM LVL</string>
     <string name="end_preview">ZAKOŃCZ PODGLĄD</string>
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 </resources>

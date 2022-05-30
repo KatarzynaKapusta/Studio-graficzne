@@ -95,8 +95,12 @@
                 android:layout_marginEnd="10dp"
                 android:background="#4CAF50"
                 app:backgroundTint="#4CAF50"
+<<<<<<< HEAD
                 android:text="@string/previewPL"
                 android:enabled="false"/>
+=======
+                android:text="@string/previewPL"/>
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
             <Button
                 android:id="@+id/plant1BuyButton"
@@ -105,8 +109,12 @@
                 android:layout_gravity="center_vertical"
                 android:background="#4CAF50"
                 app:backgroundTint="#4CAF50"
+<<<<<<< HEAD
                 android:text="@string/buyPL"
                 android:enabled="false"/>
+=======
+                android:text="@string/buyPL"/>
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
         </LinearLayout>
 
         <LinearLayout
@@ -159,6 +167,7 @@
                 android:text="@string/item_price"
                 android:textSize="18sp" />
 
+<<<<<<< HEAD
 <!--            <TextView-->
 <!--                android:id="@+id/plant2LevelLabel"-->
 <!--                android:layout_width="wrap_content"-->
@@ -179,6 +188,8 @@
 <!--                android:text="@string/item_lvl"-->
 <!--                android:textSize="18sp" />-->
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
             <Button
                 android:id="@+id/plant2PreviewButton"
                 android:layout_width="wrap_content"
@@ -188,8 +199,12 @@
                 android:layout_marginEnd="10dp"
                 android:background="#4CAF50"
                 app:backgroundTint="#4CAF50"
+<<<<<<< HEAD
                 android:text="@string/previewPL"
                 android:enabled="false"/>
+=======
+                android:text="@string/previewPL"/>
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
             <Button
                 android:id="@+id/plant2BuyButton"
@@ -198,8 +213,12 @@
                 android:layout_gravity="center_vertical"
                 android:background="#4CAF50"
                 app:backgroundTint="#4CAF50"
+<<<<<<< HEAD
                 android:text="@string/buyPL"
                 android:enabled="false"/>
+=======
+                android:text="@string/buyPL"/>
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
         </LinearLayout>
 
         <LinearLayout
@@ -253,6 +272,7 @@
                 android:text="@string/item_price"
                 android:textSize="18sp" />
 
+<<<<<<< HEAD
 <!--            <TextView-->
 <!--                android:id="@+id/plant3LevelLabel"-->
 <!--                android:layout_width="wrap_content"-->
@@ -273,6 +293,8 @@
 <!--                android:text="@string/item_lvl"-->
 <!--                android:textSize="18sp" />-->
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
             <Button
                 android:id="@+id/plant3PreviewButton"
                 android:layout_width="wrap_content"
@@ -282,8 +304,12 @@
                 android:layout_marginEnd="10dp"
                 android:background="#4CAF50"
                 app:backgroundTint="#4CAF50"
+<<<<<<< HEAD
                 android:text="@string/previewPL"
                 android:enabled="false"/>
+=======
+                android:text="@string/previewPL"/>
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
             <Button
                 android:id="@+id/plant3BuyButton"
@@ -292,8 +318,12 @@
                 android:layout_gravity="center_vertical"
                 android:background="#4CAF50"
                 app:backgroundTint="#4CAF50"
+<<<<<<< HEAD
                 android:text="@string/buyPL"
                 android:enabled="false"/>
+=======
+                android:text="@string/buyPL"/>
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

@@ -11,7 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.TextView;
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,8 +34,11 @@ public class tables_fragment extends Fragment {
     private static final String FURNITURE = "Furniture", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyTable1Button, buyTable2Button, buyTable3Button;
+<<<<<<< HEAD
     private Button previewTable1Button, previewTable2Button, previewTable3Button;
     private TextView priceTable1TxtView, priceTable2TxtView, priceTable3TxtView;
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
     // Database variables
     private FirebaseAuth mAuth;
@@ -58,10 +64,13 @@ public class tables_fragment extends Fragment {
         Log.v("USERID", userRef.getKey());
         readFromDatabase(currentUser, userRef, furnitureRef);
 
+<<<<<<< HEAD
         priceTable1TxtView = view.findViewById(R.id.table1PriceTextView);
         priceTable2TxtView = view.findViewById(R.id.table2PriceTextView);
         priceTable3TxtView = view.findViewById(R.id.table3PriceTextView);
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
         buyTable1Button = view.findViewById(R.id.table1BuyButton);
         buyTable1Button.setOnClickListener(v ->
             performBuyItem(tables.get(0))
@@ -75,6 +84,7 @@ public class tables_fragment extends Fragment {
             performBuyItem(tables.get(2));
         });
 
+<<<<<<< HEAD
         // Preview buttons
         previewTable1Button = view.findViewById(R.id.table1PreviewButton);
         previewTable1Button.setOnClickListener(v -> {
@@ -90,12 +100,15 @@ public class tables_fragment extends Fragment {
             performViewItem(tables.get(2));
         });
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
         // Reading information from the database if user is logged
 
 
         return view;
     } //OnCreate() End
 
+<<<<<<< HEAD
     private void performViewItem(Table p) {
         if(p.getId().equals("t1"))
             userOwnedItems.setT1(ItemStatus.PREVIEW.value);
@@ -112,6 +125,8 @@ public class tables_fragment extends Fragment {
 
     }
     
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
     private void performBuyItem(Table t) {
         if(ableToBuy(t)) {
             if(t.getId().equals("t1"))
@@ -169,7 +184,10 @@ public class tables_fragment extends Fragment {
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+<<<<<<< HEAD
                             tables.clear();
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
                             for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                                 itemId = keyId.child("Id").getValue(String.class);
                                 itemLevel = keyId.child("Level").getValue(Integer.class);
@@ -177,8 +195,11 @@ public class tables_fragment extends Fragment {
 
                                 Table t = new Table(itemId, itemLevel, itemPrice);
                                 tables.add(t);
+<<<<<<< HEAD
                                 setPriceTag(tables.size(),itemPrice);
                                 enableButtons(userOwnedItems);
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
                             }
                         }
@@ -202,6 +223,7 @@ public class tables_fragment extends Fragment {
         }
     }
 
+<<<<<<< HEAD
     private void enableButtons(UserOwnedItems uoi) {
         if(uoi.getT1() == ItemStatus.NOTOWNED.value)
         {
@@ -232,6 +254,8 @@ public class tables_fragment extends Fragment {
         }
     }
     
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
     private void updateUserMoney() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
@@ -241,6 +265,7 @@ public class tables_fragment extends Fragment {
             databaseOperations.updateDatabase(uid,rootRef,"money",ownedMoney);
         }
     }
+<<<<<<< HEAD
     private void setPriceTag(int size, int itemPrice) {
         if(size == 1)
             priceTable1TxtView.setText(String.valueOf(itemPrice));
@@ -252,10 +277,13 @@ public class tables_fragment extends Fragment {
             priceTable3TxtView.setText(String.valueOf(itemPrice));
 
     }
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 
     private boolean ableToBuy(Table t) {
         if(t.getPrice()<=ownedMoney)
         {
+<<<<<<< HEAD
             if(t.getId().equals("t1") && !(userOwnedItems.getT1()==ItemStatus.OWNED.value || userOwnedItems.getT1()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
@@ -263,6 +291,15 @@ public class tables_fragment extends Fragment {
                 return true;
 
             if(t.getId().equals("t3") && !(userOwnedItems.getT3()==ItemStatus.OWNED.value || userOwnedItems.getT3()==ItemStatus.HIDDENOWNED.value))
+=======
+            if(t.getId().equals("t1") && userOwnedItems.getT1()!=ItemStatus.OWNED.value)
+                return true;
+
+            if(t.getId().equals("t2") && userOwnedItems.getT2()!=ItemStatus.OWNED.value)
+                return true;
+
+            if(t.getId().equals("t3") && userOwnedItems.getT3()!=ItemStatus.OWNED.value)
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
                 return true;
         }
         return false;

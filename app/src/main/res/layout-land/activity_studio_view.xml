@@ -7,6 +7,7 @@
     android:background="@drawable/studio_walls"
     tools:context=".activity_studio_view">
 
+<<<<<<< HEAD
     <!--Generic floor -->
     <ImageView
         android:id="@+id/floor1ImageView"
@@ -293,6 +294,8 @@
 
     </ImageView>
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -421,5 +424,8 @@
             app:layout_widthPercent="4.5%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 </androidx.percentlayout.widget.PercentRelativeLayout>

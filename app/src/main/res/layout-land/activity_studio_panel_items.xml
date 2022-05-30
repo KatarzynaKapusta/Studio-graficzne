@@ -131,4 +131,8 @@
             app:layout_marginTopPercent="5%"
             app:layout_widthPercent="4.5%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
+<<<<<<< HEAD
+=======
+
+>>>>>>> bfcbbad656dd6bfb82ec36cecbeec6b582d1e70c
 </androidx.percentlayout.widget.PercentRelativeLayout>
