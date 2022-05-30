@@ -1,10 +1,13 @@
 package com.example.studiograficzne;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -27,6 +30,20 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class fragment_employees_hire extends Fragment {
@@ -91,7 +108,7 @@ public class fragment_employees_hire extends Fragment {
         });
 
         hire_third_employee.setOnClickListener(view1 -> {
-            e3hired =true;
+            userEmployeesInfo.setEmployee3Hired(true);
             hire_third_employee.setVisibility(View.INVISIBLE);
             updateDataToFirebase();
         });
@@ -119,6 +136,8 @@ public class fragment_employees_hire extends Fragment {
                     userEmployeesInfo.setEmployee2Hired(isEmployee2Hired);
                     userEmployeesInfo.setEmployee3Hired(isEmployee3Hired);
 
+                    updateEmployeesHiredButtons();
+
                 } // End of reading from "Users" branch
 
                 @Override
@@ -132,14 +151,14 @@ public class fragment_employees_hire extends Fragment {
     }
 
     public void updateEmployeesHiredButtons(){
-        if(e1hired)
+        if(userEmployeesInfo.getEmployee1Hired())
         {
             hire_first_employee.setVisibility(View.INVISIBLE);
         }
         else{
             hire_first_employee.setVisibility(View.VISIBLE);
         }
-        if(e2hired)
+        if(userEmployeesInfo.getEmployee2Hired())
         {
             hire_second_employee.setVisibility(View.INVISIBLE);
         }
@@ -147,7 +166,7 @@ public class fragment_employees_hire extends Fragment {
         {
             hire_second_employee.setVisibility(View.VISIBLE);
         }
-        if(e3hired)
+        if(userEmployeesInfo.getEmployee3Hired())
         {
             hire_third_employee.setVisibility(View.INVISIBLE);
         }

@@ -3,6 +3,7 @@ package com.example.studiograficzne;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,15 +20,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class activity_studio_view extends AppCompatActivity {
+public class activity_studio_preview extends AppCompatActivity {
 
     private TextView lvlTxtView, expTxtView, moneyTxtView, resTxtView;
     private ImageView plant1ImageView, plant2ImageView, plant3ImageView;
     private ImageView table1ImageView, table2ImageView, table3ImageView;
     private ImageView floor1ImageView, floor2ImageView, floor3ImageView;
+    private Button endPreviewBtn;
     private static final String LEVELS = "Levels";
     private static final String USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
@@ -40,7 +43,7 @@ public class activity_studio_view extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_studio_view);
+        setContentView(R.layout.activity_studio_preview);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -59,34 +62,35 @@ public class activity_studio_view extends AppCompatActivity {
         resTxtView = findViewById(R.id.resBarTextView);
         FirebaseUser user = mAuth.getCurrentUser();
 
+
         // Plants
-        plant1ImageView = findViewById(R.id.studioPlant1);
+        plant1ImageView = findViewById(R.id.studioPlant1Preview);
         plant1ImageView.setVisibility(View.INVISIBLE);
 
-        plant2ImageView = findViewById(R.id.studioPlant2);
+        plant2ImageView = findViewById(R.id.studioPlant2Preview);
         plant2ImageView.setVisibility(View.INVISIBLE);
 
-        plant3ImageView = findViewById(R.id.studioPlant3);
+        plant3ImageView = findViewById(R.id.studioPlant3Preview);
         plant3ImageView.setVisibility(View.INVISIBLE);
 
         // Tables
-        table1ImageView = findViewById(R.id.studioTable1);
+        table1ImageView = findViewById(R.id.studioTable1Preview);
         table1ImageView.setVisibility(View.INVISIBLE);
 
-        table2ImageView = findViewById(R.id.studioTable2);
+        table2ImageView = findViewById(R.id.studioTable2Preview);
         table2ImageView.setVisibility(View.INVISIBLE);
 
-        table3ImageView = findViewById(R.id.studioTable3);
+        table3ImageView = findViewById(R.id.studioTable3Preview);
         table3ImageView.setVisibility(View.INVISIBLE);
 
         // Floor
-        floor1ImageView = findViewById(R.id.floor1ImageView);
+        floor1ImageView = findViewById(R.id.floor1ImageViewPreview);
         floor1ImageView.setVisibility(View.INVISIBLE);
 
-        floor2ImageView = findViewById(R.id.floor2ImageView);
+        floor2ImageView = findViewById(R.id.floor2ImageViewPreview);
         floor2ImageView.setVisibility(View.INVISIBLE);
 
-        floor3ImageView = findViewById(R.id.floor3ImageView);
+        floor3ImageView = findViewById(R.id.floor3ImageViewPreview);
         floor3ImageView.setVisibility(View.INVISIBLE);
 
         if (user != null) {
@@ -154,7 +158,66 @@ public class activity_studio_view extends AppCompatActivity {
             });
         }
 
+        endPreviewBtn = findViewById(R.id.endPreviewButton);
+        endPreviewBtn.setOnClickListener(v -> {
+            performEndViewItem(userOwnedItems);
+            finish();
+        });
+
     } // onCreate end
+
+    @Override
+    public void onBackPressed () {}
+
+    private void performEndViewItem(UserOwnedItems userOwnedItems) {
+
+        if (userOwnedItems.getP1() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setP1(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getP2() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setP2(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getP3() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setP3(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getT1() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setT1(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getT2() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setT2(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getT3() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setT3(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getF1() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setF1(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getF2() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setF2(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+        else if (userOwnedItems.getF3() == ItemStatus.PREVIEW.value)
+        {
+            userOwnedItems.setF3(ItemStatus.NOTOWNED.value);
+            updateItemStatus();
+        }
+
+    }
 
     private void setItemsVisibility(UserOwnedItems userOwnedItems) {
 
@@ -181,7 +244,7 @@ public class activity_studio_view extends AppCompatActivity {
         views.add(floor3ImageView);
 
         for(int i = 0; i< statuses.size(); i++){
-            if(statuses.get(i)==ItemStatus.OWNED.value)
+            if(statuses.get(i)==ItemStatus.OWNED.value||statuses.get(i)==ItemStatus.PREVIEW.value)
                 views.get(i).setVisibility(View.VISIBLE);
             else
                 views.get(i).setVisibility(View.INVISIBLE);
@@ -224,6 +287,19 @@ public class activity_studio_view extends AppCompatActivity {
             FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
             rootRef = database.getReference("Users");
             rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
+        }
+    }
+
+    private void updateItemStatus() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            String uid = currentUser.getUid();
+            FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
+            Map<String, Object> childUpdates = new HashMap<>();
+            childUpdates.put("UserOwnedItems",userOwnedItems);
+
+            rootRef = database.getReference("Users");
+            rootRef.child(uid).updateChildren(childUpdates);
         }
     }
 
