@@ -14,6 +14,7 @@ public class User_info {
     public User_info(String nickname, String email) {
         this.nickname = nickname;
         this.email = email;
+
     }
 
     public void setpassword(String password) {

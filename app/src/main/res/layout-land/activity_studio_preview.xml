@@ -9,36 +9,36 @@
 
     <!--Generic floor -->
     <ImageView
-        android:id="@+id/floor1ImageView"
+        android:id="@+id/floor1ImageViewPreview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic_style1"
         tools:ignore="ContentDescription"/>
 
     <ImageView
-        android:id="@+id/floor2ImageView"
+        android:id="@+id/floor2ImageViewPreview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic_style2"
         tools:ignore="ContentDescription"/>
 
     <ImageView
-        android:id="@+id/floor3ImageView"
+        android:id="@+id/floor3ImageViewPreview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic_style3"
         tools:ignore="ContentDescription"/>
 
     <ImageView
-        android:id="@+id/floor0ImageView"
+        android:id="@+id/floor0ImageViewPreview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription" />
 
     <!--Office desks -->
     <ImageView
-        android:id="@+id/studioTable5Default"
+        android:id="@+id/studioTable5DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_desk2"
@@ -53,7 +53,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioTable1"
+        android:id="@+id/studioTable1Preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="90"
@@ -69,7 +69,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioTable2"
+        android:id="@+id/studioTable2Preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="90"
@@ -85,7 +85,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioTable3"
+        android:id="@+id/studioTable3Preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_desk1"
@@ -100,7 +100,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioTable4Default"
+        android:id="@+id/studioTable4DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_desk1"
@@ -118,7 +118,7 @@
     <!--Not changeable elements -->
 
     <ImageView
-        android:id="@+id/studioTable6Default"
+        android:id="@+id/studioTable6DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="90"
@@ -134,7 +134,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioArmchair1Default"
+        android:id="@+id/studioArmchair1DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_armchair1"
@@ -150,7 +150,7 @@
 
 
     <ImageView
-        android:id="@+id/studioArmchair2Default"
+        android:id="@+id/studioArmchair2DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="-90"
@@ -166,7 +166,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioPrinter1Default"
+        android:id="@+id/studioPrinter1DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_printer"
@@ -181,7 +181,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioPrinter2Default"
+        android:id="@+id/studioPrinter2DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="180"
@@ -198,7 +198,7 @@
 
 
     <ImageView
-        android:id="@+id/studioWatertank1Default"
+        android:id="@+id/studioWatertank1DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_watertank"
@@ -213,7 +213,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioWatertank2Default"
+        android:id="@+id/studioWatertank2DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_watertank"
@@ -231,7 +231,7 @@
     <!--Plants -->
 
     <ImageView
-        android:id="@+id/studioPlant4Default"
+        android:id="@+id/studioPlant4DefaultPreview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="-90"
@@ -247,7 +247,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioPlant2"
+        android:id="@+id/studioPlant2Preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="-90"
@@ -263,7 +263,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioPlant3"
+        android:id="@+id/studioPlant3Preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotation="-90"
@@ -279,7 +279,7 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/studioPlant1"
+        android:id="@+id/studioPlant1Preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/office_plant3"
@@ -420,6 +420,18 @@
             app:layout_marginTopPercent="5%"
             app:layout_widthPercent="4.5%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <Button
+        android:id="@+id/endPreviewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/end_preview"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#673AB7"
+        app:layout_heightPercent="17%"
+        app:layout_widthPercent="20%"
+        app:layout_marginLeftPercent="77%"
+        app:layout_marginTopPercent="77%" />
 
 
 </androidx.percentlayout.widget.PercentRelativeLayout>

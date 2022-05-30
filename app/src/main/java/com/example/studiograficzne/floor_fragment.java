@@ -1,5 +1,6 @@
 package com.example.studiograficzne;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +31,8 @@ public class floor_fragment extends Fragment {
     private static final String FURNITURE = "Furniture", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyFloor1Button, buyFloor2Button, buyFloor3Button;
+    private Button previewFloor1Button, previewFloor2Button, previewFloor3Button;
+    private TextView priceFloor1TxtView, priceFloor2TxtView, priceFloor3TxtView;
 
     // Database variables
     private FirebaseAuth mAuth;
@@ -54,6 +58,10 @@ public class floor_fragment extends Fragment {
         Log.v("USERID", userRef.getKey());
         readFromDatabase(currentUser, userRef, furnitureRef);
 
+        priceFloor1TxtView = view.findViewById(R.id.floor1PriceTextView);
+        priceFloor2TxtView = view.findViewById(R.id.floor2PriceTextView);
+        priceFloor3TxtView = view.findViewById(R.id.floor3PriceTextView);
+
         buyFloor1Button = view.findViewById(R.id.floor1BuyButton);
         buyFloor1Button.setOnClickListener(v -> {
             performBuyItem(floors.get(0));
@@ -67,12 +75,43 @@ public class floor_fragment extends Fragment {
             performBuyItem(floors.get(2));
         });
 
+        // Preview buttons
+        previewFloor1Button = view.findViewById(R.id.floor1PreviewButton);
+        previewFloor1Button.setOnClickListener(v -> {
+            performViewItem(floors.get(0));
+        });
+        previewFloor2Button = view.findViewById(R.id.floor2PreviewButton);
+        previewFloor2Button.setOnClickListener(v -> {
+            performViewItem(floors.get(1));
+
+        });
+        previewFloor3Button = view.findViewById(R.id.floor3PreviewButton);
+        previewFloor3Button.setOnClickListener(v -> {
+            performViewItem(floors.get(2));
+        });
+        
         // Reading information from the database if user is logged
 
 
         return view;
     } //OnCreate() End
 
+    private void performViewItem(Floor p) {
+        if(p.getId().equals("f1"))
+            userOwnedItems.setF1(ItemStatus.PREVIEW.value);
+
+        if(p.getId().equals("f2"))
+            userOwnedItems.setF2(ItemStatus.PREVIEW.value);
+
+        if(p.getId().equals("f3"))
+            userOwnedItems.setF3(ItemStatus.PREVIEW.value);
+        updateItemStatus();
+
+        Intent intent = new Intent(getActivity(), activity_studio_preview.class);
+        startActivity(intent);
+
+    }
+    
     private void performBuyItem(Floor f) {
         if(ableToBuy(f)) {
             if(f.getId().equals("f1"))
@@ -130,6 +169,7 @@ public class floor_fragment extends Fragment {
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            floors.clear();
                             for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                                     itemId = keyId.child("Id").getValue(String.class);
                                     itemLevel = keyId.child("Level").getValue(Integer.class);
@@ -137,6 +177,8 @@ public class floor_fragment extends Fragment {
 
                                     Floor f = new Floor(itemId, itemLevel, itemPrice);
                                     floors.add(f);
+                                    setPriceTag(floors.size(),itemPrice);
+                                    enableButtons(userOwnedItems);
 
                                 }
                         }
@@ -160,6 +202,48 @@ public class floor_fragment extends Fragment {
         }
     }
 
+    private void enableButtons(UserOwnedItems uoi) {
+        if(uoi.getF1() == ItemStatus.NOTOWNED.value)
+        {
+            buyFloor1Button.setEnabled(true);
+            previewFloor1Button.setEnabled(true);
+        }
+        else {
+            buyFloor1Button.setEnabled(false);
+            previewFloor1Button.setEnabled(false);
+        }
+
+        if(uoi.getF2() == ItemStatus.NOTOWNED.value) {
+            buyFloor2Button.setEnabled(true);
+            previewFloor2Button.setEnabled(true);
+        }
+        else {
+            buyFloor2Button.setEnabled(false);
+            previewFloor2Button.setEnabled(false);
+        }
+
+        if(uoi.getF3() == ItemStatus.NOTOWNED.value) {
+            buyFloor3Button.setEnabled(true);
+            previewFloor3Button.setEnabled(true);
+        }
+        else {
+            buyFloor3Button.setEnabled(false);
+            previewFloor3Button.setEnabled(false);
+        }
+    }
+
+    private void setPriceTag(int size, int itemPrice) {
+        if(size == 1)
+            priceFloor1TxtView.setText(String.valueOf(itemPrice));
+
+        else if(size == 2)
+            priceFloor2TxtView.setText(String.valueOf(itemPrice));
+
+        else if(size == 3)
+            priceFloor3TxtView.setText(String.valueOf(itemPrice));
+
+    }
+
     private void updateUserMoney() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
@@ -173,13 +257,13 @@ public class floor_fragment extends Fragment {
     private boolean ableToBuy(Floor f) {
         if(f.getPrice()<=ownedMoney)
         {
-            if(f.getId().equals("f1") && userOwnedItems.getF1()!=ItemStatus.OWNED.value)
+            if(f.getId().equals("f1") && !(userOwnedItems.getF1()==ItemStatus.OWNED.value || userOwnedItems.getF1()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
-            if(f.getId().equals("f2") && userOwnedItems.getF2()!=ItemStatus.OWNED.value)
+            if(f.getId().equals("f2") && !(userOwnedItems.getF2()==ItemStatus.OWNED.value || userOwnedItems.getF2()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
-            if(f.getId().equals("f3") && userOwnedItems.getF3()!=ItemStatus.OWNED.value)
+            if(f.getId().equals("f3") && !(userOwnedItems.getF3()==ItemStatus.OWNED.value || userOwnedItems.getF3()==ItemStatus.HIDDENOWNED.value))
                 return true;
         }
         return false;

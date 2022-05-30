@@ -67,6 +67,26 @@
                 android:text="@string/item_price"
                 android:textSize="18sp" />
 
+<!--            <TextView-->
+<!--                android:id="@+id/table1LevelLabel"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="-338dp"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginEnd="184dp"-->
+<!--                android:text="@string/studio_level"-->
+<!--                android:textSize="18sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/table1LevelTextView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="-170dp"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_marginEnd="184dp"-->
+<!--                android:text="@string/item_lvl"-->
+<!--                android:textSize="18sp" />-->
+
             <Button
                 android:id="@+id/table1PreviewButton"
                 android:layout_width="wrap_content"
@@ -137,6 +157,7 @@
                 android:layout_marginEnd="184dp"
                 android:text="@string/item_price"
                 android:textSize="18sp" />
+
 
             <Button
                 android:id="@+id/table2PreviewButton"

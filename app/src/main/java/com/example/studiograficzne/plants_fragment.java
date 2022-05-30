@@ -1,5 +1,6 @@
 package com.example.studiograficzne;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +31,8 @@ public class plants_fragment extends Fragment {
     private static final String FURNITURE = "Furniture", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyPlant1Button, buyPlant2Button, buyPlant3Button;
+    private Button previewPlant1Button, previewPlant2Button, previewPlant3Button;
+    private TextView pricePlant1TxtView, pricePlant2TxtView, pricePlant3TxtView;
 
     // Database variables
     private FirebaseAuth mAuth;
@@ -54,6 +58,11 @@ public class plants_fragment extends Fragment {
         Log.v("USERID", userRef.getKey());
         readFromDatabase(currentUser, userRef, furnitureRef);
 
+        pricePlant1TxtView = view.findViewById(R.id.plant1PriceTextView);
+        pricePlant2TxtView = view.findViewById(R.id.plant2PriceTextView);
+        pricePlant3TxtView = view.findViewById(R.id.plant3PriceTextView);
+
+        // Buy buttons
         buyPlant1Button = view.findViewById(R.id.plant1BuyButton);
         buyPlant1Button.setOnClickListener(v -> {
             performBuyItem(plants.get(0));
@@ -67,11 +76,42 @@ public class plants_fragment extends Fragment {
             performBuyItem(plants.get(2));
         });
 
+        // Preview buttons
+        previewPlant1Button = view.findViewById(R.id.plant1PreviewButton);
+        previewPlant1Button.setOnClickListener(v -> {
+            performViewItem(plants.get(0));
+        });
+        previewPlant2Button = view.findViewById(R.id.plant2PreviewButton);
+        previewPlant2Button.setOnClickListener(v -> {
+            performViewItem(plants.get(1));
+
+        });
+        previewPlant3Button = view.findViewById(R.id.plant3PreviewButton);
+        previewPlant3Button.setOnClickListener(v -> {
+            performViewItem(plants.get(2));
+        });
+
         // Reading information from the database if user is logged
 
 
         return view;
     } //OnCreate() End
+
+    private void performViewItem(Plant p) {
+        if(p.getId().equals("p1"))
+            userOwnedItems.setP1(ItemStatus.PREVIEW.value);
+
+        if(p.getId().equals("p2"))
+            userOwnedItems.setP2(ItemStatus.PREVIEW.value);
+
+        if(p.getId().equals("p3"))
+            userOwnedItems.setP3(ItemStatus.PREVIEW.value);
+        updateItemStatus();
+
+        Intent intent = new Intent(getActivity(), activity_studio_preview.class);
+        startActivity(intent);
+
+    }
 
     private void performBuyItem(Plant p) {
         if(ableToBuy(p)) {
@@ -130,6 +170,7 @@ public class plants_fragment extends Fragment {
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            plants.clear();
                             for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                                 itemId = keyId.child("Id").getValue(String.class);
                                 itemLevel = keyId.child("Level").getValue(Integer.class);
@@ -137,6 +178,8 @@ public class plants_fragment extends Fragment {
 
                                 Plant p = new Plant(itemId, itemLevel, itemPrice);
                                 plants.add(p);
+                                setPriceTag(plants.size(),itemPrice);
+                                enableButtons(userOwnedItems);
 
                             }
                         }
@@ -160,6 +203,36 @@ public class plants_fragment extends Fragment {
         }
     }
 
+    private void enableButtons(UserOwnedItems uoi) {
+        if(uoi.getP1() == ItemStatus.NOTOWNED.value)
+        {
+            buyPlant1Button.setEnabled(true);
+            previewPlant1Button.setEnabled(true);
+        }
+        else {
+            buyPlant1Button.setEnabled(false);
+            previewPlant1Button.setEnabled(false);
+        }
+
+        if(uoi.getP2() == ItemStatus.NOTOWNED.value) {
+            buyPlant2Button.setEnabled(true);
+            previewPlant2Button.setEnabled(true);
+        }
+        else {
+            buyPlant2Button.setEnabled(false);
+            previewPlant2Button.setEnabled(false);
+        }
+
+        if(uoi.getP3() == ItemStatus.NOTOWNED.value) {
+            buyPlant3Button.setEnabled(true);
+            previewPlant3Button.setEnabled(true);
+        }
+        else {
+            buyPlant3Button.setEnabled(false);
+            previewPlant3Button.setEnabled(false);
+        }
+    }
+
     private void updateUserMoney() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
@@ -170,16 +243,28 @@ public class plants_fragment extends Fragment {
         }
     }
 
+    private void setPriceTag(int size, int itemPrice) {
+        if(size == 1)
+            pricePlant1TxtView.setText(String.valueOf(itemPrice));
+
+        else if(size == 2)
+            pricePlant2TxtView.setText(String.valueOf(itemPrice));
+
+        else if(size == 3)
+            pricePlant3TxtView.setText(String.valueOf(itemPrice));
+
+    }
+
     private boolean ableToBuy(Plant p) {
         if(p.getPrice()<=ownedMoney)
         {
-            if(p.getId().equals("p1") && userOwnedItems.getP1()!=ItemStatus.OWNED.value)
+            if(p.getId().equals("p1") && !(userOwnedItems.getP1()==ItemStatus.OWNED.value || userOwnedItems.getP1()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
-            if(p.getId().equals("p2") && userOwnedItems.getP2()!=ItemStatus.OWNED.value)
+            if(p.getId().equals("p2") && !(userOwnedItems.getP2()==ItemStatus.OWNED.value || userOwnedItems.getP2()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
-            if(p.getId().equals("p3") && userOwnedItems.getP3()!=ItemStatus.OWNED.value)
+            if(p.getId().equals("p3") && !(userOwnedItems.getP3()==ItemStatus.OWNED.value || userOwnedItems.getP3()==ItemStatus.HIDDENOWNED.value))
                 return true;
         }
         return false;

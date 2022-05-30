@@ -1,9 +1,11 @@
 package com.example.studiograficzne;
 
 public enum ItemStatus {
-    NOTOWNED(4),
+    NOTOWNED(0),
     OWNED(1),
-    PREVIEW(2);
+    HIDDENOWNED(2),
+    PREVIEW(3),
+    HIDDENFORPREVIEW(4);
 
     public final int value;
 
