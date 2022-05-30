@@ -27,15 +27,15 @@ public class UserOwnedItems {
     }
 
     public UserOwnedItems(){
-        p1 = View.INVISIBLE;
-        p2 = View.INVISIBLE;
-        p3 = View.INVISIBLE;
-        t1 = View.INVISIBLE;
-        t2 = View.INVISIBLE;
-        t3 = View.INVISIBLE;
-        f1 = View.INVISIBLE;
-        f2 = View.INVISIBLE;
-        f3 = View.INVISIBLE;
+        p1 = ItemStatus.NOTOWNED.value;
+        p2 = ItemStatus.NOTOWNED.value;
+        p3 = ItemStatus.NOTOWNED.value;
+        t1 = ItemStatus.NOTOWNED.value;
+        t2 = ItemStatus.NOTOWNED.value;
+        t3 = ItemStatus.NOTOWNED.value;
+        f1 = ItemStatus.NOTOWNED.value;
+        f2 = ItemStatus.NOTOWNED.value;
+        f3 = ItemStatus.NOTOWNED.value;
     }
 
     public int getP1() {
@@ -109,8 +109,5 @@ public class UserOwnedItems {
     public void setF3(int f3) {
         this.f3 = f3;
     }
-
-
-
 
 }

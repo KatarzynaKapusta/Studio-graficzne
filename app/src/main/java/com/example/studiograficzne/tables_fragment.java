@@ -1,5 +1,6 @@
 package com.example.studiograficzne;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +31,8 @@ public class tables_fragment extends Fragment {
     private static final String FURNITURE = "Furniture", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyTable1Button, buyTable2Button, buyTable3Button;
-
+    private Button previewTable1Button, previewTable2Button, previewTable3Button;
+    private TextView priceTable1TxtView, priceTable2TxtView, priceTable3TxtView;
     // Database variables
     private FirebaseAuth mAuth;
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
@@ -54,6 +57,10 @@ public class tables_fragment extends Fragment {
         Log.v("USERID", userRef.getKey());
         readFromDatabase(currentUser, userRef, furnitureRef);
 
+        priceTable1TxtView = view.findViewById(R.id.table1PriceTextView);
+        priceTable2TxtView = view.findViewById(R.id.table2PriceTextView);
+        priceTable3TxtView = view.findViewById(R.id.table3PriceTextView);
+
         buyTable1Button = view.findViewById(R.id.table1BuyButton);
         buyTable1Button.setOnClickListener(v ->
             performBuyItem(tables.get(0))
@@ -67,22 +74,53 @@ public class tables_fragment extends Fragment {
             performBuyItem(tables.get(2));
         });
 
+        // Preview buttons
+        previewTable1Button = view.findViewById(R.id.table1PreviewButton);
+        previewTable1Button.setOnClickListener(v -> {
+            performViewItem(tables.get(0));
+        });
+        previewTable2Button = view.findViewById(R.id.table2PreviewButton);
+        previewTable2Button.setOnClickListener(v -> {
+            performViewItem(tables.get(1));
+
+        });
+        previewTable3Button = view.findViewById(R.id.table3PreviewButton);
+        previewTable3Button.setOnClickListener(v -> {
+            performViewItem(tables.get(2));
+        });
+
         // Reading information from the database if user is logged
 
 
         return view;
     } //OnCreate() End
 
+    private void performViewItem(Table t) {
+        if(t.getId().equals("t1"))
+            userOwnedItems.setT1(ItemStatus.PREVIEW.value);
+
+        if(t.getId().equals("t2"))
+            userOwnedItems.setT2(ItemStatus.PREVIEW.value);
+
+        if(t.getId().equals("t3"))
+            userOwnedItems.setT3(ItemStatus.PREVIEW.value);
+        updateItemStatus();
+
+        Intent intent = new Intent(getActivity(), activity_studio_preview.class);
+        startActivity(intent);
+
+    }
+    
     private void performBuyItem(Table t) {
         if(ableToBuy(t)) {
             if(t.getId().equals("t1"))
-                userOwnedItems.setT1(1);
+                userOwnedItems.setT1(ItemStatus.OWNED.value);
 
             if(t.getId().equals("t2"))
-                userOwnedItems.setT2(1);
+                userOwnedItems.setT2(ItemStatus.OWNED.value);
 
             if(t.getId().equals("t3"))
-                userOwnedItems.setT3(1);
+                userOwnedItems.setT3(ItemStatus.OWNED.value);
 
             updateItemStatus();
             ownedMoney-=t.getPrice();
@@ -130,6 +168,7 @@ public class tables_fragment extends Fragment {
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            tables.clear();
                             for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                                 itemId = keyId.child("Id").getValue(String.class);
                                 itemLevel = keyId.child("Level").getValue(Integer.class);
@@ -137,6 +176,8 @@ public class tables_fragment extends Fragment {
 
                                 Table t = new Table(itemId, itemLevel, itemPrice);
                                 tables.add(t);
+                                setPriceTag(tables.size(),itemPrice);
+                                enableButtons(userOwnedItems);
 
                             }
                         }
@@ -160,6 +201,36 @@ public class tables_fragment extends Fragment {
         }
     }
 
+    private void enableButtons(UserOwnedItems uoi) {
+        if(uoi.getT1() == ItemStatus.NOTOWNED.value)
+        {
+            buyTable1Button.setEnabled(true);
+            previewTable1Button.setEnabled(true);
+        }
+        else {
+            buyTable1Button.setEnabled(false);
+            previewTable1Button.setEnabled(false);
+        }
+
+        if(uoi.getT2() == ItemStatus.NOTOWNED.value) {
+            buyTable2Button.setEnabled(true);
+            previewTable2Button.setEnabled(true);
+        }
+        else {
+            buyTable2Button.setEnabled(false);
+            previewTable2Button.setEnabled(false);
+        }
+
+        if(uoi.getT3() == ItemStatus.NOTOWNED.value) {
+            buyTable3Button.setEnabled(true);
+            previewTable3Button.setEnabled(true);
+        }
+        else {
+            buyTable3Button.setEnabled(false);
+            previewTable3Button.setEnabled(false);
+        }
+    }
+    
     private void updateUserMoney() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
@@ -169,17 +240,28 @@ public class tables_fragment extends Fragment {
             databaseOperations.updateDatabase(uid,rootRef,"money",ownedMoney);
         }
     }
+    private void setPriceTag(int size, int itemPrice) {
+        if(size == 1)
+            priceTable1TxtView.setText(String.valueOf(itemPrice));
+
+        else if(size == 2)
+            priceTable2TxtView.setText(String.valueOf(itemPrice));
+
+        else if(size == 3)
+            priceTable3TxtView.setText(String.valueOf(itemPrice));
+
+    }
 
     private boolean ableToBuy(Table t) {
         if(t.getPrice()<=ownedMoney)
         {
-            if(t.getId().equals("t1") && userOwnedItems.getT1()!=1)
+            if(t.getId().equals("t1") && !(userOwnedItems.getT1()==ItemStatus.OWNED.value || userOwnedItems.getT1()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
-            if(t.getId().equals("t2") && userOwnedItems.getT2()!=1)
+            if(t.getId().equals("t2") && !(userOwnedItems.getT2()==ItemStatus.OWNED.value || userOwnedItems.getT2()==ItemStatus.HIDDENOWNED.value))
                 return true;
 
-            if(t.getId().equals("t3") && userOwnedItems.getT3()!=1)
+            if(t.getId().equals("t3") && !(userOwnedItems.getT3()==ItemStatus.OWNED.value || userOwnedItems.getT3()==ItemStatus.HIDDENOWNED.value))
                 return true;
         }
         return false;
