@@ -57,7 +57,7 @@ public class floor_fragment extends Fragment {
         DatabaseReference furnitureRef = rootRef.child(FURNITURE).child("Floors");
         Log.v("USERID", userRef.getKey());
         readFromDatabase(currentUser, userRef, furnitureRef);
-
+      
         priceFloor1TxtView = view.findViewById(R.id.floor1PriceTextView);
         priceFloor2TxtView = view.findViewById(R.id.floor2PriceTextView);
         priceFloor3TxtView = view.findViewById(R.id.floor3PriceTextView);
@@ -96,14 +96,14 @@ public class floor_fragment extends Fragment {
         return view;
     } //OnCreate() End
 
-    private void performViewItem(Floor p) {
-        if(p.getId().equals("f1"))
+    private void performViewItem(Floor f) {
+        if(f.getId().equals("f1"))
             userOwnedItems.setF1(ItemStatus.PREVIEW.value);
 
-        if(p.getId().equals("f2"))
+        if(f.getId().equals("f2"))
             userOwnedItems.setF2(ItemStatus.PREVIEW.value);
 
-        if(p.getId().equals("f3"))
+        if(f.getId().equals("f3"))
             userOwnedItems.setF3(ItemStatus.PREVIEW.value);
         updateItemStatus();
 
@@ -264,6 +264,7 @@ public class floor_fragment extends Fragment {
                 return true;
 
             if(f.getId().equals("f3") && !(userOwnedItems.getF3()==ItemStatus.OWNED.value || userOwnedItems.getF3()==ItemStatus.HIDDENOWNED.value))
+
                 return true;
         }
         return false;

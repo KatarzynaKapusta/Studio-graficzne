@@ -158,7 +158,6 @@
                 android:text="@string/item_price"
                 android:textSize="18sp" />
 
-
             <Button
                 android:id="@+id/table2PreviewButton"
                 android:layout_width="wrap_content"

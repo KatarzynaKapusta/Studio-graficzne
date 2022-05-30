@@ -33,7 +33,6 @@ public class tables_fragment extends Fragment {
     private Button buyTable1Button, buyTable2Button, buyTable3Button;
     private Button previewTable1Button, previewTable2Button, previewTable3Button;
     private TextView priceTable1TxtView, priceTable2TxtView, priceTable3TxtView;
-
     // Database variables
     private FirebaseAuth mAuth;
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
@@ -96,14 +95,14 @@ public class tables_fragment extends Fragment {
         return view;
     } //OnCreate() End
 
-    private void performViewItem(Table p) {
-        if(p.getId().equals("t1"))
+    private void performViewItem(Table t) {
+        if(t.getId().equals("t1"))
             userOwnedItems.setT1(ItemStatus.PREVIEW.value);
 
-        if(p.getId().equals("t2"))
+        if(t.getId().equals("t2"))
             userOwnedItems.setT2(ItemStatus.PREVIEW.value);
 
-        if(p.getId().equals("t3"))
+        if(t.getId().equals("t3"))
             userOwnedItems.setT3(ItemStatus.PREVIEW.value);
         updateItemStatus();
 
