@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.percentlayout.widget.PercentRelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment_info_improvements"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment_info_improvements">
+    android:layout_height="match_parent">
 
 
-</FrameLayout>
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/rouge_pink"
+        app:layout_heightPercent="100%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="2%"
+        app:layout_marginRightPercent="2%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="100%">
+
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_pink"
+            app:layout_heightPercent="100%"
+            app:layout_marginBottomPercent="1%"
+            app:layout_marginLeftPercent="1%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="1%"
+            app:layout_widthPercent="100%">
+
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

@@ -6,6 +6,7 @@ public class Employee {
     private double additional_money1 = 0;
     private double salary = 0;
 
+
     public double getAdditional_exp1() {
         return additional_exp1;
     }

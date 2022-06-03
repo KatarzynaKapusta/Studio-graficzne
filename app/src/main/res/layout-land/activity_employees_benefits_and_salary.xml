@@ -80,17 +80,17 @@
             android:id="@+id/text_view_countdown_studio_salary1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timer_start"
+            android:text="00:00:00"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:visibility="visible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="35%"
+            app:layout_marginLeftPercent="20%"
             app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="30%"
+            app:layout_widthPercent="60%"
             tools:ignore="InvalidId">
 
         </TextView>
@@ -101,13 +101,14 @@
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
             android:text="Zapłać"
+            android:enabled="false"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="50%"
-            android:enabled="false">
+            app:layout_widthPercent="60%"
+            tools:visibility="invisible">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -117,13 +118,14 @@
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
             android:text="Odbierz"
+            android:enabled="false"
+            android:visibility="invisible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="75%"
-            app:layout_widthPercent="50%"
-            android:enabled="false">
+            app:layout_widthPercent="60%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -177,17 +179,17 @@
             android:id="@+id/text_view_countdown_studio_salary2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timer_start"
+            android:text="00:00:00"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:visibility="visible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="35%"
+            app:layout_marginLeftPercent="20%"
             app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="30%"
+            app:layout_widthPercent="60%"
             tools:ignore="InvalidId">
 
         </TextView>
@@ -197,14 +199,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
+            android:enabled="false"
             android:text="Zapłać"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="50%"
-            android:enabled="false">
+            app:layout_widthPercent="60%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -213,14 +215,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
+            android:enabled="false"
+            android:visibility="invisible"
             android:text="Odbierz"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="75%"
-            app:layout_widthPercent="50%"
-            android:enabled="false">
+            app:layout_widthPercent="60%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -275,17 +278,17 @@
             android:id="@+id/text_view_countdown_studio_salary3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timer_start"
+            android:text="00:00:00"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:visibility="visible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="35%"
+            app:layout_marginLeftPercent="20%"
             app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="30%"
+            app:layout_widthPercent="60%"
             tools:ignore="InvalidId">
 
         </TextView>
@@ -295,14 +298,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
+            android:enabled="false"
             android:text="Zapłać"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="50%"
-            android:enabled="false">
+            app:layout_widthPercent="60%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
@@ -311,14 +314,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
+            android:enabled="false"
+            android:visibility="invisible"
             android:text="Odbierz"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="25%"
-            app:layout_marginRightPercent="25%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="75%"
-            app:layout_widthPercent="50%"
-            android:enabled="false">
+            app:layout_widthPercent="60%">
 
         </androidx.appcompat.widget.AppCompatButton>
 
