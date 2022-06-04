@@ -45,6 +45,7 @@ public class activity_meblowy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meblowy);
+
         // Checking if user is logged or not and getting his email
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -138,8 +139,8 @@ public class activity_meblowy extends AppCompatActivity {
                     Log.w(TAG, "Failed to read value.", error.toException());
                 }
             });
-        }
-    }
+        } //end of if
+    } //end of reading from data base
 
     private Double checkUserLevel(@NonNull Double exp, Double lvl, List<Double> lvlList) {
         double localLvl = 0, lastLvlValue = lvlList.get(lvlList.size()-1);

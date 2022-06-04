@@ -103,6 +103,7 @@ public class fragment_info_statistics extends Fragment {
         Log.v("USERID", userRef.getKey());
 
         //readFromDatabase(currentUser, userRef);
+        readFromDatabase(currentUser, userRef);
 
         return v;
     }
@@ -114,7 +115,7 @@ public class fragment_info_statistics extends Fragment {
                 Double money, level, resources, experience;
                 String moneyString, resourcesString, experienceString;
                 Boolean isEmployee1Hired, isEmployee2Hired, isEmployee3Hired;
-                int f1, f2, f3, t1,t2,t3,p1,p2,p3;
+                Integer f1, f2, f3, t1,t2,t3,p1,p2,p3, studio_level;
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -144,6 +145,8 @@ public class fragment_info_statistics extends Fragment {
                             t2 = keyId.child("UserOwnedItems").child("t2").getValue(Integer.class);
                             t3 = keyId.child("UserOwnedItems").child("t3").getValue(Integer.class);
 
+                            studio_level = keyId.child("UserStudioInfo").child("studioLevel").getValue(Integer.class);
+
                             break;
                         }
                     }
@@ -158,11 +161,21 @@ public class fragment_info_statistics extends Fragment {
                     checkIfPlantIsOwned();
                     addFurniture();
 
-
+                    String NOD = String.valueOf(desksCounter);
 
                     checkIfEmployeeIsHired();
+                    numbOfFurniture.setText(String.valueOf(numberOfFurniture));
+                    numbOfEmployees.setText(String.valueOf(numberOfEmployees));
+                    numbOfImprovements.setText(String.valueOf(numberOfImprovements));
+                    studioLevel.setText(String.valueOf(studio_level));
 
+                    numbOfDesks.setText(String.valueOf(desksCounter));
+                    numbOfPlants.setText(String.valueOf(floorsCounter));
+                    numbOfFloors.setText(String.valueOf(floorsCounter));
 
+                    numbOfComputers.setText(computersCounter);
+                    numbOfTablets.setText(tabletsCounter);
+                    numbOfGraphicCards.setText(graphicCardsCounter);
                 } // End of reading from "Users" branch
 
                 @Override
@@ -175,14 +188,30 @@ public class fragment_info_statistics extends Fragment {
     }
 
     private void checkIfEmployeeIsHired(){
-        if(userEmployeesInfo.getEmployee1Hired()){
-            numberOfEmployees++;
+        if(userEmployeesInfo.getEmployee1Hired() && userEmployeesInfo.getEmployee2Hired() && userEmployeesInfo.getEmployee3Hired()){
+            numberOfEmployees=3;
         }
-        if(userEmployeesInfo.getEmployee2Hired()){
-            numberOfEmployees++;
+        else if(userEmployeesInfo.getEmployee1Hired() && userEmployeesInfo.getEmployee2Hired()){
+            numberOfEmployees=2;
         }
-        if(userEmployeesInfo.getEmployee3Hired()){
-            numberOfEmployees++;
+        else if(userEmployeesInfo.getEmployee2Hired() && userEmployeesInfo.getEmployee3Hired()){
+            numberOfEmployees=2;
+        }
+        else if(userEmployeesInfo.getEmployee1Hired() && userEmployeesInfo.getEmployee3Hired()){
+            numberOfEmployees=2;
+        }
+        else if(userEmployeesInfo.getEmployee1Hired())
+        {
+            numberOfEmployees=1;
+        }
+        else if(userEmployeesInfo.getEmployee2Hired()){
+            numberOfEmployees=1;
+        }
+        else if(userEmployeesInfo.getEmployee3Hired()){
+            numberOfEmployees=1;
+        }
+        else {
+            numberOfEmployees=0;
         }
     }
 
@@ -209,41 +238,93 @@ public class fragment_info_statistics extends Fragment {
     }
 
     private void checkIfPlantIsOwned(){
-        if(userOwnedItems.getP1()==1){
-            plantsCounter++;
+        if(userOwnedItems.getP1()==1 && userOwnedItems.getP2()==1 && userOwnedItems.getP3()==1){
+            plantsCounter =3;
         }
-        if(userOwnedItems.getP2()==1){
-            plantsCounter++;
+        else if(userOwnedItems.getP2()==1 && userOwnedItems.getP3()==1){
+            plantsCounter =2;
         }
-        if(userOwnedItems.getP3()==1)
+        else if(userOwnedItems.getP3()==1 && userOwnedItems.getP1()==1)
         {
-            plantsCounter++;
+            plantsCounter=2;
         }
+        else if(userOwnedItems.getP1()==1 && userOwnedItems.getP2()==1)
+        {
+            plantsCounter=2;
+        }
+        else if(userOwnedItems.getP1()==1){
+            plantsCounter=1;
+        }
+        else if(userOwnedItems.getP2()==1){
+            plantsCounter=1;
+        }
+        else if(userOwnedItems.getP3()==1){
+            plantsCounter=1;
+        }
+        else
+        {
+            plantsCounter=0;
+        }
+
     }
 
     private void checkIfFloorIsOwned(){
-        if(userOwnedItems.getF1()==1){
-            floorsCounter++;
+        if(userOwnedItems.getF1()==1 && userOwnedItems.getF2()==1 && userOwnedItems.getF3()==1){
+            floorsCounter =3;
         }
-        if(userOwnedItems.getF2()==1){
-            floorsCounter++;
+        else if(userOwnedItems.getF2()==1 && userOwnedItems.getF3()==1){
+            floorsCounter =2;
         }
-        if(userOwnedItems.getF3()==1)
+        else if(userOwnedItems.getF3()==1 && userOwnedItems.getF1()==1)
         {
-            floorsCounter++;
+            floorsCounter=2;
+        }
+        else if(userOwnedItems.getF1()==1 && userOwnedItems.getF2()==1)
+        {
+            floorsCounter=2;
+        }
+        else if(userOwnedItems.getF1()==1){
+            floorsCounter=1;
+        }
+        else if(userOwnedItems.getF2()==1){
+            floorsCounter=1;
+        }
+        else if(userOwnedItems.getF3()==1){
+            floorsCounter=1;
+        }
+        else
+        {
+            floorsCounter=0;
         }
     }
 
     private void checkIfDeskIsOwned(){
-        if(userOwnedItems.getT1()==1){
-            desksCounter++;
+        if(userOwnedItems.getT1()==1 && userOwnedItems.getT2()==1 && userOwnedItems.getT3()==1){
+            desksCounter =3;
         }
-        if(userOwnedItems.getT2()==1){
-            desksCounter++;
+        else if(userOwnedItems.getT2()==1 && userOwnedItems.getT3()==1){
+            desksCounter =2;
         }
-        if(userOwnedItems.getT3()==1)
+        else if(userOwnedItems.getT3()==1 && userOwnedItems.getT1()==1)
         {
-            desksCounter++;
+            desksCounter=2;
+        }
+        else if(userOwnedItems.getT1()==1 && userOwnedItems.getT2()==1)
+        {
+            desksCounter=2;
+        }
+        else if(userOwnedItems.getT1()==1){
+            desksCounter=1;
+        }
+        else if(userOwnedItems.getT2()==1){
+            desksCounter=1;
+        }
+        else if(userOwnedItems.getT3()==1){
+            desksCounter=1;
+        }
+        else
+        {
+            floorsCounter=0;
         }
     }
 
