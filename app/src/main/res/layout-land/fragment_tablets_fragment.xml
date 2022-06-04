@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".tablets_fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/upgradeMainLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tablet1ImageView"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/tablet_lvl1"
+                android:contentDescription="tablet description" />
+
+            <TextView
+                android:id="@+id/tablet1NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="184dp"
+                android:text="Tablet poziom 1"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet1PriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-310dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/pricePL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet1PriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_price"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet1LevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-265dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/studio_level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet1LevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_lvl"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/tablet1PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-155dp"
+                android:layout_marginEnd="10dp"
+                android:background="#2196F3"
+                app:backgroundTint="#2196F3"
+                android:text="@string/previewPL"/>
+
+            <Button
+                android:id="@+id/tablet1BuyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#2196F3"
+                app:backgroundTint="#2196F3"
+                android:text="@string/buyPL"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tablet2ImageView"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/tablet_lvl1"
+                android:contentDescription="tablet2Description" />
+
+            <TextView
+                android:id="@+id/tablet2NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:text="Tablet poziom 2"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tablet2PriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-120dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/pricePL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet2LevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-230dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/studio_level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet2LevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_lvl"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet2PriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-250dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_price"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/tablet2PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-135dp"
+                android:layout_marginEnd="10dp"
+                android:background="#2196F3"
+                app:backgroundTint="#2196F3"
+                android:text="@string/previewPL"/>
+
+            <Button
+                android:id="@+id/tablet2BuyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#2196F3"
+                app:backgroundTint="#2196F3"
+                android:text="@string/buyPL"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/tablet3ImageView"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/tablet_lvl3"
+                android:contentDescription="tablet3 description" />
+
+            <TextView
+                android:id="@+id/tablet3NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="184dp"
+                android:text="Tablet poziom 3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet3PriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-305dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/pricePL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet3PriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_price"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet3LevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-275dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/studio_level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tablet3LevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_lvl"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/tablet3PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-170dp"
+                android:layout_marginEnd="10dp"
+                android:background="#2196F3"
+                app:backgroundTint="#2196F3"
+                android:text="@string/previewPL"/>
+
+            <Button
+                android:id="@+id/tablet3BuyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#2196F3"
+                app:backgroundTint="#2196F3"
+                android:text="@string/buyPL"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
