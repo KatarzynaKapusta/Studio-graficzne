@@ -31,6 +31,7 @@ public class graphicsCards_fragment extends Fragment {
     private static final String UPGRADES = "Upgrades", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyCard1Button, buyCard2Button, buyCard3Button;
+    private Button previewCard1Button, previewCard2Button, previewCard3Button;
     private TextView priceCard1TxtView, priceCard2TxtView, priceCard3TxtView;
     private TextView lvlCard1TxtView, lvlCard2TxtView, lvlCard3TxtView;
 
@@ -41,7 +42,6 @@ public class graphicsCards_fragment extends Fragment {
     private UserOwnedUpgrades userOwnedUpgrades;
     private List<Card> cards = new ArrayList<>();
     double ownedMoney, ownedResources;
-    Double level;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,11 +81,42 @@ public class graphicsCards_fragment extends Fragment {
             performBuyItem(cards.get(2));
         });
 
+        // Preview buttons
+        previewCard1Button = view.findViewById(R.id.card1PreviewButton);
+        previewCard1Button.setOnClickListener(v -> {
+            performViewItem(cards.get(0));
+        });
+        previewCard2Button = view.findViewById(R.id.card2PreviewButton);
+        previewCard2Button.setOnClickListener(v -> {
+            performViewItem(cards.get(1));
+
+        });
+        previewCard3Button = view.findViewById(R.id.card3PreviewButton);
+        previewCard3Button.setOnClickListener(v -> {
+            performViewItem(cards.get(2));
+        });
+
 
         // Inflate the layout for this fragment
         return view;
 
     } // OnCreate() end
+
+    private void performViewItem(Card c) {
+        if(c.getId().equals("card_lvl1"))
+            userOwnedUpgrades.setCard_lvl1(ItemStatus.PREVIEW.value);
+
+        if(c.getId().equals("card_lvl2"))
+            userOwnedUpgrades.setCard_lvl2(ItemStatus.PREVIEW.value);
+
+        if(c.getId().equals("card_lvl3"))
+            userOwnedUpgrades.setCard_lvl3(ItemStatus.PREVIEW.value);
+        updateItemStatus();
+
+        Intent intent = new Intent(getActivity(), activity_studio_preview.class);
+        startActivity(intent);
+
+    }
 
     private void performBuyItem(Card c) {
         if(ableToBuy(c)) {
@@ -115,7 +146,7 @@ public class graphicsCards_fragment extends Fragment {
         if (currentUser != null) {
             // Read from "Users" branch in db
             userRef.addValueEventListener(new ValueEventListener() {
-                Double money, resources, experience;
+                Double money, level, resources, experience;
                 String moneyString, resourcesString, experienceString;
                 Integer numStatus;
 
@@ -182,26 +213,32 @@ public class graphicsCards_fragment extends Fragment {
     }
 
     private void enableButtons(UserOwnedUpgrades uoi) {
-        if(uoi.getCard_lvl1() == ItemStatus.NOTOWNED.value && level >=3)
+        if(uoi.getCard_lvl1() == ItemStatus.NOTOWNED.value)
         {
             buyCard1Button.setEnabled(true);
+            previewCard1Button.setEnabled(true);
         }
         else {
             buyCard1Button.setEnabled(false);
+            previewCard1Button.setEnabled(false);
         }
 
-        if(uoi.getCard_lvl2() == ItemStatus.NOTOWNED.value && level >=5) {
+        if(uoi.getCard_lvl2() == ItemStatus.NOTOWNED.value) {
             buyCard2Button.setEnabled(true);
+            previewCard2Button.setEnabled(true);
         }
         else {
             buyCard2Button.setEnabled(false);
+            previewCard2Button.setEnabled(false);
         }
 
-        if(uoi.getCard_lvl3() == ItemStatus.NOTOWNED.value && level >=10) {
+        if(uoi.getCard_lvl3() == ItemStatus.NOTOWNED.value) {
             buyCard3Button.setEnabled(true);
+            previewCard3Button.setEnabled(true);
         }
         else {
             buyCard3Button.setEnabled(false);
+            previewCard3Button.setEnabled(false);
         }
     }
 
