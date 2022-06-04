@@ -33,6 +33,7 @@ public class tables_fragment extends Fragment {
     private Button buyTable1Button, buyTable2Button, buyTable3Button;
     private Button previewTable1Button, previewTable2Button, previewTable3Button;
     private TextView priceTable1TxtView, priceTable2TxtView, priceTable3TxtView;
+
     // Database variables
     private FirebaseAuth mAuth;
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
@@ -51,6 +52,7 @@ public class tables_fragment extends Fragment {
         if (currentUser != null) {
             email = currentUser.getEmail();
         }
+
         View view = inflater.inflate(R.layout.fragment_tables_fragment, container, false);
         DatabaseReference userRef = rootRef.child(USERS);
         DatabaseReference furnitureRef = rootRef.child(FURNITURE).child("Tables");
@@ -240,6 +242,7 @@ public class tables_fragment extends Fragment {
             databaseOperations.updateDatabase(uid,rootRef,"money",ownedMoney);
         }
     }
+
     private void setPriceTag(int size, int itemPrice) {
         if(size == 1)
             priceTable1TxtView.setText(String.valueOf(itemPrice));
