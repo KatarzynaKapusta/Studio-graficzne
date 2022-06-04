@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
+            android:name=".activity_endOfGame"
+            android:exported="false" />
+        <activity
             android:name=".activity_studio_preview"
             android:exported="false"
             android:screenOrientation="landscape"

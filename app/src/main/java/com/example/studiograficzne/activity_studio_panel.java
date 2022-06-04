@@ -40,6 +40,7 @@ public class activity_studio_panel extends AppCompatActivity {
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
     private String email;
     private final List<Double> lvlList = new ArrayList<>();
+    private final List<Double> improvementsList = new ArrayList<>();
 
     UserGameInfo User;
 
@@ -83,6 +84,7 @@ public class activity_studio_panel extends AppCompatActivity {
 
         DatabaseReference userRef = rootRef.child("Users");
         DatabaseReference lvlRef = rootRef.child("Levels");
+        DatabaseReference improvementsRef = rootRef.child("Improvements");
         Log.v("USERID", userRef.getKey());
 
         // TextView fields
@@ -138,6 +140,25 @@ public class activity_studio_panel extends AppCompatActivity {
                             Log.w(TAG, "Failed to read value.", error.toException());
                         }
                     }); // End of reading from "Levels" branch
+
+
+                    // Read from "Improvements" branch in db
+                    improvementsRef.addValueEventListener(new ValueEventListener() {
+                        Double addition,level;
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot keyId : dataSnapshot.getChildren()) {
+                                addition = keyId.getValue(Double.class);
+                                lvlList.add(addition);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError error) {
+                            // Failed to read value
+                            Log.w(TAG, "Failed to read value.", error.toException());
+                        }
+                    }); // End of reading from "Improvements" branch
 
                     moneyTxtView.setText(moneyString);
                     resTxtView.setText(resourcesString);
