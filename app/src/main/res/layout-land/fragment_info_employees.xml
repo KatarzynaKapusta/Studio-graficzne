@@ -11,389 +11,508 @@
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/rouge_pink"
-        app:layout_heightPercent="100%"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="70%"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="2%"
-        app:layout_marginRightPercent="2%"
-        app:layout_marginTopPercent="30%"
-        app:layout_widthPercent="100%">
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%">
 
-        <androidx.percentlayout.widget.PercentRelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/light_pink"
-            app:layout_heightPercent="100%"
-            app:layout_marginBottomPercent="1%"
-            app:layout_marginLeftPercent="1%"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imie:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="10%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="1%"
-            app:layout_widthPercent="100%">
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="20%">
 
-            <!-- Employee 1 -->
-            <ImageView
-                android:id="@+id/employee1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/employee1"
-                app:layout_heightPercent="31%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="10%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="2%"
-                app:layout_widthPercent="12%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee1_name1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Starszy Grafik"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="23%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="5%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:id="@+id/employee1_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imie"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="50%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="40%">
 
-            <TextView
-                android:id="@+id/employee1_name2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Janek"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="23%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="15%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee1_salary1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pensja:"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="43%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="5%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zatrudniono:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="57%"
+            app:layout_widthPercent="70%">
 
-            <TextView
-                android:id="@+id/employee1_salary2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="50 ZŁ"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="43%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="15%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee1_add_earnings1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Korzyści"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="63%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="5%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:id="@+id/employee1_hired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="75%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="57%"
+            app:layout_widthPercent="15%">
 
-            <TextView
-                android:id="@+id/employee1_add_earnings2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100 ZŁ"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="58%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="15%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee1_add_earnings3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="20 XP"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="68%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="15%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Korzysci:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="68%"
+            app:layout_widthPercent="60%">
 
-            <!--Employee 2-->
-            <ImageView
-                android:id="@+id/employee2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/employee2"
-                app:layout_heightPercent="31%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="10%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="33%"
-                app:layout_widthPercent="12%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee2_name1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Główny Technik"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="23%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="38%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:id="@+id/benefits_of_emp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="60%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="68%"
+            app:layout_widthPercent="30%">
 
-            <TextView
-                android:id="@+id/employee2_name2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Karolina"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="23%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="48%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee2_salary1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pensja:"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="43%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="38%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pensja:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="40%">
 
-            <TextView
-                android:id="@+id/employee2_salary2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="60 ZŁ"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="43%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="48%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee2_add_earnings1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Korzyści"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="63%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="38%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:id="@+id/salary_of_emp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="70%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="20%">
 
-            <TextView
-                android:id="@+id/employee2_add_earnings2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="120 ZŁ"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="58%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="48%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee2_add_earnings3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="40 XP"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="68%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="48%"
-                app:layout_widthPercent="20%" />
+    </androidx.percentlayout.widget.PercentRelativeLayout>
 
-            <!--Employee 3-->
-            <ImageView
-                android:id="@+id/employee3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/employee3"
-                app:layout_heightPercent="31%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="10%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="64%"
-                app:layout_widthPercent="12%" />
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="25%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginLeftPercent="7%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="20%">
 
-            <TextView
-                android:id="@+id/employee3_name1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motion Designer"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="23%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="70%"
-                app:layout_widthPercent="20%" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/employee1">
 
-            <TextView
-                android:id="@+id/employee3_name2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mateusz"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="23%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="80%"
-                app:layout_widthPercent="20%" />
+        </ImageView>
 
-            <TextView
-                android:id="@+id/employee3_salary1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pensja:"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="43%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="70%"
-                app:layout_widthPercent="20%" />
+    </androidx.percentlayout.widget.PercentRelativeLayout>
 
-            <TextView
-                android:id="@+id/employee3_salary2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="70 ZŁ"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="43%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="80%"
-                app:layout_widthPercent="20%" />
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="70%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="35%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%">
 
-            <TextView
-                android:id="@+id/employee3_add_earnings1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Korzyści"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="63%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="70%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imie:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="20%">
 
-            <TextView
-                android:id="@+id/employee3_add_earnings2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="140 ZŁ"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="58%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="80%"
-                app:layout_widthPercent="20%" />
+        </TextView>
 
-            <TextView
-                android:id="@+id/employee3_add_earnings3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="60 XP"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_heightPercent="10%"
-                app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="68%"
-                app:layout_marginRightPercent="10%"
-                app:layout_marginTopPercent="80%"
-                app:layout_widthPercent="20%" />
+        <TextView
+            android:id="@+id/employee2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imie"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="50%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="40%">
 
-        </androidx.percentlayout.widget.PercentRelativeLayout>
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zatrudniono:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="57%"
+            app:layout_widthPercent="70%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/employee2_hired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="75%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="57%"
+            app:layout_widthPercent="15%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Korzysci:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="68%"
+            app:layout_widthPercent="60%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/benefits_of_emp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="60%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="68%"
+            app:layout_widthPercent="30%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pensja:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="40%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/salary_of_emp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="70%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="20%">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="25%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="20%">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/employee2">
+
+        </ImageView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="70%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="68%"
+        app:layout_marginRightPercent="2%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imie:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="20%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/employee3_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imie"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="50%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="40%"
+            app:layout_widthPercent="40%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zatrudniono:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="57%"
+            app:layout_widthPercent="70%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/employee3_hired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="75%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="57%"
+            app:layout_widthPercent="15%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Korzysci:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="68%"
+            app:layout_widthPercent="60%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/benefits_of_emp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="60%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="68%"
+            app:layout_widthPercent="30%">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pensja:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="40%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/salary_of_emp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="70%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="80%"
+            app:layout_widthPercent="20%">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="25%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginLeftPercent="73%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="20%">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/employee3">
+
+        </ImageView>
+
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
 
