@@ -11,4 +11,8 @@ public class UserEmployeesInfo {
 
     public void setEmployee3Hired(boolean employee3Hired) {this.employee3Hired = employee3Hired;}
 
+    public boolean getEmployee1Hired() {return this.employee1Hired;}
+    public boolean getEmployee2Hired() {return this.employee2Hired;}
+    public boolean getEmployee3Hired() {return this.employee3Hired;}
+
 }

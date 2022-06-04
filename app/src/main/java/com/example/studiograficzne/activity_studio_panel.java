@@ -215,7 +215,7 @@ public class activity_studio_panel extends AppCompatActivity {
 
     public void openActivityStudioPanelItems() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        Intent intent = new Intent(this, activity_studio_panel_items.class);
+        Intent intent = new Intent(this, activity_studio_panel_info.class);
         intent.putExtra("email", currentUser.getEmail());
         startActivity(intent);
     }

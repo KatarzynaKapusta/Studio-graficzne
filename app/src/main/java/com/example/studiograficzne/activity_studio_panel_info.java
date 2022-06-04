@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_studio_panel_items extends AppCompatActivity {
+public class activity_studio_panel_info extends AppCompatActivity {
 
 
     private TextView lvlTxtView, expTxtView, moneyTxtView, resTxtView;
@@ -34,7 +34,7 @@ public class activity_studio_panel_items extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_studio_panel_items);
+        setContentView(R.layout.activity_studio_panel_info);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -55,6 +55,11 @@ public class activity_studio_panel_items extends AppCompatActivity {
         User = new UserGameInfo();
 
         // Reading information from the database if user is logged
+
+
+    }
+
+    private void readFromDatabase(FirebaseUser currentUser, DatabaseReference userRef, DatabaseReference lvlRef) {
         if (currentUser != null) {
             userRef.addValueEventListener(new ValueEventListener() {
                 Double money, level, resources, experience, result;
