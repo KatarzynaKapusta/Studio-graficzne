@@ -28,6 +28,16 @@ public class activity_studio_view extends AppCompatActivity {
     private ImageView plant1ImageView, plant2ImageView, plant3ImageView;
     private ImageView table1ImageView, table2ImageView, table3ImageView;
     private ImageView floor1ImageView, floor2ImageView, floor3ImageView;
+
+    private ImageView tablet1_lvl1ImageView, tablet1_lvl2ImageView, tablet1_lvl3ImageView;
+    private ImageView tablet2_lvl1ImageView, tablet2_lvl2ImageView, tablet2_lvl3ImageView;
+
+    private ImageView card1_lvl1ImageView, card1_lvl2ImageView, card1_lvl3ImageView;
+    private ImageView card2_lvl1ImageView, card2_lvl2ImageView, card2_lvl3ImageView;
+
+    private ImageView computer1_lvl1ImageView, computer1_lvl2ImageView, computer1_lvl3ImageView;
+    private ImageView computer2_lvl1ImageView, computer2_lvl2ImageView, computer2_lvl3ImageView;
+
     private static final String LEVELS = "Levels";
     private static final String USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
@@ -36,6 +46,7 @@ public class activity_studio_view extends AppCompatActivity {
     private String email;
     private final List<Double> lvlList = new ArrayList<>();
     private UserOwnedItems userOwnedItems;
+    private UserOwnedUpgrades userOwnedUpgrades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,13 +92,42 @@ public class activity_studio_view extends AppCompatActivity {
 
         // Floor
         floor1ImageView = findViewById(R.id.floor1ImageView);
-        floor1ImageView.setVisibility(View.INVISIBLE);
-
         floor2ImageView = findViewById(R.id.floor2ImageView);
-        floor2ImageView.setVisibility(View.INVISIBLE);
-
         floor3ImageView = findViewById(R.id.floor3ImageView);
-        floor3ImageView.setVisibility(View.INVISIBLE);
+
+        // Upgrades
+        // Computers
+        // 1
+        computer1_lvl1ImageView = findViewById(R.id.computer_num1_lvl1);
+        computer1_lvl2ImageView = findViewById(R.id.computer_num1_lvl2);
+        computer1_lvl3ImageView = findViewById(R.id.computer_num1_lvl3);
+        // 2
+        computer2_lvl1ImageView = findViewById(R.id.computer_num2_lvl1);
+        computer2_lvl2ImageView = findViewById(R.id.computer_num2_lvl2);
+        computer2_lvl3ImageView = findViewById(R.id.computer_num2_lvl3);
+
+
+        // Tablets
+        // 1
+        tablet1_lvl1ImageView = findViewById(R.id.tablet_num1_lvl1);
+        tablet1_lvl2ImageView = findViewById(R.id.tablet_num1_lvl2);
+        tablet1_lvl3ImageView = findViewById(R.id.tablet_num1_lvl3);
+        // 2
+        tablet2_lvl1ImageView = findViewById(R.id.tablet_num2_lvl1);
+        tablet2_lvl2ImageView = findViewById(R.id.tablet_num2_lvl2);
+        tablet2_lvl3ImageView = findViewById(R.id.tablet_num2_lvl3);
+
+
+        // Graphic cards
+        // 1
+        card1_lvl1ImageView = findViewById(R.id.card_num1_lvl1);
+        card1_lvl2ImageView = findViewById(R.id.card_num1_lvl2);
+        card1_lvl3ImageView = findViewById(R.id.card_num1_lvl3);
+        // 2
+        card2_lvl1ImageView = findViewById(R.id.card_num2_lvl1);
+        card2_lvl2ImageView = findViewById(R.id.card_num2_lvl2);
+        card2_lvl3ImageView = findViewById(R.id.card_num2_lvl3);
+
 
         if (user != null) {
             // Read from the database
@@ -108,12 +148,15 @@ public class activity_studio_view extends AppCompatActivity {
                             experienceString = String.valueOf(experience.intValue());
 
                             Map<String,Long> m = (Map)keyId.child("UserOwnedItems").getValue();
+                            Map<String,Long> u = (Map)keyId.child("UserOwnedUpgrades").getValue();
 
                             userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
+                            userOwnedUpgrades = new UserOwnedUpgrades(u.get("card_lvl1").intValue(), u.get("card_lvl2").intValue(),u.get("card_lvl3").intValue(),u.get("pc_lvl1").intValue(),u.get("pc_lvl2").intValue(),u.get("pc_lvl3").intValue(),u.get("t_lvl1").intValue(),u.get("t_lvl2").intValue(),u.get("t_lvl3").intValue());
                             break;
                         }
                     }
                     setItemsVisibility(userOwnedItems);
+                    setUpgradesVisibility(userOwnedUpgrades);
 
                     //TUTAJ
                     lvlRef.addValueEventListener(new ValueEventListener() {
@@ -155,6 +198,60 @@ public class activity_studio_view extends AppCompatActivity {
         }
 
     } // onCreate end
+
+    private void setUpgradesVisibility(UserOwnedUpgrades userOwnedUpgrades) {
+
+        List<Integer> statuses = new ArrayList<>();
+        statuses.add(userOwnedUpgrades.getCard_lvl1());
+        statuses.add(userOwnedUpgrades.getCard_lvl2());
+        statuses.add(userOwnedUpgrades.getCard_lvl3());
+        statuses.add(userOwnedUpgrades.getCard_lvl1());
+        statuses.add(userOwnedUpgrades.getCard_lvl2());
+        statuses.add(userOwnedUpgrades.getCard_lvl3());
+
+        statuses.add(userOwnedUpgrades.getPc_lvl1());
+        statuses.add(userOwnedUpgrades.getPc_lvl2());
+        statuses.add(userOwnedUpgrades.getPc_lvl3());
+        statuses.add(userOwnedUpgrades.getPc_lvl1());
+        statuses.add(userOwnedUpgrades.getPc_lvl2());
+        statuses.add(userOwnedUpgrades.getPc_lvl3());
+
+        statuses.add(userOwnedUpgrades.getT_lvl1());
+        statuses.add(userOwnedUpgrades.getT_lvl2());
+        statuses.add(userOwnedUpgrades.getT_lvl3());
+        statuses.add(userOwnedUpgrades.getT_lvl1());
+        statuses.add(userOwnedUpgrades.getT_lvl2());
+        statuses.add(userOwnedUpgrades.getT_lvl3());
+
+        List<ImageView> views = new ArrayList<>();
+        views.add(card1_lvl1ImageView);
+        views.add(card1_lvl2ImageView);
+        views.add(card1_lvl3ImageView);
+        views.add(card2_lvl1ImageView);
+        views.add(card2_lvl2ImageView);
+        views.add(card2_lvl3ImageView);
+
+        views.add(computer1_lvl1ImageView);
+        views.add(computer1_lvl2ImageView);
+        views.add(computer1_lvl3ImageView);
+        views.add(computer2_lvl1ImageView);
+        views.add(computer2_lvl2ImageView);
+        views.add(computer2_lvl3ImageView);
+
+        views.add(tablet1_lvl1ImageView);
+        views.add(tablet1_lvl2ImageView);
+        views.add(tablet1_lvl3ImageView);
+        views.add(tablet2_lvl1ImageView);
+        views.add(tablet2_lvl2ImageView);
+        views.add(tablet2_lvl3ImageView);
+
+        for(int i = 0; i< statuses.size(); i++){
+            if(statuses.get(i)==ItemStatus.OWNED.value)
+                views.get(i).setVisibility(View.VISIBLE);
+            else
+                views.get(i).setVisibility(View.INVISIBLE);
+        }
+    }
 
     private void setItemsVisibility(UserOwnedItems userOwnedItems) {
 
