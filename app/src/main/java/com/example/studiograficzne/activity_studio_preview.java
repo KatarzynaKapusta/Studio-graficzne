@@ -30,6 +30,7 @@ public class activity_studio_preview extends AppCompatActivity {
     private ImageView plant1ImageView, plant2ImageView, plant3ImageView;
     private ImageView table1ImageView, table2ImageView, table3ImageView;
     private ImageView floor1ImageView, floor2ImageView, floor3ImageView;
+
     private Button endPreviewBtn;
     private static final String LEVELS = "Levels";
     private static final String USERS = "Users";
@@ -85,13 +86,9 @@ public class activity_studio_preview extends AppCompatActivity {
 
         // Floor
         floor1ImageView = findViewById(R.id.floor1ImageViewPreview);
-        floor1ImageView.setVisibility(View.INVISIBLE);
-
         floor2ImageView = findViewById(R.id.floor2ImageViewPreview);
-        floor2ImageView.setVisibility(View.INVISIBLE);
-
         floor3ImageView = findViewById(R.id.floor3ImageViewPreview);
-        floor3ImageView.setVisibility(View.INVISIBLE);
+
 
         if (user != null) {
             // Read from the database
@@ -112,6 +109,7 @@ public class activity_studio_preview extends AppCompatActivity {
                             experienceString = String.valueOf(experience.intValue());
 
                             Map<String,Long> m = (Map)keyId.child("UserOwnedItems").getValue();
+                            Map<String,Long> u = (Map)keyId.child("UserOwnedUpgrades").getValue();
 
                             userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
                             break;

@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".computers_fragment"
+    tools:context=".graphicsCards_fragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -74,7 +74,7 @@
                 android:layout_marginStart="-265dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="184dp"
-                android:text="@string/studio_level"
+                android:text="@string/resources"
                 android:textSize="18sp" />
 
             <TextView
@@ -87,26 +87,25 @@
                 android:text="@string/item_lvl"
                 android:textSize="18sp" />
 
-
-            <Button
-                android:id="@+id/computer1PreviewButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="-155dp"
-                android:layout_marginEnd="10dp"
-                android:background="#009688"
-                app:backgroundTint="#009688"
-                android:text="@string/previewPL"/>
-
             <Button
                 android:id="@+id/computer1BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginStart="-155dp"
                 android:background="#009688"
                 app:backgroundTint="#009688"
                 android:text="@string/buyPL"/>
+
+            <TextView
+                android:id="@+id/computer1LvlButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:layout_gravity="center|center_horizontal"
+                android:text="Wymaga poziomu 3"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -156,7 +155,7 @@
                 android:layout_marginStart="-230dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="184dp"
-                android:text="@string/studio_level"
+                android:text="@string/resources"
                 android:textSize="18sp" />
 
             <TextView
@@ -180,24 +179,24 @@
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/computer2PreviewButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="-135dp"
-                android:layout_marginEnd="10dp"
-                android:background="#009688"
-                app:backgroundTint="#009688"
-                android:text="@string/previewPL"/>
-
-            <Button
                 android:id="@+id/computer2BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginStart="-135dp"
                 android:background="#009688"
                 app:backgroundTint="#009688"
                 android:text="@string/buyPL"/>
+
+            <TextView
+                android:id="@+id/computer2LvlButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:layout_gravity="center|center_horizontal"
+                android:text="Wymaga poziomu 5"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -258,7 +257,7 @@
                 android:layout_marginStart="-275dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="184dp"
-                android:text="@string/studio_level"
+                android:text="@string/resources"
                 android:textSize="18sp" />
 
             <TextView
@@ -273,24 +272,24 @@
 
 
             <Button
-                android:id="@+id/computer3PreviewButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="-170dp"
-                android:layout_marginEnd="10dp"
-                android:background="#009688"
-                app:backgroundTint="#009688"
-                android:text="@string/previewPL"/>
-
-            <Button
                 android:id="@+id/computer3BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginStart="-170dp"
                 android:background="#009688"
                 app:backgroundTint="#009688"
                 android:text="@string/buyPL"/>
+
+            <TextView
+                android:id="@+id/computer3LvlButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:layout_gravity="center|center_horizontal"
+                android:text="Wymaga poziomu 10"/>
+
         </LinearLayout>
     </LinearLayout>
 

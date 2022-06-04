@@ -31,6 +31,7 @@
         android:visibility="invisible"
         tools:ignore="ContentDescription" />
 
+    <!--Office desks -->
     <ImageView
         android:id="@+id/floor3ImageView"
         android:layout_width="match_parent"
@@ -39,7 +40,6 @@
         android:visibility="invisible"
         tools:ignore="ContentDescription" />
 
-    <!--Office desks -->
     <ImageView
         android:id="@+id/studioTable5Default"
         android:layout_width="wrap_content"
@@ -196,6 +196,7 @@
         app:layout_marginTopPercent="74%"
         app:layout_widthPercent="6%"
         tools:ignore="ContentDescription" />
+
     <!-- lvl1 -->
     <ImageView
         android:id="@+id/tablet_num2_lvl1"
@@ -483,14 +484,14 @@
         android:layout_height="wrap_content"
         android:rotation="125"
         android:src="@drawable/tablet_image_lvl3"
+        android:visibility="invisible"
         app:layout_heightPercent="6%"
         app:layout_marginBottomPercent="10%"
         app:layout_marginLeftPercent="47%"
         app:layout_marginRightPercent="0%"
         app:layout_marginTopPercent="56%"
         app:layout_widthPercent="6%"
-        tools:ignore="ContentDescription"
-        android:visibility="invisible"/>
+        tools:ignore="ContentDescription" />
 
 
     <ImageView
