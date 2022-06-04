@@ -34,7 +34,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/tablet_lvl1"
+                android:background="@drawable/computer_lvl1"
                 android:contentDescription="computer description" />
 
             <TextView
@@ -126,7 +126,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/tablet_lvl1"
+                android:background="@drawable/computer_lvl2"
                 android:contentDescription="computer2Description" />
 
             <TextView
@@ -218,7 +218,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/tablet_lvl1"
+                android:background="@drawable/computer_lvl3"
                 android:contentDescription="computer3 description" />
 
             <TextView

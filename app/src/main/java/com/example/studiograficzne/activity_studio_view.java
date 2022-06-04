@@ -81,13 +81,10 @@ public class activity_studio_view extends AppCompatActivity {
 
         // Floor
         floor1ImageView = findViewById(R.id.floor1ImageView);
-        floor1ImageView.setVisibility(View.INVISIBLE);
 
         floor2ImageView = findViewById(R.id.floor2ImageView);
-        floor2ImageView.setVisibility(View.INVISIBLE);
 
         floor3ImageView = findViewById(R.id.floor3ImageView);
-        floor3ImageView.setVisibility(View.INVISIBLE);
 
         if (user != null) {
             // Read from the database

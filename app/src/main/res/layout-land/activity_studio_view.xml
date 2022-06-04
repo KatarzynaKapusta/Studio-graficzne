@@ -9,48 +9,239 @@
 
     <!--Generic floor -->
     <ImageView
+        android:id="@+id/floor0ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/studio_floor_generic"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
         android:id="@+id/floor1ImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic_style1"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
 
     <ImageView
         android:id="@+id/floor2ImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic_style2"
-        tools:ignore="ContentDescription"/>
+        android:visibility="invisible"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/floor3ImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/studio_floor_generic_style3"
-        tools:ignore="ContentDescription"/>
-
-    <ImageView
-        android:id="@+id/floor0ImageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/studio_floor_generic"
-        tools:ignore="ContentDescription"/>
+        android:visibility="invisible"
+        tools:ignore="ContentDescription" />
 
     <!--Office desks -->
     <ImageView
         android:id="@+id/studioTable5Default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/office_desk2"
+        android:src="@drawable/office_desk02"
         app:layout_heightPercent="22%"
         app:layout_marginBottomPercent="7%"
         app:layout_marginLeftPercent="55%"
         app:layout_marginRightPercent="10%"
         app:layout_marginTopPercent="72%"
         app:layout_widthPercent="20%"
-        tools:ignore="ContentDescription">
+        tools:ignore="ContentDescription" />
 
-    </ImageView>
+    <!-- Cards upgrades-->
+    <!-- lvl0 -->
+    <ImageView
+        android:id="@+id/card_num2_lvl0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl0"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="0%"
+        app:layout_marginLeftPercent="58%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="85%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription" />
+
+    <!-- lvl1-->
+    <ImageView
+        android:id="@+id/card_num2_lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl1"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="0%"
+        app:layout_marginLeftPercent="58%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="85%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!-- lvl2-->
+    <ImageView
+        android:id="@+id/card_num2_lvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl2"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="0%"
+        app:layout_marginLeftPercent="58%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="85%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!-- lvl3-->
+    <ImageView
+        android:id="@+id/card_num2_lvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl3"
+        android:visibility="invisible"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="0%"
+        app:layout_marginLeftPercent="58%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="85%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription" />
+
+    <!-- Computers upgrades -->
+    <!--    lvl0-->
+    <ImageView
+        android:id="@+id/computer_num2_lvl0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl0"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="58.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="80.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription" />
+
+    <!--    lvl1-->
+    <ImageView
+        android:id="@+id/computer_num2_lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl1"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="58.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="80.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!--    lvl2-->
+    <ImageView
+        android:id="@+id/computer_num2_lvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl2"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="58.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="80.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!--    lvl3-->
+    <ImageView
+        android:id="@+id/computer_num2_lvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl3"
+        android:visibility="invisible"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="58.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="80.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription" />
+
+    <!-- tablets upgrades -->
+    <!-- lvl0 -->
+    <ImageView
+        android:id="@+id/tablet_num2_lvl0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:src="@drawable/tablet_image_lvl0"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="74%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription" />
+    <!-- lvl1 -->
+    <ImageView
+        android:id="@+id/tablet_num2_lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:src="@drawable/tablet_image_lvl1"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="74%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+    <!-- lvl2 -->
+    <ImageView
+        android:id="@+id/tablet_num2_lvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:src="@drawable/tablet_image_lvl2"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="74%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+    <!-- lvl3 -->
+    <ImageView
+        android:id="@+id/tablet_num2_lvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="90"
+        android:src="@drawable/tablet_image_lvl3"
+        android:visibility="invisible"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="74%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription" />
+
 
     <ImageView
         android:id="@+id/studioTable1"
@@ -64,9 +255,8 @@
         app:layout_marginRightPercent="30%"
         app:layout_marginTopPercent="70%"
         app:layout_widthPercent="20%"
-        tools:ignore="ContentDescription">
+        tools:ignore="ContentDescription"/>
 
-    </ImageView>
 
     <ImageView
         android:id="@+id/studioTable2"
@@ -95,27 +285,213 @@
         app:layout_marginRightPercent="20%"
         app:layout_marginTopPercent="75%"
         app:layout_widthPercent="18%"
-        tools:ignore="ContentDescription">
+        tools:ignore="ContentDescription" />
 
-    </ImageView>
 
     <ImageView
         android:id="@+id/studioTable4Default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/office_desk1"
+        android:src="@drawable/office_desk01"
         app:layout_heightPercent="18%"
         app:layout_marginBottomPercent="5%"
         app:layout_marginLeftPercent="35%"
         app:layout_marginRightPercent="20%"
         app:layout_marginTopPercent="50%"
         app:layout_widthPercent="18%"
-        tools:ignore="ContentDescription">
+        tools:ignore="ContentDescription" />
 
-    </ImageView>
+    <!-- computer updates -->
+    <!--    lvl0-->
+    <ImageView
+        android:id="@+id/computer_num1_lvl0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl0"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="55.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription" />
 
+    <!--    lvl1-->
+    <ImageView
+        android:id="@+id/computer_num1_lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl1"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="55.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
 
-    <!--Not changeable elements -->
+    <!--    lvl2-->
+    <ImageView
+        android:id="@+id/computer_num1_lvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl2"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="55.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!--    lvl3-->
+    <ImageView
+        android:id="@+id/computer_num1_lvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/computer_image_lvl3"
+        android:visibility="invisible"
+        app:layout_heightPercent="7%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40.5%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="55.5%"
+        app:layout_widthPercent="7%"
+        tools:ignore="ContentDescription" />
+
+    <!-- lvl0-->
+    <ImageView
+        android:id="@+id/card_num1_lvl0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl0"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="60%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription" />
+
+    <!-- lvl1-->
+    <ImageView
+        android:id="@+id/card_num1_lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl1"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="60%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!-- lvl2-->
+    <ImageView
+        android:id="@+id/card_num1_lvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl2"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="60%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!-- lvl3-->
+    <ImageView
+        android:id="@+id/card_num1_lvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/card_image_lvl3"
+        android:visibility="invisible"
+        app:layout_heightPercent="8%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="20%"
+        app:layout_marginTopPercent="60%"
+        app:layout_widthPercent="8%"
+        tools:ignore="ContentDescription" />
+
+    <!-- tablets upgrades -->
+    <!-- lvl0 -->
+    <ImageView
+        android:id="@+id/tablet_num1_lvl0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="125"
+        android:src="@drawable/tablet_image_lvl0"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="47%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="56%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription" />
+
+    <!-- lvl1 -->
+    <ImageView
+        android:id="@+id/tablet_num1_lvl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="125"
+        android:src="@drawable/tablet_image_lvl1"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="47%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="56%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!-- lvl2 -->
+    <ImageView
+        android:id="@+id/tablet_num1_lvl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="125"
+        android:src="@drawable/tablet_image_lvl2"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="47%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="56%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
+    <!-- lvl3 -->
+    <ImageView
+        android:id="@+id/tablet_num1_lvl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="125"
+        android:src="@drawable/tablet_image_lvl3"
+        app:layout_heightPercent="6%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="47%"
+        app:layout_marginRightPercent="0%"
+        app:layout_marginTopPercent="56%"
+        app:layout_widthPercent="6%"
+        tools:ignore="ContentDescription"
+        android:visibility="invisible"/>
+
 
     <ImageView
         android:id="@+id/studioTable6Default"
