@@ -74,7 +74,7 @@
                 android:layout_marginStart="-265dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="184dp"
-                android:text="@string/resources"
+                android:text="@string/studio_level"
                 android:textSize="18sp" />
 
             <TextView
@@ -87,25 +87,26 @@
                 android:text="@string/item_lvl"
                 android:textSize="18sp" />
 
+
+            <Button
+                android:id="@+id/card1PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-155dp"
+                android:layout_marginEnd="10dp"
+                android:background="#E91E63"
+                app:backgroundTint="#E91E63"
+                android:text="@string/previewPL"/>
+
             <Button
                 android:id="@+id/card1BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="-155dp"
                 android:background="#E91E63"
                 app:backgroundTint="#E91E63"
                 android:text="@string/buyPL"/>
-
-            <TextView
-                android:id="@+id/card1LvlButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:textStyle="bold"
-                android:layout_gravity="center|center_horizontal"
-                android:text="Wymaga poziomu 3"/>
-
         </LinearLayout>
 
         <LinearLayout
@@ -155,7 +156,7 @@
                 android:layout_marginStart="-230dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="184dp"
-                android:text="@string/resources"
+                android:text="@string/studio_level"
                 android:textSize="18sp" />
 
             <TextView
@@ -178,19 +179,19 @@
                 android:text="@string/item_price"
                 android:textSize="18sp" />
 
-
             <Button
-                android:id="@+id/card2BuyButton"
+                android:id="@+id/card2PreviewButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="-135dp"
+                android:layout_marginEnd="10dp"
                 android:background="#E91E63"
                 app:backgroundTint="#E91E63"
-                android:text="@string/buyPL"/>
+                android:text="@string/previewPL"/>
 
-            <TextView
-                android:id="@+id/card2LvlButton"
+            <Button
+                android:id="@+id/card2BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -258,7 +259,7 @@
                 android:layout_marginStart="-275dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="184dp"
-                android:text="@string/resources"
+                android:text="@string/studio_level"
                 android:textSize="18sp" />
 
             <TextView
@@ -271,25 +272,26 @@
                 android:text="@string/item_lvl"
                 android:textSize="18sp" />
 
+
             <Button
-                android:id="@+id/card3BuyButton"
+                android:id="@+id/card3PreviewButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="-170dp"
+                android:layout_marginEnd="10dp"
                 android:background="#E91E63"
                 app:backgroundTint="#E91E63"
-                android:text="@string/buyPL"/>
+                android:text="@string/previewPL"/>
 
-            <TextView
-                android:id="@+id/card3LvlButton"
+            <Button
+                android:id="@+id/card3BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:textStyle="bold"
                 android:layout_gravity="center|center_horizontal"
                 android:text="Wymaga zakupu wszystkich ulepszeń poziomu 2"/>
-
         </LinearLayout>
     </LinearLayout>
 

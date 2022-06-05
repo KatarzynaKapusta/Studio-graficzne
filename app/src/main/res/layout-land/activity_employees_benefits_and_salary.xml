@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
-    tools:ignore="ExtraText"
-    android:orientation="horizontal"
-    android:background="@drawable/studio_background"
-    android:gravity="center">
+    tools:context=".activity_employees_benefits_and_salary"
+    android:background="@drawable/studio_background">
 
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="wrap_content"
@@ -35,190 +32,301 @@
             app:layout_marginTopPercent="8%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
+    <!-- Pracownik 1 -->
     <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission1_layout_storage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/choice_studio_background"
+        android:visibility="visible"
         app:layout_marginBottomPercent="5%"
-        app:layout_marginLeftPercent="5%"
-        app:layout_marginRightPercent="65%"
+        app:layout_marginLeftPercent="3%"
+        app:layout_marginRightPercent="67%"
         app:layout_marginTopPercent="25%">
 
-        <Button
-            android:id="@+id/start_earnings_button"
+        <!-- Employee 1-->
+        <!--Tytuł-->
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/pink_snow"
-            android:text="Start"
-            android:textColor="@color/black"
-            android:visibility="visible"
-            app:layout_heightPercent="30%"
-            app:layout_marginBottomPercent="15%"
-            app:layout_marginLeftPercent="20%"
-            app:layout_marginRightPercent="20%"
-            app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="60%">
+            android:src="@drawable/employee1"
+            app:layout_heightPercent="40%"
+            app:layout_marginBottomPercent="60%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="5%"
+            app:layout_widthPercent="50%">
 
-        </Button>
-
-        <Button
-            android:id="@+id/collect_earnings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/pink_snow"
-            android:text="Odbierz zarobki"
-            android:textColor="@color/black"
-            android:visibility="invisible"
-            app:layout_heightPercent="30%"
-            app:layout_marginBottomPercent="15%"
-            app:layout_marginLeftPercent="20%"
-            app:layout_marginRightPercent="20%"
-            app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="60%">
-
-        </Button>
+        </ImageView>
 
         <TextView
+            android:id="@+id/employee1_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Odbierz zarobki swojego studia. Możesz to zrobić raz na 24 godziny."
+            android:text="Starszy Grafik"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_heightPercent="50%"
-            app:layout_marginBottomPercent="50%"
-            app:layout_marginLeftPercent="10%"
-            app:layout_marginRightPercent="10%"
-            app:layout_marginTopPercent="28%"
-            app:layout_widthPercent="80%">
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="0%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="43%"
+            app:layout_widthPercent="70%" />
 
-        </TextView>
-
+        <!-- Timer -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zarobki"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            app:layout_heightPercent="50%"
-            app:layout_marginBottomPercent="75%"
-            app:layout_marginLeftPercent="10%"
-            app:layout_marginRightPercent="15%"
-            app:layout_marginTopPercent="10%"
-            app:layout_widthPercent="80%">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/text_view_countdown_earnings"
+            android:id="@+id/text_view_countdown_studio_salary1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00:00:00"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:visibility="visible"
             app:layout_heightPercent="15%"
             app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="15%"
-            app:layout_marginRightPercent="15%"
-            app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="80%"
-            tools:ignore="InvalidId" />
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="60%"
+            tools:ignore="InvalidId">
 
+        </TextView>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/start_salary_timer_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pink_snow"
+            android:text="Zapłać"
+            android:enabled="false"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="60%"
+            tools:visibility="invisible">
+
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/collect_earnings_pay_salary_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pink_snow"
+            android:text="Odbierz"
+            android:enabled="false"
+            android:visibility="invisible"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="60%">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
+    <!-- Employee 2-->
     <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission2_layout_storage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/choice_studio_background"
-        app:layout_marginBottomPercent="42%"
-        app:layout_marginLeftPercent="40%"
-        app:layout_marginRightPercent="5%"
+        android:visibility="visible"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="35%"
+        app:layout_marginRightPercent="35%"
         app:layout_marginTopPercent="25%">
 
-        <TextView
+        <!-- Employee 2-->
+        <!--Tytuł-->
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pracownicy"
+            android:src="@drawable/employee2"
+            app:layout_heightPercent="40%"
+            app:layout_marginBottomPercent="60%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="5%"
+            app:layout_widthPercent="50%">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/employee2_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Główny Technik"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="35sp"
-            app:layout_heightPercent="50%"
-            app:layout_marginBottomPercent="50%"
-            app:layout_marginLeftPercent="10%"
-            app:layout_marginRightPercent="15%"
-            app:layout_marginTopPercent="15%"
-            app:layout_widthPercent="80%">
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="0%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="43%"
+            app:layout_widthPercent="70%" />
+
+        <!-- Timer -->
+        <TextView
+            android:id="@+id/text_view_countdown_studio_salary2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:visibility="visible"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="60%"
+            tools:ignore="InvalidId">
 
         </TextView>
 
-        <Button
-            android:id="@+id/open_studio_employees_button"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/start_salary_timer_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
-            android:text="Otwórz panel"
-            android:textColor="@color/black"
-            android:visibility="visible"
-            app:layout_heightPercent="30%"
-            app:layout_marginBottomPercent="15%"
+            android:enabled="false"
+            android:text="Zapłać"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="20%"
             app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
             app:layout_widthPercent="60%">
 
-        </Button>
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/collect_earnings_pay_salary_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pink_snow"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="Odbierz"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="60%">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
+
+    <!-- Employee 3-->
     <androidx.percentlayout.widget.PercentRelativeLayout
+        android:id="@+id/mission3_layout_storage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/choice_studio_background"
+        android:visibility="visible"
         app:layout_marginBottomPercent="5%"
-        app:layout_marginLeftPercent="40%"
-        app:layout_marginRightPercent="5%"
-        app:layout_marginTopPercent="62%">
+        app:layout_marginLeftPercent="67%"
+        app:layout_marginRightPercent="3%"
+        app:layout_marginTopPercent="25%">
 
-        <TextView
+        <!-- Employee 3-->
+        <!--Tytuł-->
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Studio Info"
+            android:src="@drawable/employee3"
+            app:layout_heightPercent="40%"
+            app:layout_marginBottomPercent="60%"
+            app:layout_marginLeftPercent="25%"
+            app:layout_marginRightPercent="25%"
+            app:layout_marginTopPercent="5%"
+            app:layout_widthPercent="50%">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/employee3_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motion Designer"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="35sp"
-            app:layout_heightPercent="50%"
-            app:layout_marginBottomPercent="50%"
-            app:layout_marginLeftPercent="10%"
-            app:layout_marginRightPercent="15%"
-            app:layout_marginTopPercent="15%"
-            app:layout_widthPercent="80%">
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="0%"
+            app:layout_marginLeftPercent="18%"
+            app:layout_marginRightPercent="18%"
+            app:layout_marginTopPercent="43%"
+            app:layout_widthPercent="70%" />
+
+        <!-- Timer -->
+        <TextView
+            android:id="@+id/text_view_countdown_studio_salary3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:visibility="visible"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="60%"
+            tools:ignore="InvalidId">
 
         </TextView>
 
-        <Button
-            android:id="@+id/open_studio_items_button"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/start_salary_timer_button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink_snow"
-            android:text="Otwórz panel"
-            android:textColor="@color/black"
-            android:visibility="visible"
-            app:layout_heightPercent="30%"
-            app:layout_marginBottomPercent="15%"
+            android:enabled="false"
+            android:text="Zapłać"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="20%"
             app:layout_marginRightPercent="20%"
             app:layout_marginTopPercent="55%"
             app:layout_widthPercent="60%">
 
-        </Button>
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/collect_earnings_pay_salary_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/pink_snow"
+            android:enabled="false"
+            android:visibility="invisible"
+            android:text="Odbierz"
+            app:layout_heightPercent="15%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="20%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="60%">
+
+        </androidx.appcompat.widget.AppCompatButton>
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
-
 
     <androidx.percentlayout.widget.PercentRelativeLayout
         android:layout_width="match_parent"
@@ -347,5 +455,4 @@
             app:layout_marginTopPercent="5%"
             app:layout_widthPercent="4.5%" />
     </androidx.percentlayout.widget.PercentRelativeLayout>
-
 </androidx.percentlayout.widget.PercentRelativeLayout>
