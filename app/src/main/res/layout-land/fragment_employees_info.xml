@@ -108,11 +108,11 @@
                 android:id="@+id/employee1_add_earnings1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Korzyści:"
+                android:text="Korzyści"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_heightPercent="10%"
                 app:layout_marginBottomPercent="0%"
                 app:layout_marginLeftPercent="63%"
@@ -130,7 +130,22 @@
                 android:textSize="18sp"
                 app:layout_heightPercent="10%"
                 app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="63%"
+                app:layout_marginLeftPercent="58%"
+                app:layout_marginRightPercent="10%"
+                app:layout_marginTopPercent="15%"
+                app:layout_widthPercent="20%" />
+
+            <TextView
+                android:id="@+id/employee1_add_earnings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 XP"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_heightPercent="10%"
+                app:layout_marginBottomPercent="0%"
+                app:layout_marginLeftPercent="68%"
                 app:layout_marginRightPercent="10%"
                 app:layout_marginTopPercent="15%"
                 app:layout_widthPercent="20%" />
@@ -214,11 +229,11 @@
                 android:id="@+id/employee2_add_earnings1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Korzyści:"
+                android:text="Korzyści"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_heightPercent="10%"
                 app:layout_marginBottomPercent="0%"
                 app:layout_marginLeftPercent="63%"
@@ -236,11 +251,25 @@
                 android:textSize="18sp"
                 app:layout_heightPercent="10%"
                 app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="63%"
+                app:layout_marginLeftPercent="58%"
                 app:layout_marginRightPercent="10%"
                 app:layout_marginTopPercent="48%"
                 app:layout_widthPercent="20%" />
 
+            <TextView
+                android:id="@+id/employee2_add_earnings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40 XP"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_heightPercent="10%"
+                app:layout_marginBottomPercent="0%"
+                app:layout_marginLeftPercent="68%"
+                app:layout_marginRightPercent="10%"
+                app:layout_marginTopPercent="48%"
+                app:layout_widthPercent="20%" />
 
             <!--Employee 3-->
             <ImageView
@@ -321,7 +350,7 @@
                 android:id="@+id/employee3_add_earnings1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Korzyści:"
+                android:text="Korzyści"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -343,11 +372,25 @@
                 android:textSize="18sp"
                 app:layout_heightPercent="10%"
                 app:layout_marginBottomPercent="0%"
-                app:layout_marginLeftPercent="63%"
+                app:layout_marginLeftPercent="58%"
                 app:layout_marginRightPercent="10%"
                 app:layout_marginTopPercent="80%"
                 app:layout_widthPercent="20%" />
 
+            <TextView
+                android:id="@+id/employee3_add_earnings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60 XP"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_heightPercent="10%"
+                app:layout_marginBottomPercent="0%"
+                app:layout_marginLeftPercent="68%"
+                app:layout_marginRightPercent="10%"
+                app:layout_marginTopPercent="80%"
+                app:layout_widthPercent="20%" />
 
         </androidx.percentlayout.widget.PercentRelativeLayout>
     </androidx.percentlayout.widget.PercentRelativeLayout>
