@@ -495,8 +495,6 @@ public class activity_bank_timed_missions extends AppCompatActivity {
             childUpdates.put("experience", User.getExperience());
             childUpdates.put("money", User.getMoney());
 
-            FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
-            rootRef = database.getReference("Users");
             rootRef.child(user.getUid()).child("UserGameInfo").updateChildren(childUpdates);
         }
     }

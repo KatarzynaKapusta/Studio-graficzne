@@ -12,7 +12,7 @@ public class UserOwnedUpgrades {
     private int t_lvl2;
     private int t_lvl3;
 
-    public UserOwnedUpgrades(int pc_lvl1, int pc_lvl2, int pc_lvl3, int card_lvl1, int card_lvl2, int card_lvl3,int t_lvl1, int t_lvl2, int t_lvl3) {
+    public UserOwnedUpgrades(int card_lvl1, int card_lvl2, int card_lvl3, int pc_lvl1, int pc_lvl2, int pc_lvl3,int t_lvl1, int t_lvl2, int t_lvl3) {
         this.pc_lvl1 = pc_lvl1;
         this.pc_lvl2 = pc_lvl2;
         this.pc_lvl3 = pc_lvl3;

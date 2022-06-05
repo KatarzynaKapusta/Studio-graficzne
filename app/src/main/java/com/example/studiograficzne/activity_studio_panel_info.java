@@ -2,16 +2,11 @@ package com.example.studiograficzne;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,10 +30,6 @@ public class activity_studio_panel_info extends AppCompatActivity {
     private String email;
     private final List<Double> lvlList = new ArrayList<>();
     UserGameInfo User;
-
-    // Fragments
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,19 +55,6 @@ public class activity_studio_panel_info extends AppCompatActivity {
         User = new UserGameInfo();
 
         // Reading information from the database if user is logged
-
-        // Fragments
-        ViewPager viewPager = findViewById(R.id.viewPagerStudioInfo);
-        activity_studio_panel_info.ViewPagerAdapter adapter = new activity_studio_panel_info.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new fragment_info_statistics(), "STATYSTYKI");
-        adapter.addFragment(new fragment_info_improvements(), "ULEPSZENIA");
-        adapter.addFragment(new fragment_info_furniture(), "WYSTRÓJ");
-        adapter.addFragment(new fragment_info_employees(), "PRACOWNICY");
-        viewPager.setAdapter(adapter);
-
-        TabLayout tabLayout = findViewById(R.id.tabViewStudioInfo);
-        tabLayout.setupWithViewPager(viewPager);
-        // End of fragments
 
 
     }
@@ -181,35 +159,6 @@ public class activity_studio_panel_info extends AppCompatActivity {
             FirebaseDatabase database = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/");
             rootRef = database.getReference("Users");
             rootRef.child(uid).child("UserGameInfo").child("level").setValue(localLvl);
-        }
-    }
-
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> fragmentList = new ArrayList<>();
-        private final List<String> fragmentTitle = new ArrayList<>();
-
-        public ViewPagerAdapter(FragmentManager fragmentManager){
-            super(fragmentManager);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentList.size();
-        }
-
-        public void addFragment(Fragment fragment, String title){
-            fragmentList.add(fragment);
-            fragmentTitle.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position){
-            return fragmentTitle.get(position);
         }
     }
 }

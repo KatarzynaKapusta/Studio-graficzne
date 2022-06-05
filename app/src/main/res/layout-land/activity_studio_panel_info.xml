@@ -136,7 +136,7 @@
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabViewStudioInfo"
+        android:id="@+id/tabViewEmployees"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -155,12 +155,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ulepszenia" />
+            android:text="Wystrój" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wystrój" />
+            android:text="Ulepszenia" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPagerStudioInfo"
+        android:id="@+id/viewPagerEmployees"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </androidx.percentlayout.widget.PercentRelativeLayout>
