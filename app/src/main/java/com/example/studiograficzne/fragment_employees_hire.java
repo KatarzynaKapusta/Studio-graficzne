@@ -123,17 +123,20 @@ public class fragment_employees_hire extends Fragment {
             // Read from "Users" branch in db
             userRef.addValueEventListener(new ValueEventListener() {
                 Boolean isEmployee1Hired, isEmployee2Hired, isEmployee3Hired;
+                double userLevel;
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                         if (keyId.child("UserInfo").child("email").getValue().equals(email)) {
+                            userLevel = keyId.child("UserGameInfo").child("level").getValue(Double.class);
                             isEmployee1Hired = keyId.child("UserEmployeesInfo").child("employee1Hired").getValue(Boolean.class);
                             isEmployee2Hired = keyId.child("UserEmployeesInfo").child("employee2Hired").getValue(Boolean.class);
                             isEmployee3Hired = keyId.child("UserEmployeesInfo").child("employee3Hired").getValue(Boolean.class);
                             break;
                         }
                     }
+                    userGameInfo.setLevel(userLevel);
                     userEmployeesInfo.setEmployee1Hired(isEmployee1Hired);
                     userEmployeesInfo.setEmployee2Hired(isEmployee2Hired);
                     userEmployeesInfo.setEmployee3Hired(isEmployee3Hired);

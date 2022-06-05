@@ -29,6 +29,10 @@ import java.util.Map;
 
 public class activity_studio_panel extends AppCompatActivity {
 
+    private double studioEarnings=200;
+    private double addStudioEarnings =0;
+    private long SAVEDaddStudioEarnings;
+
 
     FirebaseAuth mAuth;
     private TextView lvlTxtView;
@@ -43,6 +47,7 @@ public class activity_studio_panel extends AppCompatActivity {
     private final List<Double> improvementsList = new ArrayList<>();
 
     UserGameInfo User;
+    UserOwnedUpgrades userOwnedUpgrades;
 
     private Button collect_earnings_button;
     private Button start_timer_earnings_button;
@@ -69,6 +74,7 @@ public class activity_studio_panel extends AppCompatActivity {
         setContentView(R.layout.activity_studio_panel);
 
         UserStudioInfo Studio = new UserStudioInfo();
+        Studio.setEarningsSM(studioEarnings);
         mTextViewCountDownStudioPanel = findViewById(R.id.text_view_countdown_earnings);
 
         collect_earnings_button = findViewById(R.id.collect_earnings_button);
@@ -94,12 +100,14 @@ public class activity_studio_panel extends AppCompatActivity {
         resTxtView = findViewById(R.id.resBarTextView);
 
         User = new UserGameInfo();
+        userOwnedUpgrades = new UserOwnedUpgrades();
 
         // Reading information from the database if user is logged
         if (currentUser != null) {
             userRef.addValueEventListener(new ValueEventListener() {
                 Double money, level, resources, experience, result, studio_earnings;
                 String moneyString, resourcesString, experienceString;
+                Integer card_lvl1, card_lvl2, card_lvl3, pc_lvl1, pc_lvl2, pc_lvl3, t_lvl1, t_lvl2, t_lvl3;
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -112,10 +120,25 @@ public class activity_studio_panel extends AppCompatActivity {
                             resourcesString = String.valueOf(resources.intValue());
                             experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                             experienceString = String.valueOf(experience.intValue());
+
+                            card_lvl1 = keyId.child("UserOwnedUpgrades").child("card_lvl1").getValue(Integer.class);
+                            card_lvl2 = keyId.child("UserOwnedUpgrades").child("card_lvl2").getValue(Integer.class);
+                            card_lvl3 = keyId.child("UserOwnedUpgrades").child("card_lvl3").getValue(Integer.class);
+
+                            pc_lvl1 = keyId.child("UserOwnedUpgrades").child("pc_lvl1").getValue(Integer.class);
+                            pc_lvl2 = keyId.child("UserOwnedUpgrades").child("pc_lvl2").getValue(Integer.class);
+                            pc_lvl3 = keyId.child("UserOwnedUpgrades").child("pc_lvl3").getValue(Integer.class);
+
+                            t_lvl1 = keyId.child("UserOwnedUpgrades").child("t_lvl1").getValue(Integer.class);
+                            t_lvl2 = keyId.child("UserOwnedUpgrades").child("t_lvl2").getValue(Integer.class);
+                            t_lvl3 = keyId.child("UserOwnedUpgrades").child("t_lvl3").getValue(Integer.class);
+
+
                             break;
                         }
                     }
 
+                    setUserOwnedUpgrades(card_lvl1, card_lvl2, card_lvl3, pc_lvl1, pc_lvl2, pc_lvl3, t_lvl1, t_lvl2,t_lvl3);
                     // Read from "Levels" branch in db
                     lvlRef.addValueEventListener(new ValueEventListener() {
                         Double exp;
@@ -132,6 +155,7 @@ public class activity_studio_panel extends AppCompatActivity {
                             result = checkUserLevel(experience, level, lvlList);
                             levelString = String.valueOf(result.intValue());
                             lvlTxtView.setText(levelString);
+
                         }
 
                         @Override
@@ -150,6 +174,18 @@ public class activity_studio_panel extends AppCompatActivity {
                             for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                                 addition = keyId.getValue(Double.class);
                                 improvementsList.add(addition);
+                            }
+                            if(userOwnedUpgrades.checkCurrentLvl() == 3){
+                                addStudioEarnings = Studio.getEarningsSM()+improvementsList.get(2);
+                            }
+                            if(userOwnedUpgrades.checkCurrentLvl() == 2){
+                                addStudioEarnings = Studio.getEarningsSM()+improvementsList.get(1);
+                            }
+                            if(userOwnedUpgrades.checkCurrentLvl() == 1){
+                                addStudioEarnings = Studio.getEarningsSM()+improvementsList.get(0);
+                            }
+                            if(userOwnedUpgrades.checkCurrentLvl() == 0){
+                                addStudioEarnings = Studio.getEarningsSM()+0;
                             }
                         }
 
@@ -182,8 +218,8 @@ public class activity_studio_panel extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
-                    User.addStudioEarnings(Studio.getEarningsSM());
-                    updateDataToFirebase();
+
+
                     Toast.makeText(activity_studio_panel.this, "Przyznano zarobki",
                             Toast.LENGTH_SHORT).show();
                 }
@@ -200,7 +236,11 @@ public class activity_studio_panel extends AppCompatActivity {
         start_timer_earnings_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SAVEDaddStudioEarnings = (long) addStudioEarnings;
                 earningsCollected = false;
+                double earnings = (double) SAVEDaddStudioEarnings;
+                User.addStudioEarnings(earnings);
+                updateDataToFirebase();
                 mTextViewCountDownStudioPanel.setVisibility(View.VISIBLE);
                 if(mTimeRunningStudioPanel){
 
@@ -316,6 +356,8 @@ public class activity_studio_panel extends AppCompatActivity {
         editorStudioPanel.putBoolean("earningsCollectedStudioPanel", earningsCollected);
         editorStudioPanel.putLong("endTimeStudioPanel", mEndTimeStudioPanel);
 
+        editorStudioPanel.putLong("SAVEDaddEarnings", SAVEDaddStudioEarnings);
+
 //        editorStudioPanel.putLong("monRew", mon);
 //        editorStudioPanel.putLong("expRew", exp);
 
@@ -335,6 +377,7 @@ public class activity_studio_panel extends AppCompatActivity {
         mTimeLeftInMillisStudioPanel = prefsStudioPanel.getLong("millisLeftStudioPanel",START_TIME_IN_MILLIS );
         mTimeRunningStudioPanel = prefsStudioPanel.getBoolean("timerRunningStudioPanel", false);
         earningsCollected = prefsStudioPanel.getBoolean("rewardsCollectedStudioPanel", false);
+        SAVEDaddStudioEarnings =prefsStudioPanel.getLong("SAVEDaddEarnings",0);
 
 //        mon= prefsStudioPanel.getLong("monRew",0);
 //        exp= prefsStudioPanel.getLong("expRew",0);
@@ -396,6 +439,22 @@ public class activity_studio_panel extends AppCompatActivity {
 
         lvlList.clear();
         return localLvl;
+    }
+
+
+
+    private void setUserOwnedUpgrades(int c1, int c2, int c3, int pc1, int pc2, int pc3, int tab1, int tab2, int tab3){
+        userOwnedUpgrades.setCard_lvl1(c1);
+        userOwnedUpgrades.setCard_lvl2(c2);
+        userOwnedUpgrades.setCard_lvl3(c3);
+
+        userOwnedUpgrades.setPc_lvl1(pc1);
+        userOwnedUpgrades.setPc_lvl2(pc2);
+        userOwnedUpgrades.setPc_lvl3(pc3);
+
+        userOwnedUpgrades.setT_lvl1(tab1);
+        userOwnedUpgrades.setT_lvl2(tab2);
+        userOwnedUpgrades.setT_lvl3(tab3);
     }
 
     private void updateUserLvl(Double localLvl) {

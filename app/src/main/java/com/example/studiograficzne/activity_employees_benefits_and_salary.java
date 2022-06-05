@@ -672,6 +672,9 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
                     userEmployeesInfo.setEmployee2Hired(isEmployee2Hired);
                     userEmployeesInfo.setEmployee3Hired(isEmployee3Hired);
 
+                    User.setMoney(money);
+                    User.setExperience(experience);
+                    User.setResources(resources);
                     User.setLevel(level);
 
                     checkIfEmployeeIsHired();

@@ -22,6 +22,7 @@ import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class fragment_info_improvements extends Fragment {
 
@@ -35,11 +36,13 @@ public class fragment_info_improvements extends Fragment {
 
     UserGameInfo userGameInfo;
     UserOwnedUpgrades userOwnedUpgrades;
+    UserOwnedItems userOwnedItems;
 
     // List for levels
     private final List<Double> lvlList = new ArrayList<>();
 
-    private TextView comp1, comp2, comp3, card1, card2, card3, tab1,tab2,tab3;
+    private  TextView comp1, comp2, comp3, card1, card2, card3, tab1, tab2, tab3;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +72,7 @@ public class fragment_info_improvements extends Fragment {
         DatabaseReference userRef = rootRef.child(USERS);
         Log.v("USERID", userRef.getKey());
 
-        //readFromDatabase(currentUser, userRef);
+        readFromDatabase(currentUser, userRef);
 
         return v;
     }
@@ -80,9 +83,6 @@ public class fragment_info_improvements extends Fragment {
             userRef.addValueEventListener(new ValueEventListener() {
                 Double money, level, resources, experience;
                 String moneyString, resourcesString, experienceString;
-                Boolean isEmployee1Hired, isEmployee2Hired, isEmployee3Hired;
-                Integer f1, f2, f3, t1,t2,t3,p1,p2,p3, studio_level,
-                        card_lvl1, card_lvl2, card_lvl3, pc_lvl1, pc_lvl2, pc_lvl3, t_lvl1, t_lvl2, t_lvl3;
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -96,71 +96,19 @@ public class fragment_info_improvements extends Fragment {
                             experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                             experienceString = String.valueOf(experience.intValue());
 
-                            studio_level = keyId.child("UserStudioInfo").child("studioLevel").getValue(Integer.class);
+                            Map<String,Long> m = (Map)keyId.child("UserOwnedItems").getValue();
+                            Map<String,Long> u = (Map)keyId.child("UserOwnedUpgrades").getValue();
 
-                            isEmployee1Hired = keyId.child("UserEmployeesInfo").child("employee1Hired").getValue(Boolean.class);
-                            isEmployee2Hired = keyId.child("UserEmployeesInfo").child("employee2Hired").getValue(Boolean.class);
-                            isEmployee3Hired = keyId.child("UserEmployeesInfo").child("employee3Hired").getValue(Boolean.class);
-
-                            f1 = keyId.child("UserOwnedItems").child("f1").getValue(Integer.class);
-                            f2 = keyId.child("UserOwnedItems").child("f2").getValue(Integer.class);
-                            f3 = keyId.child("UserOwnedItems").child("f3").getValue(Integer.class);
-
-                            p1 = keyId.child("UserOwnedItems").child("p1").getValue(Integer.class);
-                            p2 = keyId.child("UserOwnedItems").child("p2").getValue(Integer.class);
-                            p3 = keyId.child("UserOwnedItems").child("p3").getValue(Integer.class);
-
-                            t1 = keyId.child("UserOwnedItems").child("t1").getValue(Integer.class);
-                            t2 = keyId.child("UserOwnedItems").child("t2").getValue(Integer.class);
-                            t3 = keyId.child("UserOwnedItems").child("t3").getValue(Integer.class);
-
-                            card_lvl1 = keyId.child("UserOwnedUpgrades").child("card_lvl1").getValue(Integer.class);
-                            card_lvl2 = keyId.child("UserOwnedUpgrades").child("card_lvl2").getValue(Integer.class);
-                            card_lvl3 = keyId.child("UserOwnedUpgrades").child("card_lvl3").getValue(Integer.class);
-
-                            pc_lvl1 = keyId.child("UserOwnedUpgrades").child("pc_lvl1").getValue(Integer.class);
-                            pc_lvl2 = keyId.child("UserOwnedUpgrades").child("pc_lvl2").getValue(Integer.class);
-                            pc_lvl3 = keyId.child("UserOwnedUpgrades").child("pc_lvl3").getValue(Integer.class);
-
-                            t_lvl1 = keyId.child("UserOwnedUpgrades").child("t_lvl1").getValue(Integer.class);
-                            t_lvl2 = keyId.child("UserOwnedUpgrades").child("t_lvl2").getValue(Integer.class);
-                            t_lvl3 = keyId.child("UserOwnedUpgrades").child("t_lvl3").getValue(Integer.class);
+                            userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
+                            userOwnedUpgrades = new UserOwnedUpgrades(u.get("card_lvl1").intValue(), u.get("card_lvl2").intValue(),u.get("card_lvl3").intValue(),u.get("pc_lvl1").intValue(),u.get("pc_lvl2").intValue(),u.get("pc_lvl3").intValue(),u.get("t_lvl1").intValue(),u.get("t_lvl2").intValue(),u.get("t_lvl3").intValue());
 
 
                             break;
                         }
                     }
-
-//                    userEmployeesInfo.setEmployee1Hired(isEmployee1Hired);
-//                    userEmployeesInfo.setEmployee2Hired(isEmployee2Hired);
-//                    userEmployeesInfo.setEmployee3Hired(isEmployee3Hired);
-//
-//                    setUserOwnedUpgrades(card_lvl1, card_lvl2, card_lvl3, pc_lvl1, pc_lvl2, pc_lvl3, t_lvl1, t_lvl2,t_lvl3);
-//                    setUserOwnedItems(f1,f2,f3,p1,p2,p3,t1,t2,t3);
-//
-//                    checkIfEmployeeIsHired();
-//                    checkIfDeskIsOwned();
-//                    checkIfFloorIsOwned();
-//                    checkIfPlantIsOwned();
-//
-//                    checkIfComputerIsOwned();
-//                    checkIfGraphicCardIsOwned();
-//                    checkIfTabletIsOwned();
-//
-//                    addImprovements();
-//                    addFurniture();
-//
-//                    numbOfEmployees.setText(String.valueOf(numberOfEmployees));
-//                    numbOfImprovements.setText(String.valueOf(numberOfImprovements));
-//                    studioLevel.setText(String.valueOf(studio_level));
-//
-//                    numbOfDesks.setText(String.valueOf(desksCounter));
-//                    numbOfPlants.setText(String.valueOf(plantsCounter));
-//                    numbOfFloors.setText(String.valueOf(floorsCounter));
-//
-//                    numbOfComputers.setText(String.valueOf(computersCounter));
-//                    numbOfTablets.setText(String.valueOf(tabletsCounter));
-//                    numbOfGraphicCards.setText(String.valueOf(graphicCardsCounter));
+                    checkIfUpgradeIsOwned(comp1, comp2, comp3, userOwnedUpgrades.getPc_lvl1(),userOwnedUpgrades.getPc_lvl2(), userOwnedUpgrades.getPc_lvl3());
+                    checkIfUpgradeIsOwned(card1, card2, card3, userOwnedUpgrades.getCard_lvl1(), userOwnedUpgrades.getCard_lvl2(), userOwnedUpgrades.getCard_lvl3());
+                    checkIfUpgradeIsOwned(tab1, tab2, tab3, userOwnedUpgrades.getT_lvl1(), userOwnedUpgrades.getT_lvl2(), userOwnedUpgrades.getT_lvl3());
                 } // End of reading from "Users" branch
 
                 @Override
@@ -171,5 +119,33 @@ public class fragment_info_improvements extends Fragment {
             });
         }
     }
+
+    private void checkIfUpgradeIsOwned(TextView t1, TextView t2, TextView t3, Integer up1, Integer up2, Integer up3){
+        if(up1==1)
+        {
+            t1.setText("TAK");
+        }
+        else
+        {
+            t1.setText("NIE");
+        }
+        if(up2==1)
+        {
+            t2.setText("TAK");
+        }
+        else
+        {
+            t2.setText("NIE");
+        }
+        if(up3==1)
+        {
+            t3.setText("TAK");
+        }
+        else
+        {
+            t3.setText("NIE");
+        }
+    }
+
 
 }

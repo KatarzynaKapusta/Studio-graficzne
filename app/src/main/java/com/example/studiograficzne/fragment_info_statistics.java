@@ -135,8 +135,6 @@ public class fragment_info_statistics extends Fragment {
                             experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                             experienceString = String.valueOf(experience.intValue());
 
-                            studio_level = keyId.child("UserStudioInfo").child("studioLevel").getValue(Integer.class);
-
                             isEmployee1Hired = keyId.child("UserEmployeesInfo").child("employee1Hired").getValue(Boolean.class);
                             isEmployee2Hired = keyId.child("UserEmployeesInfo").child("employee2Hired").getValue(Boolean.class);
                             isEmployee3Hired = keyId.child("UserEmployeesInfo").child("employee3Hired").getValue(Boolean.class);
@@ -188,6 +186,8 @@ public class fragment_info_statistics extends Fragment {
 
                     addImprovements();
                     addFurniture();
+
+                    studio_level = userOwnedUpgrades.checkCurrentLvl();
 
                     numbOfFurniture.setText(String.valueOf(numberOfFurniture));
                     numbOfEmployees.setText(String.valueOf(numberOfEmployees));
