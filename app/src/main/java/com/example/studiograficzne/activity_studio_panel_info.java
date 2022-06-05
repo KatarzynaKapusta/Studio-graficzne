@@ -64,6 +64,7 @@ public class activity_studio_panel_info extends AppCompatActivity {
         User = new UserGameInfo();
 
         // Reading information from the database if user is logged
+        readFromDatabase(currentUser, userRef,lvlRef);
 
         // Fragments
         ViewPager viewPager = findViewById(R.id.viewPagerStudioInfo);

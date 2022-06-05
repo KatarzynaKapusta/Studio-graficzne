@@ -141,7 +141,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 earningsCollected1 = false;
-//                User.payEmployeesSalary(emp1.getSalary());
+                User.payEmployeesSalary(emp1.getSalary());
                 updateDataToFirebase();
                 Toast.makeText(activity_employees_benefits_and_salary.this, "Opłacono pracownika",
                         Toast.LENGTH_SHORT).show();
@@ -158,7 +158,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 earningsCollected2 = false;
-//                User.payEmployeesSalary(emp2.getSalary());
+                User.payEmployeesSalary(emp2.getSalary());
                 updateDataToFirebase();
                 Toast.makeText(activity_employees_benefits_and_salary.this, "Opłacono pracownika",
                         Toast.LENGTH_SHORT).show();
@@ -175,7 +175,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 earningsCollected3 = false;
-//                User.payEmployeesSalary(emp3.getSalary());
+                User.payEmployeesSalary(emp3.getSalary());
                 updateDataToFirebase();
                 Toast.makeText(activity_employees_benefits_and_salary.this, "Opłacono pracownika",
                         Toast.LENGTH_SHORT).show();
@@ -195,7 +195,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
 
-//                    User.addEmployeesEarnings(emp1.getAdditional_money1());
+                    User.addEmployeesEarnings(emp1.getAdditional_money1());
                     updateDataToFirebase();
                     Toast.makeText(activity_employees_benefits_and_salary.this, "Przyznano zarobki",
                             Toast.LENGTH_SHORT).show();
@@ -216,7 +216,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
 
-//                    User.addEmployeesEarnings(emp2.getAdditional_money1());
+                    User.addEmployeesEarnings(emp2.getAdditional_money1());
                     updateDataToFirebase();
                     Toast.makeText(activity_employees_benefits_and_salary.this, "Przyznano zarobki",
                             Toast.LENGTH_SHORT).show();
@@ -237,7 +237,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if (user != null) {
 
-//                    User.addEmployeesEarnings(emp3.getAdditional_money1());
+                    User.addEmployeesEarnings(emp3.getAdditional_money1());
                     updateDataToFirebase();
                     Toast.makeText(activity_employees_benefits_and_salary.this, "Przyznano zarobki",
                             Toast.LENGTH_SHORT).show();
@@ -698,7 +698,7 @@ public class activity_employees_benefits_and_salary extends AppCompatActivity {
                 start_salary_timer_button1.setEnabled(true);
                 collect_benefits_pay_salary_button1.setEnabled(true);
             } else {
-                        start_salary_timer_button1.setEnabled(false);
+                start_salary_timer_button1.setEnabled(false);
                 collect_benefits_pay_salary_button1.setEnabled(false);
             }
         }

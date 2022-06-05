@@ -73,26 +73,30 @@ public class UserGameInfo implements Parcelable {
     public void addTimedMissionRewardsBank(double b_mon, double b_exp) {
         this.money += b_mon;
         this.experience += b_exp;
-    };
+    }
 
     public void addMatchMissionRewardsBank(double b_mon, double b_exp) {
         this.money += b_mon;
         this.experience += b_exp;
-    };
+    }
 
     public void addTimedMissionRewardsStorage(double s_res, double s_exp) {
         this.resources += s_res;
         this.experience += s_exp;
-    };
+    }
 
     public void addMatchMissionRewardsStorage(double s_res, double s_exp) {
         this.resources += s_res;
         this.experience += s_exp;
-    };
+    }
 
     public void addStudioEarnings(double earnings){
         this.money+=earnings;
     }
+
+    public void payEmployeesSalary(double salary){this.money-=salary;}
+
+    public void addEmployeesEarnings(double earnings){this.money+=earnings;}
 
 
 

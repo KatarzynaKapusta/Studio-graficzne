@@ -176,16 +176,16 @@ public class activity_studio_panel extends AppCompatActivity {
                                 improvementsList.add(addition);
                             }
                             if(userOwnedUpgrades.checkCurrentLvl() == 3){
-                                addStudioEarnings = Studio.getEarningsSM()+improvementsList.get(2);
+                                addStudioEarnings = studioEarnings+improvementsList.get(2);
                             }
                             if(userOwnedUpgrades.checkCurrentLvl() == 2){
-                                addStudioEarnings = Studio.getEarningsSM()+improvementsList.get(1);
+                                addStudioEarnings = studioEarnings+improvementsList.get(1);
                             }
                             if(userOwnedUpgrades.checkCurrentLvl() == 1){
-                                addStudioEarnings = Studio.getEarningsSM()+improvementsList.get(0);
+                                addStudioEarnings = studioEarnings+improvementsList.get(0);
                             }
                             if(userOwnedUpgrades.checkCurrentLvl() == 0){
-                                addStudioEarnings = Studio.getEarningsSM()+0;
+                                addStudioEarnings = studioEarnings+0;
                             }
                         }
 
