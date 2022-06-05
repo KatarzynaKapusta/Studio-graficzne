@@ -41,7 +41,7 @@ public class fragment_info_improvements extends Fragment {
     // List for levels
     private final List<Double> lvlList = new ArrayList<>();
 
-    private  TextView comp1, comp2, comp3, card1, card2, card3, tab1, tab2, tab3;
+    private TextView comp1, comp2, comp3, card1, card2, card3, tab1, tab2, tab3;
 
 
     @Override
@@ -101,7 +101,6 @@ public class fragment_info_improvements extends Fragment {
 
                             userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
                             userOwnedUpgrades = new UserOwnedUpgrades(u.get("card_lvl1").intValue(), u.get("card_lvl2").intValue(),u.get("card_lvl3").intValue(),u.get("pc_lvl1").intValue(),u.get("pc_lvl2").intValue(),u.get("pc_lvl3").intValue(),u.get("t_lvl1").intValue(),u.get("t_lvl2").intValue(),u.get("t_lvl3").intValue());
-
 
                             break;
                         }

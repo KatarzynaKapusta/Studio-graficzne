@@ -48,6 +48,18 @@ public class fragment_info_furniture extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_info_furniture, container, false);
 
+        plant1 = v.findViewById(R.id.plant_level1);
+        plant2 = v.findViewById(R.id.plant_level2);
+        plant3 = v.findViewById(R.id.plant_level3);
+
+        desk1 = v.findViewById(R.id.desk_level1);
+        desk2 = v.findViewById(R.id.desk_level2);
+        desk3 = v.findViewById(R.id.desk_level3);
+
+        floor1 = v.findViewById(R.id.floor_level1);
+        floor2 = v.findViewById(R.id.floor_level2);
+        floor3 = v.findViewById(R.id.floor_level3);
+
         // Checking if user is logged or not and getting his email
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
