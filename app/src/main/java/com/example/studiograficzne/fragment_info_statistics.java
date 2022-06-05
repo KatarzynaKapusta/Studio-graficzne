@@ -181,9 +181,14 @@ public class fragment_info_statistics extends Fragment {
                     checkIfDeskIsOwned();
                     checkIfFloorIsOwned();
                     checkIfPlantIsOwned();
+
+                    checkIfComputerIsOwned();
+                    checkIfGraphicCardIsOwned();
+                    checkIfTabletIsOwned();
+
+                    addImprovements();
                     addFurniture();
 
-                    checkIfEmployeeIsHired();
                     numbOfFurniture.setText(String.valueOf(numberOfFurniture));
                     numbOfEmployees.setText(String.valueOf(numberOfEmployees));
                     numbOfImprovements.setText(String.valueOf(numberOfImprovements));
@@ -353,14 +358,92 @@ public class fragment_info_statistics extends Fragment {
     }
 
     private void checkIfComputerIsOwned(){
-
+        if(userOwnedUpgrades.getPc_lvl1()==1 && userOwnedUpgrades.getPc_lvl2()==1 && userOwnedUpgrades.getPc_lvl3()==1){
+            computersCounter =3;
+        }
+        else if(userOwnedUpgrades.getPc_lvl2()==1 && userOwnedUpgrades.getPc_lvl3()==1){
+            computersCounter =2;
+        }
+        else if(userOwnedUpgrades.getPc_lvl3()==1 && userOwnedUpgrades.getPc_lvl1()==1)
+        {
+            computersCounter=2;
+        }
+        else if(userOwnedUpgrades.getPc_lvl1()==1 && userOwnedUpgrades.getPc_lvl2()==1)
+        {
+            computersCounter=2;
+        }
+        else if(userOwnedUpgrades.getPc_lvl1()==1){
+            computersCounter=1;
+        }
+        else if(userOwnedUpgrades.getPc_lvl2()==1){
+            computersCounter=1;
+        }
+        else if(userOwnedUpgrades.getPc_lvl3()==1){
+            computersCounter=1;
+        }
+        else
+        {
+            computersCounter=0;
+        }
     }
 
     private void checkIfTabletIsOwned(){
-
+        if(userOwnedUpgrades.getT_lvl1()==1 && userOwnedUpgrades.getT_lvl2()==1 && userOwnedUpgrades.getT_lvl3()==1){
+            tabletsCounter =3;
+        }
+        else if(userOwnedUpgrades.getT_lvl2()==1 && userOwnedUpgrades.getT_lvl3()==1){
+            tabletsCounter =2;
+        }
+        else if(userOwnedUpgrades.getT_lvl3()==1 && userOwnedUpgrades.getT_lvl1()==1)
+        {
+            tabletsCounter=2;
+        }
+        else if(userOwnedUpgrades.getT_lvl1()==1 && userOwnedUpgrades.getT_lvl2()==1)
+        {
+            tabletsCounter=2;
+        }
+        else if(userOwnedUpgrades.getT_lvl1()==1){
+            tabletsCounter=1;
+        }
+        else if(userOwnedUpgrades.getT_lvl2()==1){
+            tabletsCounter=1;
+        }
+        else if(userOwnedUpgrades.getT_lvl3()==1){
+            tabletsCounter=1;
+        }
+        else
+        {
+            tabletsCounter=0;
+        }
     }
 
     private void checkIfGraphicCardIsOwned(){
-
+        if(userOwnedUpgrades.getCard_lvl1()==1 && userOwnedUpgrades.getCard_lvl2()==1 && userOwnedUpgrades.getCard_lvl3()==1){
+            graphicCardsCounter =3;
+        }
+        else if(userOwnedUpgrades.getCard_lvl2()==1 && userOwnedUpgrades.getCard_lvl3()==1){
+            graphicCardsCounter =2;
+        }
+        else if(userOwnedUpgrades.getCard_lvl3()==1 && userOwnedUpgrades.getCard_lvl1()==1)
+        {
+            graphicCardsCounter=2;
+        }
+        else if(userOwnedUpgrades.getCard_lvl1()==1 && userOwnedUpgrades.getCard_lvl2()==1)
+        {
+            graphicCardsCounter=2;
+        }
+        else if(userOwnedUpgrades.getCard_lvl1()==1){
+            graphicCardsCounter=1;
+        }
+        else if(userOwnedUpgrades.getCard_lvl2()==1){
+            graphicCardsCounter=1;
+        }
+        else if(userOwnedUpgrades.getCard_lvl3()==1){
+            graphicCardsCounter=1;
+        }
+        else
+        {
+            graphicCardsCounter=0;
+        }
     }
 }
