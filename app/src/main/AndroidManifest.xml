@@ -11,7 +11,9 @@
         android:theme="@style/Theme.StudioGraficzne">
         <activity
             android:name=".activity_endOfGame"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
         <activity
             android:name=".activity_studio_preview"
             android:exported="false"
