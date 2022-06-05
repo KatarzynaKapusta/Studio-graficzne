@@ -110,4 +110,17 @@ public class UserOwnedItems {
         this.f3 = f3;
     }
 
+    public boolean isEverythingOwned(){
+
+        return p1 == ItemStatus.OWNED.value &&
+                p2 == ItemStatus.OWNED.value &&
+                p3 == ItemStatus.OWNED.value &&
+                t1 == ItemStatus.OWNED.value &&
+                t2 == ItemStatus.OWNED.value &&
+                t3 == ItemStatus.OWNED.value &&
+                f1 == ItemStatus.OWNED.value &&
+                f2 == ItemStatus.OWNED.value &&
+                f3 == ItemStatus.OWNED.value;
+    }
+
 }

@@ -39,6 +39,7 @@ public class tables_fragment extends Fragment {
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
     private String email;
     private UserOwnedItems userOwnedItems;
+    private UserOwnedUpgrades userOwnedUpgrades;
     private List<Table> tables = new ArrayList<>();
     double ownedMoney;
 
@@ -134,6 +135,18 @@ public class tables_fragment extends Fragment {
             Toast.makeText(getActivity(), "Nie kupiono",
                     Toast.LENGTH_SHORT).show();
         }
+
+        if(isGameOver()) {
+            Intent intent = new Intent(getActivity(), activity_endOfGame.class);
+            startActivity(intent);
+        }
+    }
+
+    private boolean isGameOver()
+    {
+        if(userOwnedUpgrades.checkCurrentLvl() == 3 && userOwnedItems.isEverythingOwned())
+            return true;
+        return false;
     }
 
     private void readFromDatabase(FirebaseUser currentUser, DatabaseReference userRef, DatabaseReference furnitureRef) {
@@ -157,8 +170,10 @@ public class tables_fragment extends Fragment {
                             experienceString = String.valueOf(experience.intValue());
 
                             Map<String,Long> m = (Map)keyId.child("UserOwnedItems").getValue();
+                            Map<String,Long> u = (Map)keyId.child("UserOwnedUpgrades").getValue();
 
                             userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
+                            userOwnedUpgrades = new UserOwnedUpgrades(u.get("card_lvl1").intValue(), u.get("card_lvl2").intValue(),u.get("card_lvl3").intValue(),u.get("pc_lvl1").intValue(),u.get("pc_lvl2").intValue(),u.get("pc_lvl3").intValue(),u.get("t_lvl1").intValue(),u.get("t_lvl2").intValue(),u.get("t_lvl3").intValue());
                             break;
                         }
                     }

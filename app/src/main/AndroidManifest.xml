@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioGraficzne">
         <activity
+            android:name=".activity_endOfGame"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.Fullscreen" />
+        <activity
             android:name=".activity_employees_benefits_and_salary"
             android:exported="false"
             android:screenOrientation="landscape"
