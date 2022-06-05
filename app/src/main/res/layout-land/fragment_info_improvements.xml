@@ -19,142 +19,163 @@
         app:layout_marginTopPercent="35%"
         app:layout_widthPercent="30%">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posiadane ulepszenia:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="85%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/computer_lvl1"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Poziom Studia:"
+            android:text="LVL 1:"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_heightPercent="15%"
+            app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginLeftPercent="40%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="22%"
-            app:layout_widthPercent="60%">
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
         <TextView
-            android:id="@+id/studio_level"
+            android:id="@+id/comp_level1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="NIE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_heightPercent="15%"
+            app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
+            app:layout_marginLeftPercent="65%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="22%"
-            app:layout_widthPercent="10%">
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Liczba ulepszeń:"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_heightPercent="15%"
-            app:layout_marginBottomPercent="10%"
-            app:layout_marginLeftPercent="10%"
-            app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="36%"
-            app:layout_widthPercent="70%">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/number_of_improvements"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_heightPercent="15%"
-            app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
-            app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="36%"
-            app:layout_widthPercent="10%">
-
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Liczba elementów wystroju:"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:src="@drawable/computer_lvl2"
             app:layout_heightPercent="25%"
             app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="10%"
             app:layout_marginRightPercent="1%"
             app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="70%">
+            app:layout_widthPercent="25%">
 
-        </TextView>
-
-        <TextView
-            android:id="@+id/number_of_furniture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_heightPercent="15%"
-            app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
-            app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="55%"
-            app:layout_widthPercent="10%">
-
-        </TextView>
+        </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Liczba pracowników:"
+            android:text="LVL 2:"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_heightPercent="20%"
+            app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginLeftPercent="40%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="72%"
-            app:layout_widthPercent="70%">
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
         <TextView
-            android:id="@+id/number_of_employees"
+            android:id="@+id/comp_level2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="NIE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_heightPercent="15%"
+            app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
+            app:layout_marginLeftPercent="65%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="78%"
-            app:layout_widthPercent="10%">
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
 
         </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/computer_lvl3"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LVL 3:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/comp_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
@@ -202,102 +223,157 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Komputery:"
-            android:textAlignment="textStart"
+            android:text="Posiadane ulepszenia:"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="85%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tablet_lvl1"
+            app:layout_heightPercent="25%"
             app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="10%"
             app:layout_marginRightPercent="1%"
             app:layout_marginTopPercent="30%"
-            app:layout_widthPercent="70%">
+            app:layout_widthPercent="25%">
 
-        </TextView>
-
-        <TextView
-            android:id="@+id/number_of_computers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_heightPercent="10%"
-            app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
-            app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="30%"
-            app:layout_widthPercent="10%">
-
-        </TextView>
+        </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tablety graficzne:"
+            android:text="LVL 1:"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginLeftPercent="40%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="70%">
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
         <TextView
-            android:id="@+id/number_of_tablets"
+            android:id="@+id/tablet_level1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="NIE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
+            app:layout_marginLeftPercent="65%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="10%">
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
 
         </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tablet_lvl2"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Karty graficzne:"
+            android:text="LVL 2:"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginLeftPercent="40%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="70%">
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
         <TextView
-            android:id="@+id/number_of_graphic_cards"
+            android:id="@+id/tablet_level2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="NIE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tablet_lvl3"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
             app:layout_marginRightPercent="1%"
             app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="10%">
+            app:layout_widthPercent="25%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LVL 3:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tablet_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
@@ -347,102 +423,157 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Biurka:"
-            android:textAlignment="textStart"
+            android:text="Posiadane ulepszenia:"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="85%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/card_lvl1"
+            app:layout_heightPercent="25%"
             app:layout_marginBottomPercent="5%"
             app:layout_marginLeftPercent="10%"
             app:layout_marginRightPercent="1%"
             app:layout_marginTopPercent="30%"
-            app:layout_widthPercent="70%">
+            app:layout_widthPercent="25%">
 
-        </TextView>
-
-        <TextView
-            android:id="@+id/number_of_desks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_heightPercent="10%"
-            app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
-            app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="30%"
-            app:layout_widthPercent="10%">
-
-        </TextView>
+        </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Podłogi:"
+            android:text="LVL 1:"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginLeftPercent="40%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="70%">
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
         <TextView
-            android:id="@+id/number_of_graphic_floors"
+            android:id="@+id/card_level1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="NIE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
+            app:layout_marginLeftPercent="65%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="50%"
-            app:layout_widthPercent="10%">
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
 
         </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/card_lvl2"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Roślinki:"
+            android:text="LVL 2:"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="10%"
+            app:layout_marginLeftPercent="40%"
             app:layout_marginRightPercent="1%"
-            app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="70%">
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 
         <TextView
-            android:id="@+id/number_of_graphic_plants"
+            android:id="@+id/card_level2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="NIE"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_heightPercent="10%"
             app:layout_marginBottomPercent="5%"
-            app:layout_marginLeftPercent="80%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/card_lvl3"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
             app:layout_marginRightPercent="1%"
             app:layout_marginTopPercent="70%"
-            app:layout_widthPercent="10%">
+            app:layout_widthPercent="25%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LVL 3:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/card_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
 
         </TextView>
 

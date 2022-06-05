@@ -263,7 +263,17 @@ public class fragment_info_statistics extends Fragment {
     }
 
     private void setUserOwnedUpgrades(int c1, int c2, int c3, int pc1, int pc2, int pc3, int tab1, int tab2, int tab3){
+        userOwnedUpgrades.setCard_lvl1(c1);
+        userOwnedUpgrades.setCard_lvl2(c2);
+        userOwnedUpgrades.setCard_lvl3(c3);
 
+        userOwnedUpgrades.setPc_lvl1(pc1);
+        userOwnedUpgrades.setPc_lvl2(pc2);
+        userOwnedUpgrades.setPc_lvl3(pc3);
+
+        userOwnedUpgrades.setT_lvl1(tab1);
+        userOwnedUpgrades.setT_lvl2(tab2);
+        userOwnedUpgrades.setT_lvl3(tab3);
     }
 
     private void checkIfPlantIsOwned(){
