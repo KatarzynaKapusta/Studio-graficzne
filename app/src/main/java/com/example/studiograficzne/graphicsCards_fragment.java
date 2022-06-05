@@ -31,7 +31,6 @@ public class graphicsCards_fragment extends Fragment {
     private static final String UPGRADES = "Upgrades", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyCard1Button, buyCard2Button, buyCard3Button;
-    private Button previewCard1Button, previewCard2Button, previewCard3Button;
     private TextView priceCard1TxtView, priceCard2TxtView, priceCard3TxtView;
     private TextView lvlCard1TxtView, lvlCard2TxtView, lvlCard3TxtView;
 
@@ -40,8 +39,10 @@ public class graphicsCards_fragment extends Fragment {
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
     private String email;
     private UserOwnedUpgrades userOwnedUpgrades;
+    private UserOwnedItems userOwnedItems;
     private List<Card> cards = new ArrayList<>();
     double ownedMoney, ownedResources;
+    Double level;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,42 +82,11 @@ public class graphicsCards_fragment extends Fragment {
             performBuyItem(cards.get(2));
         });
 
-        // Preview buttons
-        previewCard1Button = view.findViewById(R.id.card1PreviewButton);
-        previewCard1Button.setOnClickListener(v -> {
-            performViewItem(cards.get(0));
-        });
-        previewCard2Button = view.findViewById(R.id.card2PreviewButton);
-        previewCard2Button.setOnClickListener(v -> {
-            performViewItem(cards.get(1));
-
-        });
-        previewCard3Button = view.findViewById(R.id.card3PreviewButton);
-        previewCard3Button.setOnClickListener(v -> {
-            performViewItem(cards.get(2));
-        });
-
 
         // Inflate the layout for this fragment
         return view;
 
     } // OnCreate() end
-
-    private void performViewItem(Card c) {
-        if(c.getId().equals("card_lvl1"))
-            userOwnedUpgrades.setCard_lvl1(ItemStatus.PREVIEW.value);
-
-        if(c.getId().equals("card_lvl2"))
-            userOwnedUpgrades.setCard_lvl2(ItemStatus.PREVIEW.value);
-
-        if(c.getId().equals("card_lvl3"))
-            userOwnedUpgrades.setCard_lvl3(ItemStatus.PREVIEW.value);
-        updateItemStatus();
-
-        Intent intent = new Intent(getActivity(), activity_studio_preview.class);
-        startActivity(intent);
-
-    }
 
     private void performBuyItem(Card c) {
         if(ableToBuy(c)) {
@@ -140,13 +110,19 @@ public class graphicsCards_fragment extends Fragment {
             Toast.makeText(getActivity(), "Nie kupiono",
                     Toast.LENGTH_SHORT).show();
         }
+
+        if(isGameOver()) {
+            Intent intent = new Intent(getActivity(), activity_endOfGame.class);
+            startActivity(intent);
+        }
     }
+
 
     private void readFromDatabase(FirebaseUser currentUser, DatabaseReference userRef, DatabaseReference upgradesRef) {
         if (currentUser != null) {
             // Read from "Users" branch in db
             userRef.addValueEventListener(new ValueEventListener() {
-                Double money, level, resources, experience;
+                Double money, resources, experience;
                 String moneyString, resourcesString, experienceString;
                 Integer numStatus;
 
@@ -162,9 +138,11 @@ public class graphicsCards_fragment extends Fragment {
                             experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                             experienceString = String.valueOf(experience.intValue());
 
-                            Map<String,Long> m = (Map)keyId.child("UserOwnedUpgrades").getValue();
+                            Map<String,Long> m = (Map)keyId.child("UserOwnedItems").getValue();
+                            Map<String,Long> u = (Map)keyId.child("UserOwnedUpgrades").getValue();
 
-                            userOwnedUpgrades = new UserOwnedUpgrades(m.get("card_lvl1").intValue(), m.get("card_lvl2").intValue(),m.get("card_lvl3").intValue(),m.get("pc_lvl1").intValue(),m.get("pc_lvl2").intValue(),m.get("pc_lvl3").intValue(),m.get("t_lvl1").intValue(),m.get("t_lvl2").intValue(),m.get("t_lvl3").intValue());
+                            userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
+                            userOwnedUpgrades = new UserOwnedUpgrades(u.get("card_lvl1").intValue(), u.get("card_lvl2").intValue(),u.get("card_lvl3").intValue(),u.get("pc_lvl1").intValue(),u.get("pc_lvl2").intValue(),u.get("pc_lvl3").intValue(),u.get("t_lvl1").intValue(),u.get("t_lvl2").intValue(),u.get("t_lvl3").intValue());
                             break;
                         }
                     }
@@ -213,32 +191,26 @@ public class graphicsCards_fragment extends Fragment {
     }
 
     private void enableButtons(UserOwnedUpgrades uoi) {
-        if(uoi.getCard_lvl1() == ItemStatus.NOTOWNED.value)
+        if(uoi.getCard_lvl1() == ItemStatus.NOTOWNED.value && level >=3)
         {
             buyCard1Button.setEnabled(true);
-            previewCard1Button.setEnabled(true);
         }
         else {
             buyCard1Button.setEnabled(false);
-            previewCard1Button.setEnabled(false);
         }
 
-        if(uoi.getCard_lvl2() == ItemStatus.NOTOWNED.value) {
+        if(uoi.getCard_lvl2() == ItemStatus.NOTOWNED.value && userOwnedUpgrades.checkCurrentLvl() == 1) {
             buyCard2Button.setEnabled(true);
-            previewCard2Button.setEnabled(true);
         }
         else {
             buyCard2Button.setEnabled(false);
-            previewCard2Button.setEnabled(false);
         }
 
-        if(uoi.getCard_lvl3() == ItemStatus.NOTOWNED.value) {
+        if(uoi.getCard_lvl3() == ItemStatus.NOTOWNED.value && userOwnedUpgrades.checkCurrentLvl() == 2) {
             buyCard3Button.setEnabled(true);
-            previewCard3Button.setEnabled(true);
         }
         else {
             buyCard3Button.setEnabled(false);
-            previewCard3Button.setEnabled(false);
         }
     }
 
@@ -289,6 +261,13 @@ public class graphicsCards_fragment extends Fragment {
             if(t.getId().equals("card_lvl3") && !(userOwnedUpgrades.getCard_lvl3()==ItemStatus.OWNED.value || userOwnedUpgrades.getCard_lvl3()==ItemStatus.HIDDENOWNED.value))
                 return true;
         }
+        return false;
+    }
+
+    private boolean isGameOver()
+    {
+        if(userOwnedUpgrades.checkCurrentLvl() == 3 && userOwnedItems.isEverythingOwned())
+            return true;
         return false;
     }
 

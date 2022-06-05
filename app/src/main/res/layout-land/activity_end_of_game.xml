@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity_endOfGame"
+    tools:ignore="ExtraText"
+    android:orientation="horizontal"
+    android:background="@drawable/end_of_game">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="GRATULACJE!"
+        android:textAlignment="center"
+        android:textColor="#FF5722"
+        android:textSize="40sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="33%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="20%"
+        app:layout_widthPercent="40%" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="172dp"
+        android:text="Udało Ci się odblokować wszystkie ulepszenia i ozdoby!"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="25%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="34%"
+        app:layout_widthPercent="100%" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="27%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="40%"
+        app:layout_widthPercent="60%"
+        android:text="Twoje studio jest teraz niepodważalnie najlepsze!" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dziękujemy za zagranie w naszą grę :)"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="33%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="55%"
+        app:layout_widthPercent="40%" />
+
+    <Button
+        android:id="@+id/backToGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#2196F3"
+        android:text="Powrót do gry"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="70%"
+        app:layout_widthPercent="25%" />
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

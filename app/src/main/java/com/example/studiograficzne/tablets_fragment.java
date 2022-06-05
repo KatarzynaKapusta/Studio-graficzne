@@ -31,7 +31,6 @@ public class tablets_fragment extends Fragment {
     private static final String UPGRADES = "Upgrades", USERS = "Users";
     private final String TAG = this.getClass().getName().toUpperCase();
     private Button buyTablet1Button, buyTablet2Button, buyTablet3Button;
-    private Button previewTablet1Button, previewTablet2Button, previewTablet3Button;
     private TextView priceTablet1TxtView, priceTablet2TxtView, priceTablet3TxtView;
     private TextView lvlTablet1TxtView, lvlTablet2TxtView, lvlTablet3TxtView;
 
@@ -40,8 +39,10 @@ public class tablets_fragment extends Fragment {
     DatabaseReference rootRef = FirebaseDatabase.getInstance("https://studio-graficzne-baza-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
     private String email;
     private UserOwnedUpgrades userOwnedUpgrades;
+    private UserOwnedItems userOwnedItems;
     private List<Tablet> tablets = new ArrayList<>();
     double ownedMoney, ownedResources;
+    Double level;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,22 +81,6 @@ public class tablets_fragment extends Fragment {
         buyTablet3Button.setOnClickListener(v -> {
             performBuyItem(tablets.get(2));
         });
-
-        // Preview buttons
-        previewTablet1Button = view.findViewById(R.id.tablet1PreviewButton);
-        previewTablet1Button.setOnClickListener(v -> {
-            performViewItem(tablets.get(0));
-        });
-        previewTablet2Button = view.findViewById(R.id.tablet2PreviewButton);
-        previewTablet2Button.setOnClickListener(v -> {
-            performViewItem(tablets.get(1));
-
-        });
-        previewTablet3Button = view.findViewById(R.id.tablet3PreviewButton);
-        previewTablet3Button.setOnClickListener(v -> {
-            performViewItem(tablets.get(2));
-        });
-
 
         // Inflate the layout for this fragment
         return view;
@@ -140,13 +125,18 @@ public class tablets_fragment extends Fragment {
             Toast.makeText(getActivity(), "Nie kupiono",
                     Toast.LENGTH_SHORT).show();
         }
+
+        if(isGameOver()) {
+            Intent intent = new Intent(getActivity(), activity_endOfGame.class);
+            startActivity(intent);
+        }
     }
 
     private void readFromDatabase(FirebaseUser currentUser, DatabaseReference userRef, DatabaseReference upgradesRef) {
         if (currentUser != null) {
             // Read from "Users" branch in db
             userRef.addValueEventListener(new ValueEventListener() {
-                Double money, level, resources, experience;
+                Double money, resources, experience;
                 String moneyString, resourcesString, experienceString;
                 Integer numStatus;
 
@@ -162,9 +152,11 @@ public class tablets_fragment extends Fragment {
                             experience = keyId.child("UserGameInfo").child("experience").getValue(Double.class);
                             experienceString = String.valueOf(experience.intValue());
 
-                            Map<String,Long> m = (Map)keyId.child("UserOwnedUpgrades").getValue();
+                            Map<String,Long> m = (Map)keyId.child("UserOwnedItems").getValue();
+                            Map<String,Long> u = (Map)keyId.child("UserOwnedUpgrades").getValue();
 
-                            userOwnedUpgrades = new UserOwnedUpgrades(m.get("card_lvl1").intValue(), m.get("card_lvl2").intValue(),m.get("card_lvl3").intValue(),m.get("pc_lvl1").intValue(),m.get("pc_lvl2").intValue(),m.get("pc_lvl3").intValue(),m.get("t_lvl1").intValue(),m.get("t_lvl2").intValue(),m.get("t_lvl3").intValue());
+                            userOwnedItems = new UserOwnedItems(m.get("f1").intValue(), m.get("f2").intValue(),m.get("f3").intValue(),m.get("p1").intValue(),m.get("p2").intValue(),m.get("p3").intValue(),m.get("t1").intValue(),m.get("t2").intValue(),m.get("t3").intValue());
+                            userOwnedUpgrades = new UserOwnedUpgrades(u.get("card_lvl1").intValue(), u.get("card_lvl2").intValue(),u.get("card_lvl3").intValue(),u.get("pc_lvl1").intValue(),u.get("pc_lvl2").intValue(),u.get("pc_lvl3").intValue(),u.get("t_lvl1").intValue(),u.get("t_lvl2").intValue(),u.get("t_lvl3").intValue());
                             break;
                         }
                     }
@@ -213,32 +205,26 @@ public class tablets_fragment extends Fragment {
     }
 
     private void enableButtons(UserOwnedUpgrades uoi) {
-        if(uoi.getT_lvl1() == ItemStatus.NOTOWNED.value)
+        if(uoi.getT_lvl1() == ItemStatus.NOTOWNED.value && level >=3)
         {
             buyTablet1Button.setEnabled(true);
-            previewTablet1Button.setEnabled(true);
         }
         else {
             buyTablet1Button.setEnabled(false);
-            previewTablet1Button.setEnabled(false);
         }
 
-        if(uoi.getT_lvl2() == ItemStatus.NOTOWNED.value) {
+        if(uoi.getT_lvl2() == ItemStatus.NOTOWNED.value && userOwnedUpgrades.checkCurrentLvl() == 1) {
             buyTablet2Button.setEnabled(true);
-            previewTablet2Button.setEnabled(true);
         }
         else {
             buyTablet2Button.setEnabled(false);
-            previewTablet2Button.setEnabled(false);
         }
 
-        if(uoi.getT_lvl3() == ItemStatus.NOTOWNED.value) {
+        if(uoi.getT_lvl3() == ItemStatus.NOTOWNED.value && userOwnedUpgrades.checkCurrentLvl() == 2) {
             buyTablet3Button.setEnabled(true);
-            previewTablet3Button.setEnabled(true);
         }
         else {
             buyTablet3Button.setEnabled(false);
-            previewTablet3Button.setEnabled(false);
         }
     }
 
@@ -289,6 +275,13 @@ public class tablets_fragment extends Fragment {
             if(t.getId().equals("t_lvl3") && !(userOwnedUpgrades.getT_lvl3()==ItemStatus.OWNED.value || userOwnedUpgrades.getT_lvl3()==ItemStatus.HIDDENOWNED.value))
                 return true;
         }
+        return false;
+    }
+
+    private boolean isGameOver()
+    {
+        if(userOwnedUpgrades.checkCurrentLvl() == 3 && userOwnedItems.isEverythingOwned())
+            return true;
         return false;
     }
 
