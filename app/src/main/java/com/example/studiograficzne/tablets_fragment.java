@@ -197,7 +197,7 @@ public class tablets_fragment extends Fragment {
     }
 
     private void enableButtons(UserOwnedUpgrades uoi) {
-        if(uoi.getT_lvl1() == ItemStatus.NOTOWNED.value && level >=3)
+        if(uoi.getT_lvl1() == ItemStatus.NOTOWNED.value && level >=3 && userOwnedUpgrades.checkCurrentLvl() == 1)
         {
             buyTablet1Button.setEnabled(true);
         }

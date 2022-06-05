@@ -149,7 +149,7 @@ public class activity_studio_panel extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             for (DataSnapshot keyId : dataSnapshot.getChildren()) {
                                 addition = keyId.getValue(Double.class);
-                                lvlList.add(addition);
+                                improvementsList.add(addition);
                             }
                         }
 

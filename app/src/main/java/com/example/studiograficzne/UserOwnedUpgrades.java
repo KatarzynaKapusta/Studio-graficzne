@@ -107,4 +107,64 @@ public class UserOwnedUpgrades {
     public void setT_lvl3(int t_lvl3) {
         this.t_lvl3 = t_lvl3;
     }
+
+    public int checkCurrentLvl()
+    {
+        int pc = getPcLvl();
+        int tablet = getTabletLvl();
+        int card = getCardLvl();
+
+        if(pc == 3 && tablet == 3 && card == 3)
+            return 3;
+
+        if(pc >= 2 && tablet >= 2 && card >= 2)
+            return 2;
+
+        if(pc >= 1 && tablet >= 1 && card >= 1)
+            return 1;
+
+        return 0;
+    }
+
+    private int getPcLvl()
+    {
+        if(pc_lvl3 == ItemStatus.OWNED.value)
+            return 3;
+
+        if(pc_lvl2 == ItemStatus.OWNED.value)
+            return 2;
+
+        if(pc_lvl1 == ItemStatus.OWNED.value)
+            return 1;
+
+        return 0;
+    }
+
+    private int getCardLvl()
+    {
+        if(card_lvl3 == ItemStatus.OWNED.value)
+            return 3;
+
+        if(card_lvl2 == ItemStatus.OWNED.value)
+            return 2;
+
+        if(card_lvl1 == ItemStatus.OWNED.value)
+            return 1;
+
+        return 0;
+    }
+
+    private int getTabletLvl()
+    {
+        if(t_lvl3 == ItemStatus.OWNED.value)
+            return 3;
+
+        if(t_lvl2 == ItemStatus.OWNED.value)
+            return 2;
+
+        if(t_lvl1 == ItemStatus.OWNED.value)
+            return 1;
+
+        return 0;
+    }
 }
