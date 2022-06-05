@@ -57,6 +57,7 @@ public class fragment_employees_hire extends Fragment {
     private String email;
 
     UserEmployeesInfo userEmployeesInfo;
+    UserGameInfo userGameInfo;
 
     private Button hire_first_employee;
     private Button hire_second_employee;
@@ -91,6 +92,7 @@ public class fragment_employees_hire extends Fragment {
         Log.v("USERID", userRef.getKey());
 
         userEmployeesInfo = new UserEmployeesInfo();
+        userGameInfo = new UserGameInfo();
         readFromDatabase(currentUser, userRef);
         //updateEmployeesHiredButtons();
 
@@ -136,6 +138,7 @@ public class fragment_employees_hire extends Fragment {
                     userEmployeesInfo.setEmployee2Hired(isEmployee2Hired);
                     userEmployeesInfo.setEmployee3Hired(isEmployee3Hired);
 
+                    enableHireButtons();
                     updateEmployeesHiredButtons();
 
                 } // End of reading from "Users" branch
@@ -173,6 +176,30 @@ public class fragment_employees_hire extends Fragment {
         else
         {
             hire_third_employee.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void enableHireButtons(){
+        if(userGameInfo.getLevel()>=3){
+            hire_first_employee.setEnabled(true);
+        }
+        else
+        {
+            hire_first_employee.setEnabled(false);
+        }
+        if(userGameInfo.getLevel()>=5){
+            hire_second_employee.setEnabled(true);
+        }
+        else
+        {
+            hire_second_employee.setEnabled(false);
+        }
+        if(userGameInfo.getLevel()>=10){
+            hire_third_employee.setEnabled(true);
+        }
+        else
+        {
+            hire_third_employee.setEnabled(false);
         }
     }
 
