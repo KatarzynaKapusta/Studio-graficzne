@@ -16,10 +16,11 @@
         android:layout_marginBottom="60dp"
         android:text="GRATULACJE!"
         android:textAlignment="center"
-        android:textColor="#FF5722"
+        android:textColor="#B43CFF"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_marginBottomPercent="30%"
-        app:layout_marginLeftPercent="33%"
+        app:layout_marginLeftPercent="32%"
         app:layout_marginRightPercent="5%"
         app:layout_marginTopPercent="20%"
         app:layout_widthPercent="40%" />
@@ -31,26 +32,28 @@
         android:layout_marginBottom="172dp"
         android:text="Udało Ci się odblokować wszystkie ulepszenia i ozdoby!"
         android:textColor="#000000"
-        android:textSize="17sp"
+        android:textSize="20sp"
+        android:textAlignment="center"
         app:layout_marginBottomPercent="30%"
-        app:layout_marginLeftPercent="25%"
+        app:layout_marginLeftPercent="12%"
         app:layout_marginRightPercent="5%"
         app:layout_marginTopPercent="34%"
-        app:layout_widthPercent="100%" />
+        app:layout_widthPercent="80%" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
+        android:text="Twoje studio jest teraz niepodważalnie najlepsze!"
         android:textColor="#000000"
-        android:textSize="17sp"
+        android:textSize="20sp"
+        android:textAlignment="center"
         app:layout_marginBottomPercent="30%"
-        app:layout_marginLeftPercent="27%"
+        app:layout_marginLeftPercent="22%"
         app:layout_marginRightPercent="5%"
         app:layout_marginTopPercent="40%"
-        app:layout_widthPercent="60%"
-        android:text="Twoje studio jest teraz niepodważalnie najlepsze!" />
+        app:layout_widthPercent="60%" />
 
     <TextView
         android:id="@+id/textView4"
@@ -59,8 +62,9 @@
         android:text="Dziękujemy za zagranie w naszą grę :)"
         android:textColor="#000000"
         android:textSize="17sp"
+        android:textAlignment="center"
         app:layout_marginBottomPercent="30%"
-        app:layout_marginLeftPercent="33%"
+        app:layout_marginLeftPercent="32%"
         app:layout_marginRightPercent="5%"
         app:layout_marginTopPercent="55%"
         app:layout_widthPercent="40%" />
@@ -76,7 +80,21 @@
         app:layout_marginBottomPercent="10%"
         app:layout_marginLeftPercent="40%"
         app:layout_marginRightPercent="5%"
-        app:layout_marginTopPercent="70%"
+        app:layout_marginTopPercent="63%"
+        app:layout_widthPercent="25%" />
+
+    <Button
+        android:id="@+id/showStatisticsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#9DD4FF"
+        android:text="Zobacz swoje statystyki"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="80%"
         app:layout_widthPercent="25%" />
 
 </androidx.percentlayout.widget.PercentRelativeLayout>
