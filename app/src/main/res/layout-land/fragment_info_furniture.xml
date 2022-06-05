@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment_info_furniture"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="70%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="2%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%">
+
+
+
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginLeftPercent="4.5%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biurka"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+
+            app:layout_heightPercent="90%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="11%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="70%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="35%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%">
+
+
+
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginLeftPercent="37.5%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rośliny"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_heightPercent="90%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="11%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="70%"
+        app:layout_marginBottomPercent="5%"
+        app:layout_marginLeftPercent="68%"
+        app:layout_marginRightPercent="2%"
+        app:layout_marginTopPercent="35%"
+        app:layout_widthPercent="30%">
+
+
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+    <androidx.percentlayout.widget.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/choice_studio_background"
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginLeftPercent="70.5%"
+        app:layout_marginRightPercent="1%"
+        app:layout_marginTopPercent="30%"
+        app:layout_widthPercent="25%">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Podłogi"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_heightPercent="90%"
+            app:layout_marginBottomPercent="10%"
+            app:layout_marginLeftPercent="5%"
+            app:layout_marginRightPercent="5%"
+            app:layout_marginTopPercent="11%"
+            app:layout_widthPercent="90%">
+
+        </TextView>
+
+    </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

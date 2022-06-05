@@ -29,7 +29,7 @@ public class activity_rejestracja extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
 
-    private static final String USERS = "users";
+    private static final String USERS = "Users";
     private String TAG = "activity_rejestracja";
 
     private String nickname, email, password, confirmPassword;
@@ -38,6 +38,8 @@ public class activity_rejestracja extends AppCompatActivity {
     protected UserGameInfo userGameInfo;
     protected UserStudioInfo userStudioInfo;
     protected UserOwnedItems userOwnedItems;
+    protected UserEmployeesInfo userEmployeesInfo;
+    protected UserOwnedUpgrades userOwnedUpgrades;
 
     private FirebaseAuth mAuth;
 
@@ -60,6 +62,8 @@ public class activity_rejestracja extends AppCompatActivity {
         userGameInfo = new UserGameInfo();
         userStudioInfo = new UserStudioInfo();
         userOwnedItems = new UserOwnedItems();
+        userEmployeesInfo = new UserEmployeesInfo();
+        userOwnedUpgrades = new UserOwnedUpgrades();
 
         registerButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -162,7 +166,10 @@ public class activity_rejestracja extends AppCompatActivity {
         mDatabase.child(uid).child("UserInfo").setValue(userInfo); //adding user info to database
         mDatabase.child(uid).child("UserGameInfo").setValue(userGameInfo);
         mDatabase.child(uid).child("UserStudioInfo").setValue(userStudioInfo);
+        mDatabase.child(uid).child("UserEmployeesInfo").setValue(userEmployeesInfo);
         mDatabase.child(uid).child("UserOwnedItems").setValue(userOwnedItems);
+
+        mDatabase.child(uid).child("UserOwnedUpgrades").setValue(userOwnedUpgrades);
         Intent loginIntent = new Intent(this, activity_nazwij_studio.class);
 //        Intent loginIntent = new Intent(this, MainActivity.class);
         startActivity(loginIntent);

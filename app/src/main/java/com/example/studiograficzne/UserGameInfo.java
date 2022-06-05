@@ -94,6 +94,15 @@ public class UserGameInfo implements Parcelable {
         this.money+=earnings;
     }
 
+    public void addEmployeesEarnings(double earnings) {
+        this.money+=earnings;
+    }
+
+    public void payEmployeesSalary(double salary){
+        this.money-=salary;
+    }
+
+
 
 
     @Override

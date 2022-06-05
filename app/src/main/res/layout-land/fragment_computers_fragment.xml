@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".computers_fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/upgradeMainLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="0dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/computer1ImageView"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/tablet_lvl1"
+                android:contentDescription="computer description" />
+
+            <TextView
+                android:id="@+id/computer1NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="184dp"
+                android:text="Komputer poziom 1"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer1PriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-310dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/pricePL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer1PriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_price"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer1LevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-265dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/studio_level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer1LevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_lvl"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/computer1PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-155dp"
+                android:layout_marginEnd="10dp"
+                android:background="#009688"
+                app:backgroundTint="#009688"
+                android:text="@string/previewPL"/>
+
+            <Button
+                android:id="@+id/computer1BuyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#009688"
+                app:backgroundTint="#009688"
+                android:text="@string/buyPL"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/computer2ImageView"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/tablet_lvl1"
+                android:contentDescription="computer2Description" />
+
+            <TextView
+                android:id="@+id/computer2NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:text="Komputer poziom 2"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/computer2PriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-120dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/pricePL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer2LevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-230dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/studio_level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer2LevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_lvl"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer2PriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-250dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_price"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/computer2PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-135dp"
+                android:layout_marginEnd="10dp"
+                android:background="#009688"
+                app:backgroundTint="#009688"
+                android:text="@string/previewPL"/>
+
+            <Button
+                android:id="@+id/computer2BuyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:layout_gravity="center|center_horizontal"
+                android:text="Wymaga zakupu wszystkich ulepszeń poziomu 1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/computer3ImageView"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/tablet_lvl1"
+                android:contentDescription="computer3 description" />
+
+            <TextView
+                android:id="@+id/computer3NameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="184dp"
+                android:text="Komputer poziom 3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer3PriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-305dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/pricePL"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer3PriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_price"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer3LevelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-275dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/studio_level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/computer3LevelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-170dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/item_lvl"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/computer3PreviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-170dp"
+                android:layout_marginEnd="10dp"
+                android:background="#009688"
+                app:backgroundTint="#009688"
+                android:text="@string/previewPL"/>
+
+            <Button
+                android:id="@+id/computer3BuyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textStyle="bold"
+                android:layout_gravity="center|center_horizontal"
+                android:text="Wymaga zakupu wszystkich ulepszeń poziomu 2"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

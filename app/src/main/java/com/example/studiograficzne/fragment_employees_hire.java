@@ -2,12 +2,35 @@ package com.example.studiograficzne;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -153,34 +176,6 @@ public class fragment_employees_hire extends Fragment {
         }
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        SharedPreferences prefsStudio = thisContext.getSharedPreferences("prefsStudio", 0);
-        SharedPreferences.Editor editorStudio = prefsStudio.edit();
-
-        e1hired = prefsStudio.getBoolean("e1hired", false);
-        e2hired = prefsStudio.getBoolean("e2hired", false);
-        e3hired = prefsStudio.getBoolean("e3hired", false);
-
-        editorStudio.apply();
-    }
-
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        SharedPreferences prefsStudio = thisContext.getSharedPreferences("prefsStudio", 0);;
-
-        e1hired = prefsStudio.getBoolean("e1hired", false);
-        e2hired = prefsStudio.getBoolean("e2hired", false);
-        e3hired = prefsStudio.getBoolean("e3hired", false);
-
-        updateEmployeesHiredButtons();
-
-    }
-
 //Updating data to firebase
     private void updateDataToFirebase() {
 
@@ -190,12 +185,12 @@ public class fragment_employees_hire extends Fragment {
 //            databaseOperations.updateDatabase(user.getUid(),rootRef,"employee1Hired",userEmployeesInfo.getEmployee1Hired());
 //            databaseOperations.updateDatabase(user.getUid(),rootRef,"employee2Hired",userEmployeesInfo.getEmployee2Hired());
 //            databaseOperations.updateDatabase(user.getUid(),rootRef,"employee3Hired",userEmployeesInfo.getEmployee3Hired());
-                    Map<String, Object> childUpdates = new HashMap<>();
-                    childUpdates.put("employee1Hired", userEmployeesInfo.getEmployee1Hired());
-                    childUpdates.put("employee2Hired", userEmployeesInfo.getEmployee2Hired());
-                    childUpdates.put("employee3Hired", userEmployeesInfo.getEmployee3Hired());
+            Map<String, Object> childUpdates = new HashMap<>();
+            childUpdates.put("employee1Hired", userEmployeesInfo.getEmployee1Hired());
+            childUpdates.put("employee2Hired", userEmployeesInfo.getEmployee2Hired());
+            childUpdates.put("employee3Hired", userEmployeesInfo.getEmployee3Hired());
 
-                    rootRef.child(USERS).child(user.getUid()).child("UserEmployeesInfo").updateChildren(childUpdates);
+            rootRef.child(USERS).child(user.getUid()).child("UserEmployeesInfo").updateChildren(childUpdates);
         }
     }
 }
