@@ -28,7 +28,7 @@ public class UserStudioInfo {
         this.employees = employees;
     }
 
-    public void setEarningsSM(){this.earningsSM = earningsSM;}
+    public void setEarningsSM(double studioEarnings){this.earningsSM = earningsSM;}
 
     public String getStudioName() {
         return studioName;
@@ -44,9 +44,5 @@ public class UserStudioInfo {
 
     public double getEarningsSM() {return earningsSM;}
 
-    public void addEarningsFromEmployees(){
-        //switch do dodania zarobków
-
-    }
 
 }

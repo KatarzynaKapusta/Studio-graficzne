@@ -20,7 +20,162 @@
         app:layout_widthPercent="30%">
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posiadane biurka:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="85%">
 
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/table1"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 1:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/desk_level1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/table2"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 2:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/desk_level2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/table3"
+            app:layout_heightPercent="25%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="25%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 3:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/desk_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
@@ -65,7 +220,162 @@
         app:layout_marginTopPercent="35%"
         app:layout_widthPercent="30%">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posiadane rośliny:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="85%">
 
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plant1"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="20%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 1:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/plant_level1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plant2"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="20%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 2:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/plant_level2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plant3"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="20%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 3:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/plant_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
 
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
@@ -110,7 +420,162 @@
         app:layout_marginTopPercent="35%"
         app:layout_widthPercent="30%">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posiadane podłogi:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="7%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="20%"
+            app:layout_widthPercent="85%">
 
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/floor1"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="30%"
+            app:layout_widthPercent="20%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 1:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/floor_level1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="35%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/floor2"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="50%"
+            app:layout_widthPercent="20%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 2:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/floor_level2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="55%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/floor3"
+            app:layout_heightPercent="20%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="10%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="70%"
+            app:layout_widthPercent="20%">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NR 3:"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="40%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/floor_level3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_heightPercent="10%"
+            app:layout_marginBottomPercent="5%"
+            app:layout_marginLeftPercent="65%"
+            app:layout_marginRightPercent="1%"
+            app:layout_marginTopPercent="75%"
+            app:layout_widthPercent="23%">
+
+        </TextView>
 
     </androidx.percentlayout.widget.PercentRelativeLayout>
 
