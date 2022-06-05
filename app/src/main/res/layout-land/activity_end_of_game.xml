@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_endOfGame">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity_endOfGame"
+    tools:ignore="ExtraText"
+    android:orientation="horizontal"
+    android:background="@drawable/end_of_game">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="248dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
         android:text="GRATULACJE!"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:textColor="#FF5722"
+        android:textSize="40sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="33%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="20%"
+        app:layout_widthPercent="40%" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="172dp"
         android:text="Udało Ci się odblokować wszystkie ulepszenia i ozdoby!"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="25%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="34%"
+        app:layout_widthPercent="100%" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Twoje studio jest teraz niepodważalnie najlepsze!"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="68dp"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="27%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="40%"
+        app:layout_widthPercent="60%"
+        android:text="Twoje studio jest teraz niepodważalnie najlepsze!" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dziękujemy za zagranie w naszą grę"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:text="Dziękujemy za zagranie w naszą grę :)"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_marginBottomPercent="30%"
+        app:layout_marginLeftPercent="33%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="55%"
+        app:layout_widthPercent="40%" />
 
     <Button
         android:id="@+id/backToGameButton"
@@ -54,9 +72,11 @@
         android:layout_marginTop="52dp"
         android:backgroundTint="#2196F3"
         android:text="Powrót do gry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_heightPercent="15%"
+        app:layout_marginBottomPercent="10%"
+        app:layout_marginLeftPercent="40%"
+        app:layout_marginRightPercent="5%"
+        app:layout_marginTopPercent="70%"
+        app:layout_widthPercent="25%" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.percentlayout.widget.PercentRelativeLayout>
