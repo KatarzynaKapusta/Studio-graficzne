@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     tools:ignore="ExtraText"
     android:orientation="horizontal"
+    android:background="@drawable/upgrades_shop_background"
     android:gravity="center">
 
     <androidx.percentlayout.widget.PercentRelativeLayout
@@ -139,7 +140,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="33dp"
-        android:layout_marginBottom="303dp">
+        android:layout_marginBottom="303dp"
+        android:background="@color/white">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

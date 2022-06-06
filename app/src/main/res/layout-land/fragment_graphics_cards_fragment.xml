@@ -103,6 +103,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:textStyle="bold"
+                android:background="@color/white"
+                android:textColor="@color/black"
                 android:layout_gravity="center|center_horizontal"
                 android:text="Wymaga poziomu 3"/>
 
@@ -195,6 +197,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:textStyle="bold"
+                android:background="@color/white"
+                android:textColor="@color/black"
                 android:layout_gravity="center|center_horizontal"
                 android:text="Wymaga zakupu wszystkich ulepszeń poziomu 1"/>
 
@@ -287,6 +291,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:textStyle="bold"
+                android:background="@color/white"
+                android:textColor="@color/black"
                 android:layout_gravity="center|center_horizontal"
                 android:text="Wymaga zakupu wszystkich ulepszeń poziomu 2"/>
 
